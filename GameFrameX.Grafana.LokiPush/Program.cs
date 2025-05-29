@@ -1,5 +1,6 @@
 using CommandLine;
 using FreeSql;
+using GameFrameX.Foundation.Json;
 using GameFrameX.Grafana.LokiPush.Models;
 using GameFrameX.Grafana.LokiPush.Services;
 
@@ -140,6 +141,7 @@ if (string.IsNullOrEmpty(connectionString))
         "3. 配置文件: appsettings.json中的ConnectionStrings:DefaultConnection");
 }
 
+Console.WriteLine($"启动参数 {JsonHelper.SerializeFormat(finalOptions)}");
 builder.Services.AddSingleton<IFreeSql>(provider =>
 {
     var freeSql = new FreeSqlBuilder()
