@@ -2,10 +2,7 @@ name: Build and Push Docker Image to Aliyun
 
 on:
   push:
-    branches: [ main, master ]
     tags: [ '*' ]
-  pull_request:
-    branches: [ main, master ]
 
 env:
   IMAGE_NAME: gameframex.grafana.lokipush
@@ -34,12 +31,8 @@ jobs:
       with:
         images: ${{ secrets.ALIYUN_REGISTRY_URL }}/${{ secrets.ALIYUN_NAMESPACE }}/${{ env.IMAGE_NAME }}
         tags: |
-          type=ref,event=branch
-          type=ref,event=pr
-          type=semver,pattern={{version}}
-          type=semver,pattern={{major}}.{{minor}}
-          type=semver,pattern={{major}}
-          type=raw,value=latest,enable={{is_default_branch}}
+          type=ref,event=tag
+          type=raw,value=latest
           
     - name: Build and push Docker image
       uses: docker/build-push-action@v5
