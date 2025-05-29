@@ -13,9 +13,9 @@ parseResult
     .WithNotParsed(errors =>
     {
         // 检查是否是帮助请求或版本请求
-        var isHelpOrVersion = errors.Any(e => e.Tag == CommandLine.ErrorType.HelpRequestedError || 
-                                             e.Tag == CommandLine.ErrorType.VersionRequestedError);
-        
+        var isHelpOrVersion = errors.Any(e => e.Tag == CommandLine.ErrorType.HelpRequestedError ||
+                                              e.Tag == CommandLine.ErrorType.VersionRequestedError);
+
         if (!isHelpOrVersion)
         {
             Console.WriteLine("命令行参数解析失败:");
@@ -23,6 +23,7 @@ parseResult
             {
                 Console.WriteLine($"  {error}");
             }
+
             Environment.Exit(1);
         }
         else
@@ -39,13 +40,13 @@ var finalOptions = MergeOptionsWithEnvironment(cmdOptions);
 static LauncherOptions MergeOptionsWithEnvironment(LauncherOptions? cmdOptions)
 {
     var options = cmdOptions ?? new LauncherOptions();
-    
+
     // 如果命令行参数未设置，则使用环境变量
     if (string.IsNullOrEmpty(options.ConnectionString))
     {
         options.ConnectionString = Environment.GetEnvironmentVariable("DATABASE_CONNECTION_STRING");
     }
-    
+
     // 批处理大小：命令行 > 环境变量 > 默认值
     if (cmdOptions?.BatchSize == 100) // 默认值，检查环境变量
     {
@@ -54,7 +55,7 @@ static LauncherOptions MergeOptionsWithEnvironment(LauncherOptions? cmdOptions)
             options.BatchSize = envBatchSize;
         }
     }
-    
+
     // 刷新间隔：命令行 > 环境变量 > 默认值
     if (cmdOptions?.FlushIntervalSeconds == 30) // 默认值，检查环境变量
     {
@@ -63,7 +64,7 @@ static LauncherOptions MergeOptionsWithEnvironment(LauncherOptions? cmdOptions)
             options.FlushIntervalSeconds = envFlushInterval;
         }
     }
-    
+
     // 最大队列大小：命令行 > 环境变量 > 默认值
     if (cmdOptions?.MaxQueueSize == 10000) // 默认值，检查环境变量
     {
@@ -72,7 +73,7 @@ static LauncherOptions MergeOptionsWithEnvironment(LauncherOptions? cmdOptions)
             options.MaxQueueSize = envMaxQueue;
         }
     }
-    
+
     // 端口：命令行 > 环境变量 > 默认值
     if (cmdOptions?.Port == 5000) // 默认值，检查环境变量
     {
@@ -81,7 +82,7 @@ static LauncherOptions MergeOptionsWithEnvironment(LauncherOptions? cmdOptions)
             options.Port = envPort;
         }
     }
-    
+
     // 环境：命令行 > 环境变量 > 默认值
     if (cmdOptions?.Environment == "Production") // 默认值，检查环境变量
     {
@@ -91,7 +92,7 @@ static LauncherOptions MergeOptionsWithEnvironment(LauncherOptions? cmdOptions)
             options.Environment = envEnvironment;
         }
     }
-    
+
     // Verbose模式：命令行 > 环境变量 > 默认值
     if (cmdOptions?.Verbose == false) // 默认值，检查环境变量
     {
@@ -100,7 +101,7 @@ static LauncherOptions MergeOptionsWithEnvironment(LauncherOptions? cmdOptions)
             options.Verbose = envVerbose;
         }
     }
-    
+
     return options;
 }
 
@@ -110,10 +111,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Environment.EnvironmentName = finalOptions.Environment;
 
 // 配置 Kestrel 端口
-builder.WebHost.ConfigureKestrel(serverOptions =>
-{
-    serverOptions.ListenAnyIP(finalOptions.Port);
-});
+builder.WebHost.ConfigureKestrel(serverOptions => { serverOptions.ListenAnyIP(finalOptions.Port); });
 
 // 配置日志级别
 if (finalOptions.Verbose)
@@ -124,21 +122,18 @@ if (finalOptions.Verbose)
 // Add services to the container.
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen(c =>
-{
-    c.SwaggerDoc("v1", new() { Title = "GameFrameX Grafana Loki Push API", Version = "v1" });
-});
+builder.Services.AddSwaggerGen(c => { c.SwaggerDoc("v1", new() { Title = "GameFrameX Grafana Loki Push API", Version = "v1" }); });
 
 // 配置FreeSql - 支持命令行参数、环境变量和配置文件
-var connectionString = finalOptions.ConnectionString 
-    ?? builder.Configuration.GetConnectionString("DefaultConnection");
+var connectionString = finalOptions.ConnectionString
+                       ?? builder.Configuration.GetConnectionString("DefaultConnection");
 
 if (string.IsNullOrEmpty(connectionString))
 {
     throw new InvalidOperationException("数据库连接字符串未配置。请通过以下方式之一设置:\n" +
-        "1. 命令行参数: --connection \"连接字符串\"\n" +
-        "2. 环境变量: DATABASE_CONNECTION_STRING\n" +
-        "3. 配置文件: appsettings.json中的ConnectionStrings:DefaultConnection");
+                                        "1. 命令行参数: --connection \"连接字符串\"\n" +
+                                        "2. 环境变量: DATABASE_CONNECTION_STRING\n" +
+                                        "3. 配置文件: appsettings.json中的ConnectionStrings:DefaultConnection");
 }
 
 Console.WriteLine($"启动参数 {JsonHelper.SerializeFormat(finalOptions)}");
@@ -206,10 +201,10 @@ catch (Exception ex)
 app.Logger.LogInformation("GameFrameX Grafana Loki Push 服务启动完成");
 app.Logger.LogInformation("运行环境: {Environment}", app.Environment.EnvironmentName);
 app.Logger.LogInformation("监听端口: {Port}", finalOptions.Port);
-app.Logger.LogInformation("批处理配置: BatchSize={BatchSize}, FlushInterval={FlushInterval}s, MaxQueue={MaxQueue}", 
-    finalOptions.BatchSize, 
-    finalOptions.FlushIntervalSeconds, 
-    finalOptions.MaxQueueSize);
+app.Logger.LogInformation("批处理配置: BatchSize={BatchSize}, FlushInterval={FlushInterval}s, MaxQueue={MaxQueue}",
+                          finalOptions.BatchSize,
+                          finalOptions.FlushIntervalSeconds,
+                          finalOptions.MaxQueueSize);
 app.Logger.LogInformation("API文档地址: {SwaggerUrl}", app.Environment.IsDevelopment() ? $"http://localhost:{finalOptions.Port}/swagger" : "/swagger");
 app.Logger.LogInformation("Loki推送端点: /loki/api/v1/push");
 app.Logger.LogInformation("健康检查端点: /health");
