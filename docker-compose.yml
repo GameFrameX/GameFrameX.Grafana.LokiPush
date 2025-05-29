@@ -1,0 +1,59 @@
+version: '3.8'
+
+services:
+  # PostgreSQL 数据库
+  postgres:
+    image: postgres:15
+    container_name: loki-postgres
+    environment:
+      POSTGRES_DB: loki_logs
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: your_password
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - loki-network
+    restart: unless-stopped
+
+  # Grafana Loki Push 服务
+  loki-push:
+    build: .
+    container_name: loki-push-service
+    environment:
+      # 数据库连接
+      DATABASE_CONNECTION_STRING: "Host=postgres;Port=5432;Database=loki_logs;Username=postgres;Password=your_password"
+      
+      # 批处理配置
+      BATCH_SIZE: "100"
+      FLUSH_INTERVAL_SECONDS: "30"
+      MAX_QUEUE_SIZE: "10000"
+      
+      # ASP.NET Core 配置
+      ASPNETCORE_ENVIRONMENT: "Production"
+      ASPNETCORE_URLS: "http://+:5000"
+      
+      # 日志配置
+      Logging__LogLevel__Default: "Information"
+      Logging__LogLevel__Microsoft.AspNetCore: "Warning"
+    ports:
+      - "5000:5000"
+    depends_on:
+      - postgres
+    networks:
+      - loki-network
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+volumes:
+  postgres_data:
+
+networks:
+  loki-network:
+    driver: bridge

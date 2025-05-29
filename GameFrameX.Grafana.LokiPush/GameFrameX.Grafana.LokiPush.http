@@ -1,0 +1,6 @@
+@GameFrameX.Grafana.LokiPush_HostAddress = http://localhost:5064
+
+GET {{GameFrameX.Grafana.LokiPush_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

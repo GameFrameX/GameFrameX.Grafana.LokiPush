@@ -1,0 +1,116 @@
+### GameFrameX Grafana Loki Push API 测试
+
+@host = https://localhost:7159
+@lokiEndpoint = {{host}}/loki/api/v1
+
+### 健康检查
+GET {{lokiEndpoint}}/health
+Accept: application/json
+
+### 获取服务信息
+GET {{lokiEndpoint}}/info
+Accept: application/json
+
+### 测试单条日志推送
+POST {{lokiEndpoint}}/push
+Content-Type: application/json
+
+{
+  "streams": [
+    {
+      "stream": {
+        "job": "test-app",
+        "level": "info",
+        "instance": "localhost:8080"
+      },
+      "values": [
+        ["1640995200000000000", "This is a test log message"]
+      ]
+    }
+  ]
+}
+
+### 测试多条日志推送
+POST {{lokiEndpoint}}/push
+Content-Type: application/json
+
+{
+  "streams": [
+    {
+      "stream": {
+        "job": "web-app",
+        "level": "info",
+        "service": "api"
+      },
+      "values": [
+        ["1640995200000000000", "User login successful"],
+        ["1640995201000000000", "Processing request for user ID: 12345"],
+        ["1640995202000000000", "Database query completed in 45ms"]
+      ]
+    },
+    {
+      "stream": {
+        "job": "web-app",
+        "level": "error",
+        "service": "api"
+      },
+      "values": [
+        ["1640995203000000000", "Failed to connect to external service"],
+        ["1640995204000000000", "Retrying connection attempt 1/3"]
+      ]
+    }
+  ]
+}
+
+### 测试大批量日志推送（模拟高负载）
+POST {{lokiEndpoint}}/push
+Content-Type: application/json
+
+{
+  "streams": [
+    {
+      "stream": {
+        "job": "batch-test",
+        "level": "debug",
+        "component": "worker"
+      },
+      "values": [
+        ["1640995200000000000", "Batch job started"],
+        ["1640995201000000000", "Processing item 1/100"],
+        ["1640995202000000000", "Processing item 2/100"],
+        ["1640995203000000000", "Processing item 3/100"],
+        ["1640995204000000000", "Processing item 4/100"],
+        ["1640995205000000000", "Processing item 5/100"],
+        ["1640995206000000000", "Checkpoint reached at 5%"],
+        ["1640995207000000000", "Memory usage: 256MB"],
+        ["1640995208000000000", "CPU usage: 45%"],
+        ["1640995209000000000", "Network I/O: 1.2MB/s"]
+      ]
+    }
+  ]
+}
+
+### 测试错误格式（应该返回错误）
+POST {{lokiEndpoint}}/push
+Content-Type: application/json
+
+{
+  "streams": [
+    {
+      "stream": {
+        "job": "error-test"
+      },
+      "values": [
+        ["invalid-timestamp", "This should fail"]
+      ]
+    }
+  ]
+}
+
+### 测试空请求（应该返回错误）
+POST {{lokiEndpoint}}/push
+Content-Type: application/json
+
+{
+  "streams": []
+}
