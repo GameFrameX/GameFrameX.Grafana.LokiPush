@@ -80,7 +80,7 @@ public class LokiController : ControllerBase
             if (pendingLogs.Any())
             {
                 _batchProcessingService.AddLogs(pendingLogs);
-                _logger.LogInformation("接收到 {StreamCount} 个流，共 {EntryCount} 条日志条目",
+                _logger.LogDebug("接收到 {StreamCount} 个流，共 {EntryCount} 条日志条目",
                                        request.Streams.Count, totalEntries);
             }
             else
