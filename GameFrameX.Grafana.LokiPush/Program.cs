@@ -144,14 +144,17 @@ if (string.IsNullOrEmpty(connectionString))
 Console.WriteLine($"启动参数 {JsonHelper.SerializeFormat(finalOptions)}");
 builder.Services.AddSingleton<IFreeSql>(provider =>
 {
-    var freeSql = new FreeSqlBuilder()
-        .UseConnectionString(DataType.PostgreSQL, connectionString)
-        .UseAutoSyncStructure(true) // 自动同步实体结构到数据库
-        .UseNoneCommandParameter(true)
-        .UseMonitorCommand(cmd => Console.WriteLine($"SQL: {cmd.CommandText}"))
-        .Build();
-    
-    return freeSql;
+    var freeSqlBuilder = new FreeSqlBuilder()
+                         .UseConnectionString(DataType.PostgreSQL, connectionString)
+                         .UseAutoSyncStructure(true) // 自动同步实体结构到数据库
+                         .UseNoneCommandParameter(true);
+
+    if (finalOptions.Environment.Equals(Environments.Development, StringComparison.OrdinalIgnoreCase))
+    {
+        freeSqlBuilder.UseMonitorCommand(cmd => Console.WriteLine($"SQL: {cmd.CommandText}"));
+    }
+
+    return freeSqlBuilder.Build();
 });
 
 // 注册批处理服务 - 使用合并后的配置选项
