@@ -52,16 +52,16 @@ dotnet run --project GameFrameX.Grafana.LokiPush -- --batch-size 200 --flush-int
 
 ### 命令行参数完整列表
 
-| 参数 | 简写 | 默认值 | 说明 |
-|------|------|--------|------|
-| `--connection` | `-c` | - | 数据库连接字符串 |
-| `--batch-size` | `-b` | 100 | 批处理大小 |
-| `--flush-interval` | `-i` | 30 | 刷新间隔（秒） |
-| `--max-queue` | `-q` | 10000 | 最大队列大小 |
-| `--port` | `-p` | 5000 | HTTP服务端口 |
-| `--environment` | `-e` | Production | 运行环境 |
-| `--verbose` | `-v` | false | 启用详细日志 |
-| `--help` | `-h` | false | 显示帮助信息 |
+| 参数 | 默认值 | 说明 |
+|------|--------|------|
+| `--connection` | - | 数据库连接字符串 |
+| `--batch-size` | 100 | 批处理大小 |
+| `--flush-interval` | 30 | 刷新间隔（秒） |
+| `--max-queue` | 10000 | 最大队列大小 |
+| `--port` | 5000 | HTTP服务端口 |
+| `--environment` | Production | 运行环境 |
+| `--verbose` | false | 启用详细日志 |
+| `--help` | false | 显示帮助信息 |
 
 ### 快速启动示例
 
