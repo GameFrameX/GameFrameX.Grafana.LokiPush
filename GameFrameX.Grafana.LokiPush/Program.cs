@@ -1,10 +1,13 @@
 using CommandLine;
 using FreeSql;
+using FreeSql.Extensions.ZeroEntity;
 using FreeSql.Internal;
 using GameFrameX.Foundation.Json;
 using GameFrameX.Grafana.LokiPush;
 using GameFrameX.Grafana.LokiPush.Models;
 using GameFrameX.Grafana.LokiPush.Services;
+using Newtonsoft.Json;
+using Yitter.IdGenerator;
 
 // 解析命令行参数
 LauncherOptions? cmdOptions = null;
@@ -106,6 +109,14 @@ static LauncherOptions MergeOptionsWithEnvironment(LauncherOptions? cmdOptions)
     return options;
 }
 
+// 检查 TableDescriptor.json 文件
+string filePath = "./json/TableDescriptor.json";
+var fileTableDescriptor = new FileInfo(filePath);
+if (!fileTableDescriptor.Exists)
+{
+    throw new FileNotFoundException($"未找到TableDescriptor.json文件。请确保该文件位于当前目录下。=> {filePath}");
+}
+YitIdHelper.SetIdGenerator(new IdGeneratorOptions(10));
 var builder = WebApplication.CreateBuilder(args);
 
 // 根据合并后的参数设置环境
@@ -138,32 +149,22 @@ if (string.IsNullOrEmpty(connectionString))
 }
 
 Console.WriteLine($"启动参数 {JsonHelper.SerializeFormat(finalOptions)}");
-builder.Services.AddSingleton<IFreeSql>(provider =>
-{
-    var freeSqlBuilder = new FreeSqlBuilder()
-                         .UseConnectionString(DataType.PostgreSQL, connectionString)
-                         .UseAutoSyncStructure(true) // 自动同步实体结构到数据库
-                         .UseNameConvert(NameConvertType.PascalCaseToUnderscoreWithLower) // 驼峰转下划线
-                         .UseNoneCommandParameter(true);
+var freeSqlBuilder = new FreeSqlBuilder()
+                     .UseConnectionString(DataType.PostgreSQL, connectionString)
+                     // .UseAutoSyncStructure(true) // 自动同步实体结构到数据库
+                     .UseNameConvert(NameConvertType.PascalCaseToUnderscoreWithLower) // 驼峰转下划线
+                     .UseNoneCommandParameter(true);
 
-    if (finalOptions.Environment.Equals(Environments.Development, StringComparison.OrdinalIgnoreCase))
-    {
-        freeSqlBuilder.UseMonitorCommand(cmd => Console.WriteLine($"SQL: {cmd.CommandText}"));
-    }
+var freeSql = freeSqlBuilder.Build();
 
-    var instance = freeSqlBuilder.Build();
-    if (finalOptions.Environment.Equals(Environments.Development, StringComparison.OrdinalIgnoreCase))
-    {
-        foreach (var type in EventMapManager.GetEventNames())
-        {
-            instance.CodeFirst.SyncStructure(type);
-        }
-    }
+var tableDescriptorJson = File.ReadAllText(fileTableDescriptor.FullName);
+var logEntry = JsonConvert.DeserializeObject<TableDescriptor[]>(tableDescriptorJson);
+var zeroDbContext = new ZeroDbContext(freeSql, logEntry);
+zeroDbContext.SyncStructure(logEntry);
 
-    return instance;
-});
 
-EventMapManager.Init();
+builder.Services.AddSingleton<IFreeSql>(freeSql);
+builder.Services.AddSingleton<ZeroDbContext>(zeroDbContext);
 
 // 注册批处理服务 - 使用合并后的配置选项
 builder.Services.Configure<BatchProcessingOptions>(batchOptions =>

@@ -7,10 +7,11 @@
     </PropertyGroup>
 
     <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
-      <DocumentationFile>bin\Debug\GameFrameX.Grafana.LokiPush.xml</DocumentationFile>
+      <DocumentationFile></DocumentationFile>
     </PropertyGroup>
 
     <ItemGroup>
+        <PackageReference Include="FreeSql.Extensions.ZeroEntity" Version="3.5.211" />
         <PackageReference Include="GameFrameX.Foundation.Extensions" Version="1.5.2" />
         <PackageReference Include="GameFrameX.Foundation.Json" Version="1.5.2" />
         <PackageReference Include="GameFrameX.Foundation.Logger" Version="1.5.2" />
@@ -20,10 +21,14 @@
         <PackageReference Include="FreeSql.Provider.PostgreSQL" Version="3.5.211" />
         <PackageReference Include="FreeSql.Extensions.JsonMap" Version="3.5.211" />
         <PackageReference Include="CommandLineParser" Version="2.9.1"/>
+        <PackageReference Include="Yitter.IdGenerator" Version="1.0.14" />
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\GameFrameX.Grafana.Entity\GameFrameX.Grafana.Entity.csproj" />
+      <Content Remove="json\TableDescriptor.json" />
+      <None Include="json\TableDescriptor.json">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
     </ItemGroup>
 
 </Project>
