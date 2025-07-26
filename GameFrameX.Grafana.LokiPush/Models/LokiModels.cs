@@ -1,4 +1,3 @@
-using FreeSql.DataAnnotations;
 using System.Text.Json.Serialization;
 
 namespace GameFrameX.Grafana.LokiPush.Models;
@@ -22,46 +21,6 @@ public class LokiStream
 
     [JsonPropertyName("values")]
     public List<List<string>> Values { get; set; } = new();
-}
-
-/// <summary>
-/// 日志条目数据库实体
-/// </summary>
-[Table(Name = "loki_logs")]
-public class LokiLogEntry
-{
-    [Column(IsIdentity = true, IsPrimary = true)]
-    public long Id { get; set; }
-
-    /// <summary>
-    /// 时间戳（纳秒）
-    /// </summary>
-    [Column(Name = "timestamp_ns")]
-    public long TimestampNs { get; set; }
-
-    /// <summary>
-    /// 日志内容
-    /// </summary>
-    [Column(StringLength = -1)]
-    public string Content { get; set; } = string.Empty;
-
-    /// <summary>
-    /// 标签（JSON格式存储）
-    /// </summary>
-    [Column(StringLength = -1)]
-    public string Labels { get; set; } = string.Empty;
-
-    /// <summary>
-    /// 创建时间
-    /// </summary>
-    [Column(Name = "created_at")]
-    public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
-
-    /// <summary>
-    /// 日志时间（从纳秒时间戳转换）
-    /// </summary>
-    [Column(Name = "log_time")]
-    public DateTime LogTime { get; set; }
 }
 
 /// <summary>

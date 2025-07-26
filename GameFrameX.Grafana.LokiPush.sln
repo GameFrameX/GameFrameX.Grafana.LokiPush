@@ -2,6 +2,8 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameFrameX.Grafana.LokiPush", "GameFrameX.Grafana.LokiPush\GameFrameX.Grafana.LokiPush.csproj", "{3608F1D6-8D18-4445-9473-1FBA84B28E1B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameFrameX.Grafana.Entity", "GameFrameX.Grafana.Entity\GameFrameX.Grafana.Entity.csproj", "{07A1E7AF-4A66-466D-BE32-827A98FA1521}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +14,9 @@ Global
 		{3608F1D6-8D18-4445-9473-1FBA84B28E1B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3608F1D6-8D18-4445-9473-1FBA84B28E1B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3608F1D6-8D18-4445-9473-1FBA84B28E1B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{07A1E7AF-4A66-466D-BE32-827A98FA1521}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{07A1E7AF-4A66-466D-BE32-827A98FA1521}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{07A1E7AF-4A66-466D-BE32-827A98FA1521}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{07A1E7AF-4A66-466D-BE32-827A98FA1521}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

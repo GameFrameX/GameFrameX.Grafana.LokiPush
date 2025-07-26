@@ -1,6 +1,8 @@
 using CommandLine;
 using FreeSql;
+using FreeSql.Internal;
 using GameFrameX.Foundation.Json;
+using GameFrameX.Grafana.LokiPush;
 using GameFrameX.Grafana.LokiPush.Models;
 using GameFrameX.Grafana.LokiPush.Services;
 
@@ -13,8 +15,7 @@ parseResult
     .WithNotParsed(errors =>
     {
         // 检查是否是帮助请求或版本请求
-        var isHelpOrVersion = errors.Any(e => e.Tag == CommandLine.ErrorType.HelpRequestedError ||
-                                              e.Tag == CommandLine.ErrorType.VersionRequestedError);
+        var isHelpOrVersion = errors.Any(e => e.Tag == CommandLine.ErrorType.HelpRequestedError || e.Tag == CommandLine.ErrorType.VersionRequestedError);
 
         if (!isHelpOrVersion)
         {
@@ -142,6 +143,7 @@ builder.Services.AddSingleton<IFreeSql>(provider =>
     var freeSqlBuilder = new FreeSqlBuilder()
                          .UseConnectionString(DataType.PostgreSQL, connectionString)
                          .UseAutoSyncStructure(true) // 自动同步实体结构到数据库
+                         .UseNameConvert(NameConvertType.PascalCaseToUnderscoreWithLower) // 驼峰转下划线
                          .UseNoneCommandParameter(true);
 
     if (finalOptions.Environment.Equals(Environments.Development, StringComparison.OrdinalIgnoreCase))
@@ -149,8 +151,19 @@ builder.Services.AddSingleton<IFreeSql>(provider =>
         freeSqlBuilder.UseMonitorCommand(cmd => Console.WriteLine($"SQL: {cmd.CommandText}"));
     }
 
-    return freeSqlBuilder.Build();
+    var instance = freeSqlBuilder.Build();
+    if (finalOptions.Environment.Equals(Environments.Development, StringComparison.OrdinalIgnoreCase))
+    {
+        foreach (var type in EventMapManager.GetEventNames())
+        {
+            instance.CodeFirst.SyncStructure(type);
+        }
+    }
+
+    return instance;
 });
+
+EventMapManager.Init();
 
 // 注册批处理服务 - 使用合并后的配置选项
 builder.Services.Configure<BatchProcessingOptions>(batchOptions =>

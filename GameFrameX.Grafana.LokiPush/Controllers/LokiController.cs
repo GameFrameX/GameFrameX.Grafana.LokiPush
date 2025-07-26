@@ -12,9 +12,7 @@ public class LokiController : ControllerBase
     private readonly IBatchProcessingService _batchProcessingService;
     private readonly ILogger<LokiController> _logger;
 
-    public LokiController(
-        IBatchProcessingService batchProcessingService,
-        ILogger<LokiController> logger)
+    public LokiController(IBatchProcessingService batchProcessingService, ILogger<LokiController> logger)
     {
         _batchProcessingService = batchProcessingService;
         _logger = logger;
@@ -81,7 +79,7 @@ public class LokiController : ControllerBase
             {
                 _batchProcessingService.AddLogs(pendingLogs);
                 _logger.LogDebug("接收到 {StreamCount} 个流，共 {EntryCount} 条日志条目",
-                                       request.Streams.Count, totalEntries);
+                                 request.Streams.Count, totalEntries);
             }
             else
             {

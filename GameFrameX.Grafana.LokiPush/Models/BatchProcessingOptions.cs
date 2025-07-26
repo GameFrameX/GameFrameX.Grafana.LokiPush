@@ -8,12 +8,12 @@ public class BatchProcessingOptions
     /// <summary>
     /// 批处理大小
     /// </summary>
-    public int BatchSize { get; set; } = 100;
+    public int BatchSize { get; set; } = 5;
 
     /// <summary>
     /// 刷新间隔（秒）
     /// </summary>
-    public int FlushIntervalSeconds { get; set; } = 30;
+    public int FlushIntervalSeconds { get; set; } = 10;
 
     /// <summary>
     /// 最大队列大小
