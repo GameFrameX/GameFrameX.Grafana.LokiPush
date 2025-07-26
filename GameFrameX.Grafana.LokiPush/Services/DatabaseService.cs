@@ -1,7 +1,6 @@
 using GameFrameX.Grafana.LokiPush.Models;
 using GameFrameX.Foundation.Json;
 using FreeSql.Extensions.ZeroEntity;
-using Newtonsoft.Json;
 using Yitter.IdGenerator;
 
 namespace GameFrameX.Grafana.LokiPush.Services;
@@ -35,11 +34,11 @@ public class DatabaseService : IDatabaseService
         }
     }
 
-    public async Task<bool> BatchInsertLogsAsync(List<PendingLogEntry> logs)
+    public Task<bool> BatchInsertLogsAsync(List<PendingLogEntry> logs)
     {
         if (!logs.Any())
         {
-            return true;
+            return Task.FromResult(true);
         }
 
         try
@@ -70,12 +69,12 @@ public class DatabaseService : IDatabaseService
                 }
             }
 
-            return true;
+            return Task.FromResult(true);
         }
         catch (Exception ex)
         {
             _logger.LogError(ex, "批量插入日志失败，记录数: {Count}", logs.Count);
-            return false;
+            return Task.FromResult(false);
         }
     }
 }
