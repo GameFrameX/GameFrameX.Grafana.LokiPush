@@ -37,25 +37,9 @@ public class BaseUserData
     [Column(StringLength = 255)]
     public string Country { get; set; } = string.Empty;
 
-    /// <summary>
-    /// 角色名称
-    /// </summary>
-    [Column(StringLength = 255)]
-    public string NickName { get; set; } = string.Empty;
 
     /// <summary>
-    /// 设备ID
-    /// </summary>
-    [Column(StringLength = 255)]
-    public string DeviceId { get; set; } = string.Empty;
-
-    /// <summary>
-    /// 激活时间：设备首次登录
-    /// </summary>
-    public DateTime ActiveTime { get; set; }
-
-    /// <summary>
-    /// 渠道id
+    /// 渠道
     /// </summary>
     [Column(StringLength = 255)]
     public string Channel { get; set; } = string.Empty;
@@ -69,35 +53,14 @@ public class BaseUserData
     /// <summary>
     /// 开服时间
     /// </summary>
+    [Column(IsNullable = true)]
     public DateTime ServerOpenTime { get; set; }
-
-    /// <summary>
-    /// 账号历史累充金额
-    /// </summary>
-
-    public long AccountHistoryMoney { get; set; }
-
-    /// <summary>
-    /// 角色历史累充金额
-    /// </summary>
-    public long RoleHistoryMoney { get; set; }
-
-    /// <summary>
-    /// 设备历史累充金额
-    /// </summary>
-    public long DeviceHistoryMoney { get; set; }
 
     /// <summary>
     /// 环境
     /// </summary>
     [Column(StringLength = 255)]
     public string Domain { get; set; } = string.Empty;
-
-    /// <summary>
-    /// 最后登出时间
-    /// </summary>
-    [Column(IsNullable = true)]
-    public DateTime LatestOnlineTime { get; set; }
 
     /// <summary>
     /// 应用（ios/安卓）

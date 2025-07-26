@@ -9,13 +9,9 @@ using FreeSql.DataAnnotations;
 namespace GameFrameX.Grafana.Entity.Client;
 
 /// <summary>
-/// 玩家登录服务器时记录
+/// 下载网页文件
 /// </summary>
-[Table(Name = "client_log_in")]
-public class ClientLogIn : BaseUserClientData
+[Table(Name = "client_download_web_files")]
+public class ClientDownloadWebFiles : BaseUserClientData
 {
-    /// <summary>
-    /// 类型，（0-登入，1-登出）
-    /// </summary>
-    public int Type { get; set; }
 }

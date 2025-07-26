@@ -13,11 +13,11 @@ namespace GameFrameX.Grafana.Entity.Client;
 /// 客户端网络
 /// </summary>
 [Table(Name = "client_net_log")]
-public class ClientNetLog : BaseUserData
+public class ClientNetLog : BaseUserClientData
 {
     /// <summary>
     /// 网络类型
     /// </summary>
     [Column(StringLength = 512)]
-    public string tag { get; set; }
+    public string Tag { get; set; }
 }

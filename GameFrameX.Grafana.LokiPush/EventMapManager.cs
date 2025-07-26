@@ -14,11 +14,19 @@ public static class EventMapManager
 {
     static Dictionary<string, Type> Map { get; } = new();
 
+    /// <summary>
+    /// 初始化事件映射
+    /// </summary>
     public static void Init()
     {
         var types = typeof(BaseUserData).Assembly.GetTypes().Where(t => t.GetCustomAttribute<TableAttribute>() != null).ToList();
         foreach (var type in types)
         {
+            if (type.IsAbstract)
+            {
+                continue;
+            }
+
             var tableAttribute = type.GetCustomAttribute<TableAttribute>();
             if (!string.IsNullOrEmpty(tableAttribute?.Name))
             {
@@ -27,11 +35,20 @@ public static class EventMapManager
         }
     }
 
+    /// <summary>
+    /// 获取事件名称
+    /// </summary>
+    /// <returns></returns>
     public static List<Type> GetEventNames()
     {
         return Map.Values.ToList();
     }
 
+    /// <summary>
+    /// 获取事件类型
+    /// </summary>
+    /// <param name="eventName"></param>
+    /// <returns></returns>
     public static Type? GetEventType(string eventName)
     {
         return Map.GetValueOrDefault(eventName);

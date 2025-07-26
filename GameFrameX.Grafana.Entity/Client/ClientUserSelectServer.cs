@@ -9,13 +9,9 @@ using FreeSql.DataAnnotations;
 namespace GameFrameX.Grafana.Entity.Client;
 
 /// <summary>
-/// 玩家登录服务器时记录
+/// 用户选择服务器
 /// </summary>
-[Table(Name = "client_log_in")]
-public class ClientLogIn : BaseUserClientData
+[Table(Name = "client_user_select_server")]
+public class ClientUserSelectServer : BaseUserClientData
 {
-    /// <summary>
-    /// 类型，（0-登入，1-登出）
-    /// </summary>
-    public int Type { get; set; }
 }

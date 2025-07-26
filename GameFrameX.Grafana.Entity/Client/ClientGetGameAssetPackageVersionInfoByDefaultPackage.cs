@@ -9,13 +9,9 @@ using FreeSql.DataAnnotations;
 namespace GameFrameX.Grafana.Entity.Client;
 
 /// <summary>
-/// 玩家登录服务器时记录
+/// 获取默认资源包版本信息
 /// </summary>
-[Table(Name = "client_log_in")]
-public class ClientLogIn : BaseUserClientData
+[Table(Name = "client_get_game_asset_package_version_info_by_default_package")]
+public class ClientGetGameAssetPackageVersionInfoByDefaultPackage : BaseUserClientData
 {
-    /// <summary>
-    /// 类型，（0-登入，1-登出）
-    /// </summary>
-    public int Type { get; set; }
 }

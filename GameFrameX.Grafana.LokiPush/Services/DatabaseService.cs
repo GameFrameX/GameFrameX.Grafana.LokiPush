@@ -32,7 +32,7 @@ public class DatabaseService : IDatabaseService
         foreach (var property in properties)
         {
             // 将属性名转换为下划线命名
-            var columnName = property.Name;
+            var columnName = property.Name.ConvertToSnakeCase();
             _baseUserDataPropertyMap[columnName] = property;
             _propertyToColumnMap[property] = columnName;
 
@@ -119,6 +119,22 @@ public class DatabaseService : IDatabaseService
                 }
                 else
                 {
+                    foreach (var field in entity)
+                    {
+                        // 如果字段是BaseUserData的属性，则跳过
+                        if (IsBaseUserDataProperty(field.Key))
+                        {
+                            continue;
+                        }
+
+                        // 如果字段在事件类型中不存在，则跳过
+                        if (!eventType.GetProperties().Any(p => p.Name.Equals(field.Key, StringComparison.OrdinalIgnoreCase)))
+                        {
+                            // _logger.LogWarning("事件 '{EventName}' 中缺少字段 '{FieldName}'，将其忽略", eventDataModel.EventName, field.Key);
+                            entity.Remove(field.Key);
+                        }
+                    }
+
                     if (eventEntities.TryGetValue(eventDataModel.EventName, out var list))
                     {
                         list.Add(entity);
@@ -136,11 +152,15 @@ public class DatabaseService : IDatabaseService
             }
 
             // 批量插入不能入库的事件数据
-            var result = await _freeSql.Insert(entities).ExecuteAffrowsAsync();
+            if (entities.Any())
+            {
+                var result = await _freeSql.Insert(entities).ExecuteAffrowsAsync();
 
-            _logger.LogInformation("批量插入 {Count} 条日志记录，影响行数: {AffectedRows}", logs.Count, result);
+                _logger.LogInformation("批量插入 {Count} 条日志记录，影响行数: {AffectedRows}", logs.Count, result);
+                return result > 0;
+            }
 
-            return result > 0;
+            return true;
         }
         catch (Exception ex)
         {
@@ -271,5 +291,4 @@ public class DatabaseService : IDatabaseService
 
         return value.Equals(Activator.CreateInstance(type));
     }
-
 }
