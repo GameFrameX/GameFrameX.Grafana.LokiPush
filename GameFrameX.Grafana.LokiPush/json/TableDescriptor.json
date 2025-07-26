@@ -1,1 +1,3952 @@
-[{"Name":"client_start_x","Comment":"启动游戏","Columns":[{"Name":"id","MapType":"System.Int64","Comment":"主ID"},{"Name":"account_id","MapType":"System.String"},{"Name":"role_id","MapType":"System.String"},{"Name":"server_id","MapType":"System.String"},{"Name":"country","MapType":"System.String"},{"Name":"channel","MapType":"System.String"},{"Name":"orig_channel","MapType":"System.String"},{"Name":"server_open_time","MapType":"System.String"},{"Name":"domain","MapType":"System.String"},{"Name":"system","MapType":"System.String"},{"Name":"device_type","MapType":"System.String"},{"Name":"ip","MapType":"System.String"},{"Name":"device_model","MapType":"System.String"},{"Name":"os","MapType":"System.String"},{"Name":"app_version","MapType":"System.String"},{"Name":"unity_version","MapType":"System.String"},{"Name":"platform","MapType":"System.String"},{"Name":"created_time","MapType":"System.DateTime"},{"Name":"nick_name","MapType":"System.String"},{"Name":"sub_channel","MapType":"System.String"},{"Name":"server_channel","MapType":"System.String"},{"Name":"payment","MapType":"System.String"},{"Name":"device_id","MapType":"System.String"},{"Name":"active_time","MapType":"System.DateTime"},{"Name":"account_history_money","MapType":"System.String"},{"Name":"role_history_money","MapType":"System.String"},{"Name":"device_history_money","MapType":"System.String"},{"Name":"processor_type","MapType":"System.String"},{"Name":"processor_count","MapType":"System.String"},{"Name":"processor_frequency","MapType":"System.String"},{"Name":"system_memory_size","MapType":"System.String"},{"Name":"graphics_device_name","MapType":"System.String"},{"Name":"graphics_device_type","MapType":"System.String"},{"Name":"graphics_memory_size","MapType":"System.String"},{"Name":"graphics_device_version","MapType":"System.String"},{"Name":"graphics_shader_level","MapType":"System.String"},{"Name":"screen_width","MapType":"System.Int64"},{"Name":"screen_height","MapType":"System.Int64"},{"Name":"screen_dpi","MapType":"System.String"},{"Name":"screen_refresh_rate","MapType":"System.String"},{"Name":"system_language","MapType":"System.String"},{"Name":"current_culture","MapType":"System.String"},{"Name":"network_type","MapType":"System.String"},{"Name":"latest_online_time","MapType":"System.DateTime"}]}]
+[
+  {
+    "Name": "client_start",
+    "Comment": "启动游戏",
+    "Columns": [
+      {
+        "Name": "id",
+        "MapType": "System.Int64",
+        "Comment": "主ID"
+      },
+      {
+        "Name": "account_id",
+        "MapType": "System.String",
+        "Comment": "账号ID"
+      },
+      {
+        "Name": "role_id",
+        "MapType": "System.String",
+        "Comment": "角色ID"
+      },
+      {
+        "Name": "server_id",
+        "MapType": "System.String",
+        "Comment": "服务器ID"
+      },
+      {
+        "Name": "country",
+        "MapType": "System.String",
+        "Comment": "国家"
+      },
+      {
+        "Name": "channel",
+        "MapType": "System.String",
+        "Comment": "渠道"
+      },
+      {
+        "Name": "orig_channel",
+        "MapType": "System.String",
+        "Comment": "原始渠道"
+      },
+      {
+        "Name": "server_open_time",
+        "MapType": "System.String",
+        "Comment": "服务器开服时间"
+      },
+      {
+        "Name": "domain",
+        "MapType": "System.String",
+        "Comment": "环境"
+      },
+      {
+        "Name": "system",
+        "MapType": "System.String",
+        "Comment": "应用系统"
+      },
+      {
+        "Name": "device_type",
+        "MapType": "System.String",
+        "Comment": "设备类型"
+      },
+      {
+        "Name": "ip",
+        "MapType": "System.String",
+        "Comment": "行为发生时ip地址"
+      },
+      {
+        "Name": "device_model",
+        "MapType": "System.String",
+        "Comment": "设备型号"
+      },
+      {
+        "Name": "os",
+        "MapType": "System.String",
+        "Comment": "操作系统"
+      },
+      {
+        "Name": "app_version",
+        "MapType": "System.String",
+        "Comment": "应用版本"
+      },
+      {
+        "Name": "unity_version",
+        "MapType": "System.String",
+        "Comment": "Unity版本"
+      },
+      {
+        "Name": "platform",
+        "MapType": "System.String",
+        "Comment": "Unity平台"
+      },
+      {
+        "Name": "created_time",
+        "MapType": "System.DateTime",
+        "Comment": "创建时间"
+      },
+      {
+        "Name": "nick_name",
+        "MapType": "System.String",
+        "Comment": "昵称"
+      },
+      {
+        "Name": "sub_channel",
+        "MapType": "System.String",
+        "Comment": "子渠道"
+      },
+      {
+        "Name": "server_channel",
+        "MapType": "System.String",
+        "Comment": "服务器渠道"
+      },
+      {
+        "Name": "payment",
+        "MapType": "System.String",
+        "Comment": "支付方式"
+      },
+      {
+        "Name": "device_id",
+        "MapType": "System.String",
+        "Comment": "设备ID"
+      },
+      {
+        "Name": "active_time",
+        "MapType": "System.DateTime",
+        "Comment": "激活时间"
+      },
+      {
+        "Name": "account_history_money",
+        "MapType": "System.String",
+        "Comment": "账号历史金额"
+      },
+      {
+        "Name": "role_history_money",
+        "MapType": "System.String",
+        "Comment": "角色历史金额"
+      },
+      {
+        "Name": "device_history_money",
+        "MapType": "System.String",
+        "Comment": "设备历史金额"
+      },
+      {
+        "Name": "processor_type",
+        "MapType": "System.String",
+        "Comment": "处理器类型"
+      },
+      {
+        "Name": "processor_count",
+        "MapType": "System.String",
+        "Comment": "处理器数量"
+      },
+      {
+        "Name": "processor_frequency",
+        "MapType": "System.String",
+        "Comment": "处理器频率"
+      },
+      {
+        "Name": "system_memory_size",
+        "MapType": "System.String",
+        "Comment": "系统内存大小"
+      },
+      {
+        "Name": "graphics_device_name",
+        "MapType": "System.String",
+        "Comment": "图形设备名称"
+      },
+      {
+        "Name": "graphics_device_type",
+        "MapType": "System.String",
+        "Comment": "图形设备类型"
+      },
+      {
+        "Name": "graphics_memory_size",
+        "MapType": "System.String",
+        "Comment": "图形内存大小"
+      },
+      {
+        "Name": "graphics_device_version",
+        "MapType": "System.String",
+        "Comment": "图形设备版本"
+      },
+      {
+        "Name": "graphics_shader_level",
+        "MapType": "System.String",
+        "Comment": "图形着色器级别"
+      },
+      {
+        "Name": "screen_width",
+        "MapType": "System.Int32",
+        "Comment": "屏幕宽度"
+      },
+      {
+        "Name": "screen_height",
+        "MapType": "System.Int32",
+        "Comment": "屏幕高度"
+      },
+      {
+        "Name": "screen_dpi",
+        "MapType": "System.String",
+        "Comment": "屏幕DPI"
+      },
+      {
+        "Name": "screen_refresh_rate",
+        "MapType": "System.String",
+        "Comment": "屏幕刷新率"
+      },
+      {
+        "Name": "system_language",
+        "MapType": "System.String",
+        "Comment": "系统语言"
+      },
+      {
+        "Name": "current_culture",
+        "MapType": "System.String",
+        "Comment": "当前语言"
+      },
+      {
+        "Name": "network_type",
+        "MapType": "System.String",
+        "Comment": "网络类型"
+      },
+      {
+        "Name": "latest_online_time",
+        "MapType": "System.DateTime",
+        "Comment": "最近在线时间"
+      }
+    ]
+  },
+  {
+    "Name": "client_start_game_launcher",
+    "Comment": "开始游戏启动器",
+    "Columns": [
+      {
+        "Name": "id",
+        "MapType": "System.Int64",
+        "Comment": "主ID"
+      },
+      {
+        "Name": "account_id",
+        "MapType": "System.String",
+        "Comment": "账号ID"
+      },
+      {
+        "Name": "role_id",
+        "MapType": "System.String",
+        "Comment": "角色ID"
+      },
+      {
+        "Name": "server_id",
+        "MapType": "System.String",
+        "Comment": "服务器ID"
+      },
+      {
+        "Name": "country",
+        "MapType": "System.String",
+        "Comment": "国家"
+      },
+      {
+        "Name": "channel",
+        "MapType": "System.String",
+        "Comment": "渠道"
+      },
+      {
+        "Name": "orig_channel",
+        "MapType": "System.String",
+        "Comment": "原始渠道"
+      },
+      {
+        "Name": "server_open_time",
+        "MapType": "System.String",
+        "Comment": "服务器开服时间"
+      },
+      {
+        "Name": "domain",
+        "MapType": "System.String",
+        "Comment": "环境"
+      },
+      {
+        "Name": "system",
+        "MapType": "System.String",
+        "Comment": "应用系统"
+      },
+      {
+        "Name": "device_type",
+        "MapType": "System.String",
+        "Comment": "设备类型"
+      },
+      {
+        "Name": "ip",
+        "MapType": "System.String",
+        "Comment": "行为发生时ip地址"
+      },
+      {
+        "Name": "device_model",
+        "MapType": "System.String",
+        "Comment": "设备型号"
+      },
+      {
+        "Name": "os",
+        "MapType": "System.String",
+        "Comment": "操作系统"
+      },
+      {
+        "Name": "app_version",
+        "MapType": "System.String",
+        "Comment": "应用版本"
+      },
+      {
+        "Name": "unity_version",
+        "MapType": "System.String",
+        "Comment": "Unity版本"
+      },
+      {
+        "Name": "platform",
+        "MapType": "System.String",
+        "Comment": "Unity平台"
+      },
+      {
+        "Name": "created_time",
+        "MapType": "System.DateTime",
+        "Comment": "创建时间"
+      },
+      {
+        "Name": "nick_name",
+        "MapType": "System.String",
+        "Comment": "昵称"
+      },
+      {
+        "Name": "sub_channel",
+        "MapType": "System.String",
+        "Comment": "子渠道"
+      },
+      {
+        "Name": "server_channel",
+        "MapType": "System.String",
+        "Comment": "服务器渠道"
+      },
+      {
+        "Name": "payment",
+        "MapType": "System.String",
+        "Comment": "支付方式"
+      },
+      {
+        "Name": "device_id",
+        "MapType": "System.String",
+        "Comment": "设备ID"
+      },
+      {
+        "Name": "active_time",
+        "MapType": "System.DateTime",
+        "Comment": "激活时间"
+      },
+      {
+        "Name": "account_history_money",
+        "MapType": "System.String",
+        "Comment": "账号历史金额"
+      },
+      {
+        "Name": "role_history_money",
+        "MapType": "System.String",
+        "Comment": "角色历史金额"
+      },
+      {
+        "Name": "device_history_money",
+        "MapType": "System.String",
+        "Comment": "设备历史金额"
+      },
+      {
+        "Name": "processor_type",
+        "MapType": "System.String",
+        "Comment": "处理器类型"
+      },
+      {
+        "Name": "processor_count",
+        "MapType": "System.String",
+        "Comment": "处理器数量"
+      },
+      {
+        "Name": "processor_frequency",
+        "MapType": "System.String",
+        "Comment": "处理器频率"
+      },
+      {
+        "Name": "system_memory_size",
+        "MapType": "System.String",
+        "Comment": "系统内存大小"
+      },
+      {
+        "Name": "graphics_device_name",
+        "MapType": "System.String",
+        "Comment": "图形设备名称"
+      },
+      {
+        "Name": "graphics_device_type",
+        "MapType": "System.String",
+        "Comment": "图形设备类型"
+      },
+      {
+        "Name": "graphics_memory_size",
+        "MapType": "System.String",
+        "Comment": "图形内存大小"
+      },
+      {
+        "Name": "graphics_device_version",
+        "MapType": "System.String",
+        "Comment": "图形设备版本"
+      },
+      {
+        "Name": "graphics_shader_level",
+        "MapType": "System.String",
+        "Comment": "图形着色器级别"
+      },
+      {
+        "Name": "screen_width",
+        "MapType": "System.Int32",
+        "Comment": "屏幕宽度"
+      },
+      {
+        "Name": "screen_height",
+        "MapType": "System.Int32",
+        "Comment": "屏幕高度"
+      },
+      {
+        "Name": "screen_dpi",
+        "MapType": "System.String",
+        "Comment": "屏幕DPI"
+      },
+      {
+        "Name": "screen_refresh_rate",
+        "MapType": "System.String",
+        "Comment": "屏幕刷新率"
+      },
+      {
+        "Name": "system_language",
+        "MapType": "System.String",
+        "Comment": "系统语言"
+      },
+      {
+        "Name": "current_culture",
+        "MapType": "System.String",
+        "Comment": "当前语言"
+      },
+      {
+        "Name": "network_type",
+        "MapType": "System.String",
+        "Comment": "网络类型"
+      },
+      {
+        "Name": "latest_online_time",
+        "MapType": "System.DateTime",
+        "Comment": "最近在线时间"
+      }
+    ]
+  },
+  {
+    "Name": "client_start_load_aot_dll",
+    "Comment": "开始加载AOT动态库",
+    "Columns": [
+      {
+        "Name": "id",
+        "MapType": "System.Int64",
+        "Comment": "主ID"
+      },
+      {
+        "Name": "account_id",
+        "MapType": "System.String",
+        "Comment": "账号ID"
+      },
+      {
+        "Name": "role_id",
+        "MapType": "System.String",
+        "Comment": "角色ID"
+      },
+      {
+        "Name": "server_id",
+        "MapType": "System.String",
+        "Comment": "服务器ID"
+      },
+      {
+        "Name": "country",
+        "MapType": "System.String",
+        "Comment": "国家"
+      },
+      {
+        "Name": "channel",
+        "MapType": "System.String",
+        "Comment": "渠道"
+      },
+      {
+        "Name": "orig_channel",
+        "MapType": "System.String",
+        "Comment": "原始渠道"
+      },
+      {
+        "Name": "server_open_time",
+        "MapType": "System.String",
+        "Comment": "服务器开服时间"
+      },
+      {
+        "Name": "domain",
+        "MapType": "System.String",
+        "Comment": "环境"
+      },
+      {
+        "Name": "system",
+        "MapType": "System.String",
+        "Comment": "应用系统"
+      },
+      {
+        "Name": "device_type",
+        "MapType": "System.String",
+        "Comment": "设备类型"
+      },
+      {
+        "Name": "ip",
+        "MapType": "System.String",
+        "Comment": "行为发生时ip地址"
+      },
+      {
+        "Name": "device_model",
+        "MapType": "System.String",
+        "Comment": "设备型号"
+      },
+      {
+        "Name": "os",
+        "MapType": "System.String",
+        "Comment": "操作系统"
+      },
+      {
+        "Name": "app_version",
+        "MapType": "System.String",
+        "Comment": "应用版本"
+      },
+      {
+        "Name": "unity_version",
+        "MapType": "System.String",
+        "Comment": "Unity版本"
+      },
+      {
+        "Name": "platform",
+        "MapType": "System.String",
+        "Comment": "Unity平台"
+      },
+      {
+        "Name": "created_time",
+        "MapType": "System.DateTime",
+        "Comment": "创建时间"
+      },
+      {
+        "Name": "nick_name",
+        "MapType": "System.String",
+        "Comment": "昵称"
+      },
+      {
+        "Name": "sub_channel",
+        "MapType": "System.String",
+        "Comment": "子渠道"
+      },
+      {
+        "Name": "server_channel",
+        "MapType": "System.String",
+        "Comment": "服务器渠道"
+      },
+      {
+        "Name": "payment",
+        "MapType": "System.String",
+        "Comment": "支付方式"
+      },
+      {
+        "Name": "device_id",
+        "MapType": "System.String",
+        "Comment": "设备ID"
+      },
+      {
+        "Name": "active_time",
+        "MapType": "System.DateTime",
+        "Comment": "激活时间"
+      },
+      {
+        "Name": "account_history_money",
+        "MapType": "System.String",
+        "Comment": "账号历史金额"
+      },
+      {
+        "Name": "role_history_money",
+        "MapType": "System.String",
+        "Comment": "角色历史金额"
+      },
+      {
+        "Name": "device_history_money",
+        "MapType": "System.String",
+        "Comment": "设备历史金额"
+      },
+      {
+        "Name": "processor_type",
+        "MapType": "System.String",
+        "Comment": "处理器类型"
+      },
+      {
+        "Name": "processor_count",
+        "MapType": "System.String",
+        "Comment": "处理器数量"
+      },
+      {
+        "Name": "processor_frequency",
+        "MapType": "System.String",
+        "Comment": "处理器频率"
+      },
+      {
+        "Name": "system_memory_size",
+        "MapType": "System.String",
+        "Comment": "系统内存大小"
+      },
+      {
+        "Name": "graphics_device_name",
+        "MapType": "System.String",
+        "Comment": "图形设备名称"
+      },
+      {
+        "Name": "graphics_device_type",
+        "MapType": "System.String",
+        "Comment": "图形设备类型"
+      },
+      {
+        "Name": "graphics_memory_size",
+        "MapType": "System.String",
+        "Comment": "图形内存大小"
+      },
+      {
+        "Name": "graphics_device_version",
+        "MapType": "System.String",
+        "Comment": "图形设备版本"
+      },
+      {
+        "Name": "graphics_shader_level",
+        "MapType": "System.String",
+        "Comment": "图形着色器级别"
+      },
+      {
+        "Name": "screen_width",
+        "MapType": "System.Int32",
+        "Comment": "屏幕宽度"
+      },
+      {
+        "Name": "screen_height",
+        "MapType": "System.Int32",
+        "Comment": "屏幕高度"
+      },
+      {
+        "Name": "screen_dpi",
+        "MapType": "System.String",
+        "Comment": "屏幕DPI"
+      },
+      {
+        "Name": "screen_refresh_rate",
+        "MapType": "System.String",
+        "Comment": "屏幕刷新率"
+      },
+      {
+        "Name": "system_language",
+        "MapType": "System.String",
+        "Comment": "系统语言"
+      },
+      {
+        "Name": "current_culture",
+        "MapType": "System.String",
+        "Comment": "当前语言"
+      },
+      {
+        "Name": "network_type",
+        "MapType": "System.String",
+        "Comment": "网络类型"
+      },
+      {
+        "Name": "latest_online_time",
+        "MapType": "System.DateTime",
+        "Comment": "最近在线时间"
+      }
+    ]
+  },
+  {
+    "Name": "client_start_load_hotfix_dll",
+    "Comment": "开始加载热更新动态库",
+    "Columns": [
+      {
+        "Name": "id",
+        "MapType": "System.Int64",
+        "Comment": "主ID"
+      },
+      {
+        "Name": "account_id",
+        "MapType": "System.String",
+        "Comment": "账号ID"
+      },
+      {
+        "Name": "role_id",
+        "MapType": "System.String",
+        "Comment": "角色ID"
+      },
+      {
+        "Name": "server_id",
+        "MapType": "System.String",
+        "Comment": "服务器ID"
+      },
+      {
+        "Name": "country",
+        "MapType": "System.String",
+        "Comment": "国家"
+      },
+      {
+        "Name": "channel",
+        "MapType": "System.String",
+        "Comment": "渠道"
+      },
+      {
+        "Name": "orig_channel",
+        "MapType": "System.String",
+        "Comment": "原始渠道"
+      },
+      {
+        "Name": "server_open_time",
+        "MapType": "System.String",
+        "Comment": "服务器开服时间"
+      },
+      {
+        "Name": "domain",
+        "MapType": "System.String",
+        "Comment": "环境"
+      },
+      {
+        "Name": "system",
+        "MapType": "System.String",
+        "Comment": "应用系统"
+      },
+      {
+        "Name": "device_type",
+        "MapType": "System.String",
+        "Comment": "设备类型"
+      },
+      {
+        "Name": "ip",
+        "MapType": "System.String",
+        "Comment": "行为发生时ip地址"
+      },
+      {
+        "Name": "device_model",
+        "MapType": "System.String",
+        "Comment": "设备型号"
+      },
+      {
+        "Name": "os",
+        "MapType": "System.String",
+        "Comment": "操作系统"
+      },
+      {
+        "Name": "app_version",
+        "MapType": "System.String",
+        "Comment": "应用版本"
+      },
+      {
+        "Name": "unity_version",
+        "MapType": "System.String",
+        "Comment": "Unity版本"
+      },
+      {
+        "Name": "platform",
+        "MapType": "System.String",
+        "Comment": "Unity平台"
+      },
+      {
+        "Name": "created_time",
+        "MapType": "System.DateTime",
+        "Comment": "创建时间"
+      },
+      {
+        "Name": "nick_name",
+        "MapType": "System.String",
+        "Comment": "昵称"
+      },
+      {
+        "Name": "sub_channel",
+        "MapType": "System.String",
+        "Comment": "子渠道"
+      },
+      {
+        "Name": "server_channel",
+        "MapType": "System.String",
+        "Comment": "服务器渠道"
+      },
+      {
+        "Name": "payment",
+        "MapType": "System.String",
+        "Comment": "支付方式"
+      },
+      {
+        "Name": "device_id",
+        "MapType": "System.String",
+        "Comment": "设备ID"
+      },
+      {
+        "Name": "active_time",
+        "MapType": "System.DateTime",
+        "Comment": "激活时间"
+      },
+      {
+        "Name": "account_history_money",
+        "MapType": "System.String",
+        "Comment": "账号历史金额"
+      },
+      {
+        "Name": "role_history_money",
+        "MapType": "System.String",
+        "Comment": "角色历史金额"
+      },
+      {
+        "Name": "device_history_money",
+        "MapType": "System.String",
+        "Comment": "设备历史金额"
+      },
+      {
+        "Name": "processor_type",
+        "MapType": "System.String",
+        "Comment": "处理器类型"
+      },
+      {
+        "Name": "processor_count",
+        "MapType": "System.String",
+        "Comment": "处理器数量"
+      },
+      {
+        "Name": "processor_frequency",
+        "MapType": "System.String",
+        "Comment": "处理器频率"
+      },
+      {
+        "Name": "system_memory_size",
+        "MapType": "System.String",
+        "Comment": "系统内存大小"
+      },
+      {
+        "Name": "graphics_device_name",
+        "MapType": "System.String",
+        "Comment": "图形设备名称"
+      },
+      {
+        "Name": "graphics_device_type",
+        "MapType": "System.String",
+        "Comment": "图形设备类型"
+      },
+      {
+        "Name": "graphics_memory_size",
+        "MapType": "System.String",
+        "Comment": "图形内存大小"
+      },
+      {
+        "Name": "graphics_device_version",
+        "MapType": "System.String",
+        "Comment": "图形设备版本"
+      },
+      {
+        "Name": "graphics_shader_level",
+        "MapType": "System.String",
+        "Comment": "图形着色器级别"
+      },
+      {
+        "Name": "screen_width",
+        "MapType": "System.Int32",
+        "Comment": "屏幕宽度"
+      },
+      {
+        "Name": "screen_height",
+        "MapType": "System.Int32",
+        "Comment": "屏幕高度"
+      },
+      {
+        "Name": "screen_dpi",
+        "MapType": "System.String",
+        "Comment": "屏幕DPI"
+      },
+      {
+        "Name": "screen_refresh_rate",
+        "MapType": "System.String",
+        "Comment": "屏幕刷新率"
+      },
+      {
+        "Name": "system_language",
+        "MapType": "System.String",
+        "Comment": "系统语言"
+      },
+      {
+        "Name": "current_culture",
+        "MapType": "System.String",
+        "Comment": "当前语言"
+      },
+      {
+        "Name": "network_type",
+        "MapType": "System.String",
+        "Comment": "网络类型"
+      },
+      {
+        "Name": "latest_online_time",
+        "MapType": "System.DateTime",
+        "Comment": "最近在线时间"
+      }
+    ]
+  },
+  {
+    "Name": "client_start_patch_done",
+    "Comment": "补丁更新完成",
+    "Columns": [
+      {
+        "Name": "id",
+        "MapType": "System.Int64",
+        "Comment": "主ID"
+      },
+      {
+        "Name": "account_id",
+        "MapType": "System.String",
+        "Comment": "账号ID"
+      },
+      {
+        "Name": "role_id",
+        "MapType": "System.String",
+        "Comment": "角色ID"
+      },
+      {
+        "Name": "server_id",
+        "MapType": "System.String",
+        "Comment": "服务器ID"
+      },
+      {
+        "Name": "country",
+        "MapType": "System.String",
+        "Comment": "国家"
+      },
+      {
+        "Name": "channel",
+        "MapType": "System.String",
+        "Comment": "渠道"
+      },
+      {
+        "Name": "orig_channel",
+        "MapType": "System.String",
+        "Comment": "原始渠道"
+      },
+      {
+        "Name": "server_open_time",
+        "MapType": "System.String",
+        "Comment": "服务器开服时间"
+      },
+      {
+        "Name": "domain",
+        "MapType": "System.String",
+        "Comment": "环境"
+      },
+      {
+        "Name": "system",
+        "MapType": "System.String",
+        "Comment": "应用系统"
+      },
+      {
+        "Name": "device_type",
+        "MapType": "System.String",
+        "Comment": "设备类型"
+      },
+      {
+        "Name": "ip",
+        "MapType": "System.String",
+        "Comment": "行为发生时ip地址"
+      },
+      {
+        "Name": "device_model",
+        "MapType": "System.String",
+        "Comment": "设备型号"
+      },
+      {
+        "Name": "os",
+        "MapType": "System.String",
+        "Comment": "操作系统"
+      },
+      {
+        "Name": "app_version",
+        "MapType": "System.String",
+        "Comment": "应用版本"
+      },
+      {
+        "Name": "unity_version",
+        "MapType": "System.String",
+        "Comment": "Unity版本"
+      },
+      {
+        "Name": "platform",
+        "MapType": "System.String",
+        "Comment": "Unity平台"
+      },
+      {
+        "Name": "created_time",
+        "MapType": "System.DateTime",
+        "Comment": "创建时间"
+      },
+      {
+        "Name": "nick_name",
+        "MapType": "System.String",
+        "Comment": "昵称"
+      },
+      {
+        "Name": "sub_channel",
+        "MapType": "System.String",
+        "Comment": "子渠道"
+      },
+      {
+        "Name": "server_channel",
+        "MapType": "System.String",
+        "Comment": "服务器渠道"
+      },
+      {
+        "Name": "payment",
+        "MapType": "System.String",
+        "Comment": "支付方式"
+      },
+      {
+        "Name": "device_id",
+        "MapType": "System.String",
+        "Comment": "设备ID"
+      },
+      {
+        "Name": "active_time",
+        "MapType": "System.DateTime",
+        "Comment": "激活时间"
+      },
+      {
+        "Name": "account_history_money",
+        "MapType": "System.String",
+        "Comment": "账号历史金额"
+      },
+      {
+        "Name": "role_history_money",
+        "MapType": "System.String",
+        "Comment": "角色历史金额"
+      },
+      {
+        "Name": "device_history_money",
+        "MapType": "System.String",
+        "Comment": "设备历史金额"
+      },
+      {
+        "Name": "processor_type",
+        "MapType": "System.String",
+        "Comment": "处理器类型"
+      },
+      {
+        "Name": "processor_count",
+        "MapType": "System.String",
+        "Comment": "处理器数量"
+      },
+      {
+        "Name": "processor_frequency",
+        "MapType": "System.String",
+        "Comment": "处理器频率"
+      },
+      {
+        "Name": "system_memory_size",
+        "MapType": "System.String",
+        "Comment": "系统内存大小"
+      },
+      {
+        "Name": "graphics_device_name",
+        "MapType": "System.String",
+        "Comment": "图形设备名称"
+      },
+      {
+        "Name": "graphics_device_type",
+        "MapType": "System.String",
+        "Comment": "图形设备类型"
+      },
+      {
+        "Name": "graphics_memory_size",
+        "MapType": "System.String",
+        "Comment": "图形内存大小"
+      },
+      {
+        "Name": "graphics_device_version",
+        "MapType": "System.String",
+        "Comment": "图形设备版本"
+      },
+      {
+        "Name": "graphics_shader_level",
+        "MapType": "System.String",
+        "Comment": "图形着色器级别"
+      },
+      {
+        "Name": "screen_width",
+        "MapType": "System.Int32",
+        "Comment": "屏幕宽度"
+      },
+      {
+        "Name": "screen_height",
+        "MapType": "System.Int32",
+        "Comment": "屏幕高度"
+      },
+      {
+        "Name": "screen_dpi",
+        "MapType": "System.String",
+        "Comment": "屏幕DPI"
+      },
+      {
+        "Name": "screen_refresh_rate",
+        "MapType": "System.String",
+        "Comment": "屏幕刷新率"
+      },
+      {
+        "Name": "system_language",
+        "MapType": "System.String",
+        "Comment": "系统语言"
+      },
+      {
+        "Name": "current_culture",
+        "MapType": "System.String",
+        "Comment": "当前语言"
+      },
+      {
+        "Name": "network_type",
+        "MapType": "System.String",
+        "Comment": "网络类型"
+      },
+      {
+        "Name": "latest_online_time",
+        "MapType": "System.DateTime",
+        "Comment": "最近在线时间"
+      }
+    ]
+  },
+  {
+    "Name": "client_start_patch_init",
+    "Comment": "开始补丁初始化",
+    "Columns": [
+      {
+        "Name": "id",
+        "MapType": "System.Int64",
+        "Comment": "主ID"
+      },
+      {
+        "Name": "account_id",
+        "MapType": "System.String",
+        "Comment": "账号ID"
+      },
+      {
+        "Name": "role_id",
+        "MapType": "System.String",
+        "Comment": "角色ID"
+      },
+      {
+        "Name": "server_id",
+        "MapType": "System.String",
+        "Comment": "服务器ID"
+      },
+      {
+        "Name": "country",
+        "MapType": "System.String",
+        "Comment": "国家"
+      },
+      {
+        "Name": "channel",
+        "MapType": "System.String",
+        "Comment": "渠道"
+      },
+      {
+        "Name": "orig_channel",
+        "MapType": "System.String",
+        "Comment": "原始渠道"
+      },
+      {
+        "Name": "server_open_time",
+        "MapType": "System.String",
+        "Comment": "服务器开服时间"
+      },
+      {
+        "Name": "domain",
+        "MapType": "System.String",
+        "Comment": "环境"
+      },
+      {
+        "Name": "system",
+        "MapType": "System.String",
+        "Comment": "应用系统"
+      },
+      {
+        "Name": "device_type",
+        "MapType": "System.String",
+        "Comment": "设备类型"
+      },
+      {
+        "Name": "ip",
+        "MapType": "System.String",
+        "Comment": "行为发生时ip地址"
+      },
+      {
+        "Name": "device_model",
+        "MapType": "System.String",
+        "Comment": "设备型号"
+      },
+      {
+        "Name": "os",
+        "MapType": "System.String",
+        "Comment": "操作系统"
+      },
+      {
+        "Name": "app_version",
+        "MapType": "System.String",
+        "Comment": "应用版本"
+      },
+      {
+        "Name": "unity_version",
+        "MapType": "System.String",
+        "Comment": "Unity版本"
+      },
+      {
+        "Name": "platform",
+        "MapType": "System.String",
+        "Comment": "Unity平台"
+      },
+      {
+        "Name": "created_time",
+        "MapType": "System.DateTime",
+        "Comment": "创建时间"
+      },
+      {
+        "Name": "nick_name",
+        "MapType": "System.String",
+        "Comment": "昵称"
+      },
+      {
+        "Name": "sub_channel",
+        "MapType": "System.String",
+        "Comment": "子渠道"
+      },
+      {
+        "Name": "server_channel",
+        "MapType": "System.String",
+        "Comment": "服务器渠道"
+      },
+      {
+        "Name": "payment",
+        "MapType": "System.String",
+        "Comment": "支付方式"
+      },
+      {
+        "Name": "device_id",
+        "MapType": "System.String",
+        "Comment": "设备ID"
+      },
+      {
+        "Name": "active_time",
+        "MapType": "System.DateTime",
+        "Comment": "激活时间"
+      },
+      {
+        "Name": "account_history_money",
+        "MapType": "System.String",
+        "Comment": "账号历史金额"
+      },
+      {
+        "Name": "role_history_money",
+        "MapType": "System.String",
+        "Comment": "角色历史金额"
+      },
+      {
+        "Name": "device_history_money",
+        "MapType": "System.String",
+        "Comment": "设备历史金额"
+      },
+      {
+        "Name": "processor_type",
+        "MapType": "System.String",
+        "Comment": "处理器类型"
+      },
+      {
+        "Name": "processor_count",
+        "MapType": "System.String",
+        "Comment": "处理器数量"
+      },
+      {
+        "Name": "processor_frequency",
+        "MapType": "System.String",
+        "Comment": "处理器频率"
+      },
+      {
+        "Name": "system_memory_size",
+        "MapType": "System.String",
+        "Comment": "系统内存大小"
+      },
+      {
+        "Name": "graphics_device_name",
+        "MapType": "System.String",
+        "Comment": "图形设备名称"
+      },
+      {
+        "Name": "graphics_device_type",
+        "MapType": "System.String",
+        "Comment": "图形设备类型"
+      },
+      {
+        "Name": "graphics_memory_size",
+        "MapType": "System.String",
+        "Comment": "图形内存大小"
+      },
+      {
+        "Name": "graphics_device_version",
+        "MapType": "System.String",
+        "Comment": "图形设备版本"
+      },
+      {
+        "Name": "graphics_shader_level",
+        "MapType": "System.String",
+        "Comment": "图形着色器级别"
+      },
+      {
+        "Name": "screen_width",
+        "MapType": "System.Int32",
+        "Comment": "屏幕宽度"
+      },
+      {
+        "Name": "screen_height",
+        "MapType": "System.Int32",
+        "Comment": "屏幕高度"
+      },
+      {
+        "Name": "screen_dpi",
+        "MapType": "System.String",
+        "Comment": "屏幕DPI"
+      },
+      {
+        "Name": "screen_refresh_rate",
+        "MapType": "System.String",
+        "Comment": "屏幕刷新率"
+      },
+      {
+        "Name": "system_language",
+        "MapType": "System.String",
+        "Comment": "系统语言"
+      },
+      {
+        "Name": "current_culture",
+        "MapType": "System.String",
+        "Comment": "当前语言"
+      },
+      {
+        "Name": "network_type",
+        "MapType": "System.String",
+        "Comment": "网络类型"
+      },
+      {
+        "Name": "latest_online_time",
+        "MapType": "System.DateTime",
+        "Comment": "最近在线时间"
+      }
+    ]
+  },
+  {
+    "Name": "client_start_update_manifest",
+    "Comment": "开始更新资源清单",
+    "Columns": [
+      {
+        "Name": "id",
+        "MapType": "System.Int64",
+        "Comment": "主ID"
+      },
+      {
+        "Name": "account_id",
+        "MapType": "System.String",
+        "Comment": "账号ID"
+      },
+      {
+        "Name": "role_id",
+        "MapType": "System.String",
+        "Comment": "角色ID"
+      },
+      {
+        "Name": "server_id",
+        "MapType": "System.String",
+        "Comment": "服务器ID"
+      },
+      {
+        "Name": "country",
+        "MapType": "System.String",
+        "Comment": "国家"
+      },
+      {
+        "Name": "channel",
+        "MapType": "System.String",
+        "Comment": "渠道"
+      },
+      {
+        "Name": "orig_channel",
+        "MapType": "System.String",
+        "Comment": "原始渠道"
+      },
+      {
+        "Name": "server_open_time",
+        "MapType": "System.String",
+        "Comment": "服务器开服时间"
+      },
+      {
+        "Name": "domain",
+        "MapType": "System.String",
+        "Comment": "环境"
+      },
+      {
+        "Name": "system",
+        "MapType": "System.String",
+        "Comment": "应用系统"
+      },
+      {
+        "Name": "device_type",
+        "MapType": "System.String",
+        "Comment": "设备类型"
+      },
+      {
+        "Name": "ip",
+        "MapType": "System.String",
+        "Comment": "行为发生时ip地址"
+      },
+      {
+        "Name": "device_model",
+        "MapType": "System.String",
+        "Comment": "设备型号"
+      },
+      {
+        "Name": "os",
+        "MapType": "System.String",
+        "Comment": "操作系统"
+      },
+      {
+        "Name": "app_version",
+        "MapType": "System.String",
+        "Comment": "应用版本"
+      },
+      {
+        "Name": "unity_version",
+        "MapType": "System.String",
+        "Comment": "Unity版本"
+      },
+      {
+        "Name": "platform",
+        "MapType": "System.String",
+        "Comment": "Unity平台"
+      },
+      {
+        "Name": "created_time",
+        "MapType": "System.DateTime",
+        "Comment": "创建时间"
+      },
+      {
+        "Name": "nick_name",
+        "MapType": "System.String",
+        "Comment": "昵称"
+      },
+      {
+        "Name": "sub_channel",
+        "MapType": "System.String",
+        "Comment": "子渠道"
+      },
+      {
+        "Name": "server_channel",
+        "MapType": "System.String",
+        "Comment": "服务器渠道"
+      },
+      {
+        "Name": "payment",
+        "MapType": "System.String",
+        "Comment": "支付方式"
+      },
+      {
+        "Name": "device_id",
+        "MapType": "System.String",
+        "Comment": "设备ID"
+      },
+      {
+        "Name": "active_time",
+        "MapType": "System.DateTime",
+        "Comment": "激活时间"
+      },
+      {
+        "Name": "account_history_money",
+        "MapType": "System.String",
+        "Comment": "账号历史金额"
+      },
+      {
+        "Name": "role_history_money",
+        "MapType": "System.String",
+        "Comment": "角色历史金额"
+      },
+      {
+        "Name": "device_history_money",
+        "MapType": "System.String",
+        "Comment": "设备历史金额"
+      },
+      {
+        "Name": "processor_type",
+        "MapType": "System.String",
+        "Comment": "处理器类型"
+      },
+      {
+        "Name": "processor_count",
+        "MapType": "System.String",
+        "Comment": "处理器数量"
+      },
+      {
+        "Name": "processor_frequency",
+        "MapType": "System.String",
+        "Comment": "处理器频率"
+      },
+      {
+        "Name": "system_memory_size",
+        "MapType": "System.String",
+        "Comment": "系统内存大小"
+      },
+      {
+        "Name": "graphics_device_name",
+        "MapType": "System.String",
+        "Comment": "图形设备名称"
+      },
+      {
+        "Name": "graphics_device_type",
+        "MapType": "System.String",
+        "Comment": "图形设备类型"
+      },
+      {
+        "Name": "graphics_memory_size",
+        "MapType": "System.String",
+        "Comment": "图形内存大小"
+      },
+      {
+        "Name": "graphics_device_version",
+        "MapType": "System.String",
+        "Comment": "图形设备版本"
+      },
+      {
+        "Name": "graphics_shader_level",
+        "MapType": "System.String",
+        "Comment": "图形着色器级别"
+      },
+      {
+        "Name": "screen_width",
+        "MapType": "System.Int32",
+        "Comment": "屏幕宽度"
+      },
+      {
+        "Name": "screen_height",
+        "MapType": "System.Int32",
+        "Comment": "屏幕高度"
+      },
+      {
+        "Name": "screen_dpi",
+        "MapType": "System.String",
+        "Comment": "屏幕DPI"
+      },
+      {
+        "Name": "screen_refresh_rate",
+        "MapType": "System.String",
+        "Comment": "屏幕刷新率"
+      },
+      {
+        "Name": "system_language",
+        "MapType": "System.String",
+        "Comment": "系统语言"
+      },
+      {
+        "Name": "current_culture",
+        "MapType": "System.String",
+        "Comment": "当前语言"
+      },
+      {
+        "Name": "network_type",
+        "MapType": "System.String",
+        "Comment": "网络类型"
+      },
+      {
+        "Name": "latest_online_time",
+        "MapType": "System.DateTime",
+        "Comment": "最近在线时间"
+      }
+    ]
+  },
+  {
+    "Columns": [
+      {
+        "Name": "id",
+        "MapType": "System.Int64",
+        "Comment": "主ID"
+      },
+      {
+        "Name": "account_id",
+        "MapType": "System.String",
+        "Comment": "账号ID"
+      },
+      {
+        "Name": "role_id",
+        "MapType": "System.String",
+        "Comment": "角色ID"
+      },
+      {
+        "Name": "server_id",
+        "MapType": "System.String",
+        "Comment": "服务器ID"
+      },
+      {
+        "Name": "country",
+        "MapType": "System.String",
+        "Comment": "国家"
+      },
+      {
+        "Name": "channel",
+        "MapType": "System.String",
+        "Comment": "渠道"
+      },
+      {
+        "Name": "orig_channel",
+        "MapType": "System.String",
+        "Comment": "原始渠道"
+      },
+      {
+        "Name": "server_open_time",
+        "MapType": "System.String",
+        "Comment": "服务器开服时间"
+      },
+      {
+        "Name": "domain",
+        "MapType": "System.String",
+        "Comment": "环境"
+      },
+      {
+        "Name": "system",
+        "MapType": "System.String",
+        "Comment": "应用系统"
+      },
+      {
+        "Name": "device_type",
+        "MapType": "System.String",
+        "Comment": "设备类型"
+      },
+      {
+        "Name": "ip",
+        "MapType": "System.String",
+        "Comment": "行为发生时ip地址"
+      },
+      {
+        "Name": "device_model",
+        "MapType": "System.String",
+        "Comment": "设备型号"
+      },
+      {
+        "Name": "os",
+        "MapType": "System.String",
+        "Comment": "操作系统"
+      },
+      {
+        "Name": "app_version",
+        "MapType": "System.String",
+        "Comment": "应用版本"
+      },
+      {
+        "Name": "unity_version",
+        "MapType": "System.String",
+        "Comment": "Unity版本"
+      },
+      {
+        "Name": "platform",
+        "MapType": "System.String",
+        "Comment": "Unity平台"
+      },
+      {
+        "Name": "created_time",
+        "MapType": "System.DateTime",
+        "Comment": "创建时间"
+      },
+      {
+        "Name": "nick_name",
+        "MapType": "System.String",
+        "Comment": "昵称"
+      },
+      {
+        "Name": "sub_channel",
+        "MapType": "System.String",
+        "Comment": "子渠道"
+      },
+      {
+        "Name": "server_channel",
+        "MapType": "System.String",
+        "Comment": "服务器渠道"
+      },
+      {
+        "Name": "payment",
+        "MapType": "System.String",
+        "Comment": "支付方式"
+      },
+      {
+        "Name": "device_id",
+        "MapType": "System.String",
+        "Comment": "设备ID"
+      },
+      {
+        "Name": "active_time",
+        "MapType": "System.DateTime",
+        "Comment": "激活时间"
+      },
+      {
+        "Name": "account_history_money",
+        "MapType": "System.String",
+        "Comment": "账号历史金额"
+      },
+      {
+        "Name": "role_history_money",
+        "MapType": "System.String",
+        "Comment": "角色历史金额"
+      },
+      {
+        "Name": "device_history_money",
+        "MapType": "System.String",
+        "Comment": "设备历史金额"
+      },
+      {
+        "Name": "processor_type",
+        "MapType": "System.String",
+        "Comment": "处理器类型"
+      },
+      {
+        "Name": "processor_count",
+        "MapType": "System.String",
+        "Comment": "处理器数量"
+      },
+      {
+        "Name": "processor_frequency",
+        "MapType": "System.String",
+        "Comment": "处理器频率"
+      },
+      {
+        "Name": "system_memory_size",
+        "MapType": "System.String",
+        "Comment": "系统内存大小"
+      },
+      {
+        "Name": "graphics_device_name",
+        "MapType": "System.String",
+        "Comment": "图形设备名称"
+      },
+      {
+        "Name": "graphics_device_type",
+        "MapType": "System.String",
+        "Comment": "图形设备类型"
+      },
+      {
+        "Name": "graphics_memory_size",
+        "MapType": "System.String",
+        "Comment": "图形内存大小"
+      },
+      {
+        "Name": "graphics_device_version",
+        "MapType": "System.String",
+        "Comment": "图形设备版本"
+      },
+      {
+        "Name": "graphics_shader_level",
+        "MapType": "System.String",
+        "Comment": "图形着色器级别"
+      },
+      {
+        "Name": "screen_width",
+        "MapType": "System.Int32",
+        "Comment": "屏幕宽度"
+      },
+      {
+        "Name": "screen_height",
+        "MapType": "System.Int32",
+        "Comment": "屏幕高度"
+      },
+      {
+        "Name": "screen_dpi",
+        "MapType": "System.String",
+        "Comment": "屏幕DPI"
+      },
+      {
+        "Name": "screen_refresh_rate",
+        "MapType": "System.String",
+        "Comment": "屏幕刷新率"
+      },
+      {
+        "Name": "system_language",
+        "MapType": "System.String",
+        "Comment": "系统语言"
+      },
+      {
+        "Name": "current_culture",
+        "MapType": "System.String",
+        "Comment": "当前语言"
+      },
+      {
+        "Name": "network_type",
+        "MapType": "System.String",
+        "Comment": "网络类型"
+      },
+      {
+        "Name": "latest_online_time",
+        "MapType": "System.DateTime",
+        "Comment": "最近在线时间"
+      }
+    ],
+    "Name": "client_start_update_static_version",
+    "Comment": "开始更新静态版本"
+  },
+  {
+    "Columns": [
+      {
+        "Name": "id",
+        "MapType": "System.Int64",
+        "Comment": "主ID"
+      },
+      {
+        "Name": "type",
+        "MapType": "System.String",
+        "Comment": "类型"
+      },
+      {
+        "Name": "account_id",
+        "MapType": "System.String",
+        "Comment": "账号ID"
+      },
+      {
+        "Name": "role_id",
+        "MapType": "System.String",
+        "Comment": "角色ID"
+      },
+      {
+        "Name": "server_id",
+        "MapType": "System.String",
+        "Comment": "服务器ID"
+      },
+      {
+        "Name": "country",
+        "MapType": "System.String",
+        "Comment": "国家"
+      },
+      {
+        "Name": "channel",
+        "MapType": "System.String",
+        "Comment": "渠道"
+      },
+      {
+        "Name": "orig_channel",
+        "MapType": "System.String",
+        "Comment": "原始渠道"
+      },
+      {
+        "Name": "server_open_time",
+        "MapType": "System.String",
+        "Comment": "服务器开服时间"
+      },
+      {
+        "Name": "domain",
+        "MapType": "System.String",
+        "Comment": "环境"
+      },
+      {
+        "Name": "system",
+        "MapType": "System.String",
+        "Comment": "应用系统"
+      },
+      {
+        "Name": "device_type",
+        "MapType": "System.String",
+        "Comment": "设备类型"
+      },
+      {
+        "Name": "ip",
+        "MapType": "System.String",
+        "Comment": "行为发生时ip地址"
+      },
+      {
+        "Name": "device_model",
+        "MapType": "System.String",
+        "Comment": "设备型号"
+      },
+      {
+        "Name": "os",
+        "MapType": "System.String",
+        "Comment": "操作系统"
+      },
+      {
+        "Name": "app_version",
+        "MapType": "System.String",
+        "Comment": "应用版本"
+      },
+      {
+        "Name": "unity_version",
+        "MapType": "System.String",
+        "Comment": "Unity版本"
+      },
+      {
+        "Name": "platform",
+        "MapType": "System.String",
+        "Comment": "Unity平台"
+      },
+      {
+        "Name": "created_time",
+        "MapType": "System.DateTime",
+        "Comment": "创建时间"
+      },
+      {
+        "Name": "nick_name",
+        "MapType": "System.String",
+        "Comment": "昵称"
+      },
+      {
+        "Name": "sub_channel",
+        "MapType": "System.String",
+        "Comment": "子渠道"
+      },
+      {
+        "Name": "server_channel",
+        "MapType": "System.String",
+        "Comment": "服务器渠道"
+      },
+      {
+        "Name": "payment",
+        "MapType": "System.String",
+        "Comment": "支付方式"
+      },
+      {
+        "Name": "device_id",
+        "MapType": "System.String",
+        "Comment": "设备ID"
+      },
+      {
+        "Name": "active_time",
+        "MapType": "System.DateTime",
+        "Comment": "激活时间"
+      },
+      {
+        "Name": "account_history_money",
+        "MapType": "System.String",
+        "Comment": "账号历史金额"
+      },
+      {
+        "Name": "role_history_money",
+        "MapType": "System.String",
+        "Comment": "角色历史金额"
+      },
+      {
+        "Name": "device_history_money",
+        "MapType": "System.String",
+        "Comment": "设备历史金额"
+      },
+      {
+        "Name": "processor_type",
+        "MapType": "System.String",
+        "Comment": "处理器类型"
+      },
+      {
+        "Name": "processor_count",
+        "MapType": "System.String",
+        "Comment": "处理器数量"
+      },
+      {
+        "Name": "processor_frequency",
+        "MapType": "System.String",
+        "Comment": "处理器频率"
+      },
+      {
+        "Name": "system_memory_size",
+        "MapType": "System.String",
+        "Comment": "系统内存大小"
+      },
+      {
+        "Name": "graphics_device_name",
+        "MapType": "System.String",
+        "Comment": "图形设备名称"
+      },
+      {
+        "Name": "graphics_device_type",
+        "MapType": "System.String",
+        "Comment": "图形设备类型"
+      },
+      {
+        "Name": "graphics_memory_size",
+        "MapType": "System.String",
+        "Comment": "图形内存大小"
+      },
+      {
+        "Name": "graphics_device_version",
+        "MapType": "System.String",
+        "Comment": "图形设备版本"
+      },
+      {
+        "Name": "graphics_shader_level",
+        "MapType": "System.String",
+        "Comment": "图形着色器级别"
+      },
+      {
+        "Name": "screen_width",
+        "MapType": "System.Int32",
+        "Comment": "屏幕宽度"
+      },
+      {
+        "Name": "screen_height",
+        "MapType": "System.Int32",
+        "Comment": "屏幕高度"
+      },
+      {
+        "Name": "screen_dpi",
+        "MapType": "System.String",
+        "Comment": "屏幕DPI"
+      },
+      {
+        "Name": "screen_refresh_rate",
+        "MapType": "System.String",
+        "Comment": "屏幕刷新率"
+      },
+      {
+        "Name": "system_language",
+        "MapType": "System.String",
+        "Comment": "系统语言"
+      },
+      {
+        "Name": "current_culture",
+        "MapType": "System.String",
+        "Comment": "当前语言"
+      },
+      {
+        "Name": "network_type",
+        "MapType": "System.String",
+        "Comment": "网络类型"
+      },
+      {
+        "Name": "latest_online_time",
+        "MapType": "System.DateTime",
+        "Comment": "最近在线时间"
+      }
+    ],
+    "Name": "client_user_login",
+    "Comment": "用户登录"
+  },
+  {
+    "Columns": [
+      {
+        "Name": "id",
+        "MapType": "System.Int64",
+        "Comment": "主ID"
+      },
+      {
+        "Name": "type",
+        "MapType": "System.String",
+        "Comment": "类型"
+      },
+      {
+        "Name": "account_id",
+        "MapType": "System.String",
+        "Comment": "账号ID"
+      },
+      {
+        "Name": "role_id",
+        "MapType": "System.String",
+        "Comment": "角色ID"
+      },
+      {
+        "Name": "server_id",
+        "MapType": "System.String",
+        "Comment": "服务器ID"
+      },
+      {
+        "Name": "country",
+        "MapType": "System.String",
+        "Comment": "国家"
+      },
+      {
+        "Name": "channel",
+        "MapType": "System.String",
+        "Comment": "渠道"
+      },
+      {
+        "Name": "orig_channel",
+        "MapType": "System.String",
+        "Comment": "原始渠道"
+      },
+      {
+        "Name": "server_open_time",
+        "MapType": "System.String",
+        "Comment": "服务器开服时间"
+      },
+      {
+        "Name": "domain",
+        "MapType": "System.String",
+        "Comment": "环境"
+      },
+      {
+        "Name": "system",
+        "MapType": "System.String",
+        "Comment": "应用系统"
+      },
+      {
+        "Name": "device_type",
+        "MapType": "System.String",
+        "Comment": "设备类型"
+      },
+      {
+        "Name": "ip",
+        "MapType": "System.String",
+        "Comment": "行为发生时ip地址"
+      },
+      {
+        "Name": "device_model",
+        "MapType": "System.String",
+        "Comment": "设备型号"
+      },
+      {
+        "Name": "os",
+        "MapType": "System.String",
+        "Comment": "操作系统"
+      },
+      {
+        "Name": "app_version",
+        "MapType": "System.String",
+        "Comment": "应用版本"
+      },
+      {
+        "Name": "unity_version",
+        "MapType": "System.String",
+        "Comment": "Unity版本"
+      },
+      {
+        "Name": "platform",
+        "MapType": "System.String",
+        "Comment": "Unity平台"
+      },
+      {
+        "Name": "created_time",
+        "MapType": "System.DateTime",
+        "Comment": "创建时间"
+      },
+      {
+        "Name": "nick_name",
+        "MapType": "System.String",
+        "Comment": "昵称"
+      },
+      {
+        "Name": "sub_channel",
+        "MapType": "System.String",
+        "Comment": "子渠道"
+      },
+      {
+        "Name": "server_channel",
+        "MapType": "System.String",
+        "Comment": "服务器渠道"
+      },
+      {
+        "Name": "payment",
+        "MapType": "System.String",
+        "Comment": "支付方式"
+      },
+      {
+        "Name": "device_id",
+        "MapType": "System.String",
+        "Comment": "设备ID"
+      },
+      {
+        "Name": "active_time",
+        "MapType": "System.DateTime",
+        "Comment": "激活时间"
+      },
+      {
+        "Name": "account_history_money",
+        "MapType": "System.String",
+        "Comment": "账号历史金额"
+      },
+      {
+        "Name": "role_history_money",
+        "MapType": "System.String",
+        "Comment": "角色历史金额"
+      },
+      {
+        "Name": "device_history_money",
+        "MapType": "System.String",
+        "Comment": "设备历史金额"
+      },
+      {
+        "Name": "processor_type",
+        "MapType": "System.String",
+        "Comment": "处理器类型"
+      },
+      {
+        "Name": "processor_count",
+        "MapType": "System.String",
+        "Comment": "处理器数量"
+      },
+      {
+        "Name": "processor_frequency",
+        "MapType": "System.String",
+        "Comment": "处理器频率"
+      },
+      {
+        "Name": "system_memory_size",
+        "MapType": "System.String",
+        "Comment": "系统内存大小"
+      },
+      {
+        "Name": "graphics_device_name",
+        "MapType": "System.String",
+        "Comment": "图形设备名称"
+      },
+      {
+        "Name": "graphics_device_type",
+        "MapType": "System.String",
+        "Comment": "图形设备类型"
+      },
+      {
+        "Name": "graphics_memory_size",
+        "MapType": "System.String",
+        "Comment": "图形内存大小"
+      },
+      {
+        "Name": "graphics_device_version",
+        "MapType": "System.String",
+        "Comment": "图形设备版本"
+      },
+      {
+        "Name": "graphics_shader_level",
+        "MapType": "System.String",
+        "Comment": "图形着色器级别"
+      },
+      {
+        "Name": "screen_width",
+        "MapType": "System.Int32",
+        "Comment": "屏幕宽度"
+      },
+      {
+        "Name": "screen_height",
+        "MapType": "System.Int32",
+        "Comment": "屏幕高度"
+      },
+      {
+        "Name": "screen_dpi",
+        "MapType": "System.String",
+        "Comment": "屏幕DPI"
+      },
+      {
+        "Name": "screen_refresh_rate",
+        "MapType": "System.String",
+        "Comment": "屏幕刷新率"
+      },
+      {
+        "Name": "system_language",
+        "MapType": "System.String",
+        "Comment": "系统语言"
+      },
+      {
+        "Name": "current_culture",
+        "MapType": "System.String",
+        "Comment": "当前语言"
+      },
+      {
+        "Name": "network_type",
+        "MapType": "System.String",
+        "Comment": "网络类型"
+      },
+      {
+        "Name": "latest_online_time",
+        "MapType": "System.DateTime",
+        "Comment": "最近在线时间"
+      }
+    ],
+    "Name": "client_user_register",
+    "Comment": "用户注册"
+  },
+  {
+    "Columns": [
+      {
+        "Name": "id",
+        "MapType": "System.Int64",
+        "Comment": "主ID"
+      },
+      {
+        "Name": "account_id",
+        "MapType": "System.String",
+        "Comment": "账号ID"
+      },
+      {
+        "Name": "role_id",
+        "MapType": "System.String",
+        "Comment": "角色ID"
+      },
+      {
+        "Name": "server_id",
+        "MapType": "System.String",
+        "Comment": "服务器ID"
+      },
+      {
+        "Name": "country",
+        "MapType": "System.String",
+        "Comment": "国家"
+      },
+      {
+        "Name": "channel",
+        "MapType": "System.String",
+        "Comment": "渠道"
+      },
+      {
+        "Name": "orig_channel",
+        "MapType": "System.String",
+        "Comment": "原始渠道"
+      },
+      {
+        "Name": "server_open_time",
+        "MapType": "System.String",
+        "Comment": "服务器开服时间"
+      },
+      {
+        "Name": "domain",
+        "MapType": "System.String",
+        "Comment": "环境"
+      },
+      {
+        "Name": "system",
+        "MapType": "System.String",
+        "Comment": "应用系统"
+      },
+      {
+        "Name": "device_type",
+        "MapType": "System.String",
+        "Comment": "设备类型"
+      },
+      {
+        "Name": "ip",
+        "MapType": "System.String",
+        "Comment": "行为发生时ip地址"
+      },
+      {
+        "Name": "device_model",
+        "MapType": "System.String",
+        "Comment": "设备型号"
+      },
+      {
+        "Name": "os",
+        "MapType": "System.String",
+        "Comment": "操作系统"
+      },
+      {
+        "Name": "app_version",
+        "MapType": "System.String",
+        "Comment": "应用版本"
+      },
+      {
+        "Name": "unity_version",
+        "MapType": "System.String",
+        "Comment": "Unity版本"
+      },
+      {
+        "Name": "platform",
+        "MapType": "System.String",
+        "Comment": "Unity平台"
+      },
+      {
+        "Name": "created_time",
+        "MapType": "System.DateTime",
+        "Comment": "创建时间"
+      },
+      {
+        "Name": "nick_name",
+        "MapType": "System.String",
+        "Comment": "昵称"
+      },
+      {
+        "Name": "sub_channel",
+        "MapType": "System.String",
+        "Comment": "子渠道"
+      },
+      {
+        "Name": "server_channel",
+        "MapType": "System.String",
+        "Comment": "服务器渠道"
+      },
+      {
+        "Name": "payment",
+        "MapType": "System.String",
+        "Comment": "支付方式"
+      },
+      {
+        "Name": "device_id",
+        "MapType": "System.String",
+        "Comment": "设备ID"
+      },
+      {
+        "Name": "active_time",
+        "MapType": "System.DateTime",
+        "Comment": "激活时间"
+      },
+      {
+        "Name": "account_history_money",
+        "MapType": "System.String",
+        "Comment": "账号历史金额"
+      },
+      {
+        "Name": "role_history_money",
+        "MapType": "System.String",
+        "Comment": "角色历史金额"
+      },
+      {
+        "Name": "device_history_money",
+        "MapType": "System.String",
+        "Comment": "设备历史金额"
+      },
+      {
+        "Name": "processor_type",
+        "MapType": "System.String",
+        "Comment": "处理器类型"
+      },
+      {
+        "Name": "processor_count",
+        "MapType": "System.String",
+        "Comment": "处理器数量"
+      },
+      {
+        "Name": "processor_frequency",
+        "MapType": "System.String",
+        "Comment": "处理器频率"
+      },
+      {
+        "Name": "system_memory_size",
+        "MapType": "System.String",
+        "Comment": "系统内存大小"
+      },
+      {
+        "Name": "graphics_device_name",
+        "MapType": "System.String",
+        "Comment": "图形设备名称"
+      },
+      {
+        "Name": "graphics_device_type",
+        "MapType": "System.String",
+        "Comment": "图形设备类型"
+      },
+      {
+        "Name": "graphics_memory_size",
+        "MapType": "System.String",
+        "Comment": "图形内存大小"
+      },
+      {
+        "Name": "graphics_device_version",
+        "MapType": "System.String",
+        "Comment": "图形设备版本"
+      },
+      {
+        "Name": "graphics_shader_level",
+        "MapType": "System.String",
+        "Comment": "图形着色器级别"
+      },
+      {
+        "Name": "screen_width",
+        "MapType": "System.Int32",
+        "Comment": "屏幕宽度"
+      },
+      {
+        "Name": "screen_height",
+        "MapType": "System.Int32",
+        "Comment": "屏幕高度"
+      },
+      {
+        "Name": "screen_dpi",
+        "MapType": "System.String",
+        "Comment": "屏幕DPI"
+      },
+      {
+        "Name": "screen_refresh_rate",
+        "MapType": "System.String",
+        "Comment": "屏幕刷新率"
+      },
+      {
+        "Name": "system_language",
+        "MapType": "System.String",
+        "Comment": "系统语言"
+      },
+      {
+        "Name": "current_culture",
+        "MapType": "System.String",
+        "Comment": "当前语言"
+      },
+      {
+        "Name": "network_type",
+        "MapType": "System.String",
+        "Comment": "网络类型"
+      },
+      {
+        "Name": "server_id",
+        "MapType": "System.String",
+        "Comment": "服务器ID"
+      },
+      {
+        "Name": "latest_online_time",
+        "MapType": "System.DateTime",
+        "Comment": "最近在线时间"
+      }
+    ],
+    "Name": "client_user_select_server",
+    "Comment": "用户选择服务器"
+  },
+  {
+    "Columns": [
+      {
+        "Name": "id",
+        "MapType": "System.Int64",
+        "Comment": "主ID"
+      },
+      {
+        "Name": "account_id",
+        "MapType": "System.String",
+        "Comment": "账号ID"
+      },
+      {
+        "Name": "role_id",
+        "MapType": "System.String",
+        "Comment": "角色ID"
+      },
+      {
+        "Name": "server_id",
+        "MapType": "System.String",
+        "Comment": "服务器ID"
+      },
+      {
+        "Name": "country",
+        "MapType": "System.String",
+        "Comment": "国家"
+      },
+      {
+        "Name": "channel",
+        "MapType": "System.String",
+        "Comment": "渠道"
+      },
+      {
+        "Name": "orig_channel",
+        "MapType": "System.String",
+        "Comment": "原始渠道"
+      },
+      {
+        "Name": "server_open_time",
+        "MapType": "System.String",
+        "Comment": "服务器开服时间"
+      },
+      {
+        "Name": "domain",
+        "MapType": "System.String",
+        "Comment": "环境"
+      },
+      {
+        "Name": "system",
+        "MapType": "System.String",
+        "Comment": "应用系统"
+      },
+      {
+        "Name": "device_type",
+        "MapType": "System.String",
+        "Comment": "设备类型"
+      },
+      {
+        "Name": "ip",
+        "MapType": "System.String",
+        "Comment": "行为发生时ip地址"
+      },
+      {
+        "Name": "device_model",
+        "MapType": "System.String",
+        "Comment": "设备型号"
+      },
+      {
+        "Name": "os",
+        "MapType": "System.String",
+        "Comment": "操作系统"
+      },
+      {
+        "Name": "app_version",
+        "MapType": "System.String",
+        "Comment": "应用版本"
+      },
+      {
+        "Name": "unity_version",
+        "MapType": "System.String",
+        "Comment": "Unity版本"
+      },
+      {
+        "Name": "platform",
+        "MapType": "System.String",
+        "Comment": "Unity平台"
+      },
+      {
+        "Name": "created_time",
+        "MapType": "System.DateTime",
+        "Comment": "创建时间"
+      },
+      {
+        "Name": "nick_name",
+        "MapType": "System.String",
+        "Comment": "昵称"
+      },
+      {
+        "Name": "sub_channel",
+        "MapType": "System.String",
+        "Comment": "子渠道"
+      },
+      {
+        "Name": "server_channel",
+        "MapType": "System.String",
+        "Comment": "服务器渠道"
+      },
+      {
+        "Name": "payment",
+        "MapType": "System.String",
+        "Comment": "支付方式"
+      },
+      {
+        "Name": "device_id",
+        "MapType": "System.String",
+        "Comment": "设备ID"
+      },
+      {
+        "Name": "active_time",
+        "MapType": "System.DateTime",
+        "Comment": "激活时间"
+      },
+      {
+        "Name": "account_history_money",
+        "MapType": "System.String",
+        "Comment": "账号历史金额"
+      },
+      {
+        "Name": "role_history_money",
+        "MapType": "System.String",
+        "Comment": "角色历史金额"
+      },
+      {
+        "Name": "device_history_money",
+        "MapType": "System.String",
+        "Comment": "设备历史金额"
+      },
+      {
+        "Name": "processor_type",
+        "MapType": "System.String",
+        "Comment": "处理器类型"
+      },
+      {
+        "Name": "processor_count",
+        "MapType": "System.String",
+        "Comment": "处理器数量"
+      },
+      {
+        "Name": "processor_frequency",
+        "MapType": "System.String",
+        "Comment": "处理器频率"
+      },
+      {
+        "Name": "system_memory_size",
+        "MapType": "System.String",
+        "Comment": "系统内存大小"
+      },
+      {
+        "Name": "graphics_device_name",
+        "MapType": "System.String",
+        "Comment": "图形设备名称"
+      },
+      {
+        "Name": "graphics_device_type",
+        "MapType": "System.String",
+        "Comment": "图形设备类型"
+      },
+      {
+        "Name": "graphics_memory_size",
+        "MapType": "System.String",
+        "Comment": "图形内存大小"
+      },
+      {
+        "Name": "graphics_device_version",
+        "MapType": "System.String",
+        "Comment": "图形设备版本"
+      },
+      {
+        "Name": "graphics_shader_level",
+        "MapType": "System.String",
+        "Comment": "图形着色器级别"
+      },
+      {
+        "Name": "screen_width",
+        "MapType": "System.Int32",
+        "Comment": "屏幕宽度"
+      },
+      {
+        "Name": "screen_height",
+        "MapType": "System.Int32",
+        "Comment": "屏幕高度"
+      },
+      {
+        "Name": "screen_dpi",
+        "MapType": "System.String",
+        "Comment": "屏幕DPI"
+      },
+      {
+        "Name": "screen_refresh_rate",
+        "MapType": "System.String",
+        "Comment": "屏幕刷新率"
+      },
+      {
+        "Name": "system_language",
+        "MapType": "System.String",
+        "Comment": "系统语言"
+      },
+      {
+        "Name": "current_culture",
+        "MapType": "System.String",
+        "Comment": "当前语言"
+      },
+      {
+        "Name": "network_type",
+        "MapType": "System.String",
+        "Comment": "网络类型"
+      },
+      {
+        "Name": "server_id",
+        "MapType": "System.String",
+        "Comment": "服务器ID"
+      },
+      {
+        "Name": "role_name",
+        "MapType": "System.String",
+        "Comment": "角色名称"
+      },
+      {
+        "Name": "latest_online_time",
+        "MapType": "System.DateTime",
+        "Comment": "最近在线时间"
+      }
+    ],
+    "Name": "client_role_create",
+    "Comment": "角色创建"
+  },
+  {
+    "Columns": [
+      {
+        "Name": "id",
+        "MapType": "System.Int64",
+        "Comment": "主ID"
+      },
+      {
+        "Name": "account_id",
+        "MapType": "System.String",
+        "Comment": "账号ID"
+      },
+      {
+        "Name": "role_id",
+        "MapType": "System.String",
+        "Comment": "角色ID"
+      },
+      {
+        "Name": "server_id",
+        "MapType": "System.String",
+        "Comment": "服务器ID"
+      },
+      {
+        "Name": "country",
+        "MapType": "System.String",
+        "Comment": "国家"
+      },
+      {
+        "Name": "channel",
+        "MapType": "System.String",
+        "Comment": "渠道"
+      },
+      {
+        "Name": "orig_channel",
+        "MapType": "System.String",
+        "Comment": "原始渠道"
+      },
+      {
+        "Name": "server_open_time",
+        "MapType": "System.String",
+        "Comment": "服务器开服时间"
+      },
+      {
+        "Name": "domain",
+        "MapType": "System.String",
+        "Comment": "环境"
+      },
+      {
+        "Name": "system",
+        "MapType": "System.String",
+        "Comment": "应用系统"
+      },
+      {
+        "Name": "device_type",
+        "MapType": "System.String",
+        "Comment": "设备类型"
+      },
+      {
+        "Name": "ip",
+        "MapType": "System.String",
+        "Comment": "行为发生时ip地址"
+      },
+      {
+        "Name": "device_model",
+        "MapType": "System.String",
+        "Comment": "设备型号"
+      },
+      {
+        "Name": "os",
+        "MapType": "System.String",
+        "Comment": "操作系统"
+      },
+      {
+        "Name": "app_version",
+        "MapType": "System.String",
+        "Comment": "应用版本"
+      },
+      {
+        "Name": "unity_version",
+        "MapType": "System.String",
+        "Comment": "Unity版本"
+      },
+      {
+        "Name": "platform",
+        "MapType": "System.String",
+        "Comment": "Unity平台"
+      },
+      {
+        "Name": "created_time",
+        "MapType": "System.DateTime",
+        "Comment": "创建时间"
+      },
+      {
+        "Name": "nick_name",
+        "MapType": "System.String",
+        "Comment": "昵称"
+      },
+      {
+        "Name": "sub_channel",
+        "MapType": "System.String",
+        "Comment": "子渠道"
+      },
+      {
+        "Name": "server_channel",
+        "MapType": "System.String",
+        "Comment": "服务器渠道"
+      },
+      {
+        "Name": "payment",
+        "MapType": "System.String",
+        "Comment": "支付方式"
+      },
+      {
+        "Name": "device_id",
+        "MapType": "System.String",
+        "Comment": "设备ID"
+      },
+      {
+        "Name": "active_time",
+        "MapType": "System.DateTime",
+        "Comment": "激活时间"
+      },
+      {
+        "Name": "account_history_money",
+        "MapType": "System.String",
+        "Comment": "账号历史金额"
+      },
+      {
+        "Name": "role_history_money",
+        "MapType": "System.String",
+        "Comment": "角色历史金额"
+      },
+      {
+        "Name": "device_history_money",
+        "MapType": "System.String",
+        "Comment": "设备历史金额"
+      },
+      {
+        "Name": "processor_type",
+        "MapType": "System.String",
+        "Comment": "处理器类型"
+      },
+      {
+        "Name": "processor_count",
+        "MapType": "System.String",
+        "Comment": "处理器数量"
+      },
+      {
+        "Name": "processor_frequency",
+        "MapType": "System.String",
+        "Comment": "处理器频率"
+      },
+      {
+        "Name": "system_memory_size",
+        "MapType": "System.String",
+        "Comment": "系统内存大小"
+      },
+      {
+        "Name": "graphics_device_name",
+        "MapType": "System.String",
+        "Comment": "图形设备名称"
+      },
+      {
+        "Name": "graphics_device_type",
+        "MapType": "System.String",
+        "Comment": "图形设备类型"
+      },
+      {
+        "Name": "graphics_memory_size",
+        "MapType": "System.String",
+        "Comment": "图形内存大小"
+      },
+      {
+        "Name": "graphics_device_version",
+        "MapType": "System.String",
+        "Comment": "图形设备版本"
+      },
+      {
+        "Name": "graphics_shader_level",
+        "MapType": "System.String",
+        "Comment": "图形着色器级别"
+      },
+      {
+        "Name": "screen_width",
+        "MapType": "System.Int32",
+        "Comment": "屏幕宽度"
+      },
+      {
+        "Name": "screen_height",
+        "MapType": "System.Int32",
+        "Comment": "屏幕高度"
+      },
+      {
+        "Name": "screen_dpi",
+        "MapType": "System.String",
+        "Comment": "屏幕DPI"
+      },
+      {
+        "Name": "screen_refresh_rate",
+        "MapType": "System.String",
+        "Comment": "屏幕刷新率"
+      },
+      {
+        "Name": "system_language",
+        "MapType": "System.String",
+        "Comment": "系统语言"
+      },
+      {
+        "Name": "current_culture",
+        "MapType": "System.String",
+        "Comment": "当前语言"
+      },
+      {
+        "Name": "network_type",
+        "MapType": "System.String",
+        "Comment": "网络类型"
+      },
+      {
+        "Name": "server_id",
+        "MapType": "System.String",
+        "Comment": "服务器ID"
+      },
+      {
+        "Name": "latest_online_time",
+        "MapType": "System.DateTime",
+        "Comment": "最近在线时间"
+      }
+    ],
+    "Name": "client_role_login",
+    "Comment": "角色登录"
+  },
+  {
+    "Columns": [
+      {
+        "Name": "id",
+        "MapType": "System.Int64",
+        "Comment": "主ID"
+      },
+      {
+        "Name": "account_id",
+        "MapType": "System.String",
+        "Comment": "账号ID"
+      },
+      {
+        "Name": "role_id",
+        "MapType": "System.String",
+        "Comment": "角色ID"
+      },
+      {
+        "Name": "server_id",
+        "MapType": "System.String",
+        "Comment": "服务器ID"
+      },
+      {
+        "Name": "country",
+        "MapType": "System.String",
+        "Comment": "国家"
+      },
+      {
+        "Name": "channel",
+        "MapType": "System.String",
+        "Comment": "渠道"
+      },
+      {
+        "Name": "orig_channel",
+        "MapType": "System.String",
+        "Comment": "原始渠道"
+      },
+      {
+        "Name": "server_open_time",
+        "MapType": "System.String",
+        "Comment": "服务器开服时间"
+      },
+      {
+        "Name": "domain",
+        "MapType": "System.String",
+        "Comment": "环境"
+      },
+      {
+        "Name": "system",
+        "MapType": "System.String",
+        "Comment": "应用系统"
+      },
+      {
+        "Name": "device_type",
+        "MapType": "System.String",
+        "Comment": "设备类型"
+      },
+      {
+        "Name": "ip",
+        "MapType": "System.String",
+        "Comment": "行为发生时ip地址"
+      },
+      {
+        "Name": "device_model",
+        "MapType": "System.String",
+        "Comment": "设备型号"
+      },
+      {
+        "Name": "os",
+        "MapType": "System.String",
+        "Comment": "操作系统"
+      },
+      {
+        "Name": "app_version",
+        "MapType": "System.String",
+        "Comment": "应用版本"
+      },
+      {
+        "Name": "unity_version",
+        "MapType": "System.String",
+        "Comment": "Unity版本"
+      },
+      {
+        "Name": "platform",
+        "MapType": "System.String",
+        "Comment": "Unity平台"
+      },
+      {
+        "Name": "created_time",
+        "MapType": "System.DateTime",
+        "Comment": "创建时间"
+      },
+      {
+        "Name": "nick_name",
+        "MapType": "System.String",
+        "Comment": "昵称"
+      },
+      {
+        "Name": "sub_channel",
+        "MapType": "System.String",
+        "Comment": "子渠道"
+      },
+      {
+        "Name": "server_channel",
+        "MapType": "System.String",
+        "Comment": "服务器渠道"
+      },
+      {
+        "Name": "payment",
+        "MapType": "System.String",
+        "Comment": "支付方式"
+      },
+      {
+        "Name": "device_id",
+        "MapType": "System.String",
+        "Comment": "设备ID"
+      },
+      {
+        "Name": "active_time",
+        "MapType": "System.DateTime",
+        "Comment": "激活时间"
+      },
+      {
+        "Name": "account_history_money",
+        "MapType": "System.String",
+        "Comment": "账号历史金额"
+      },
+      {
+        "Name": "role_history_money",
+        "MapType": "System.String",
+        "Comment": "角色历史金额"
+      },
+      {
+        "Name": "device_history_money",
+        "MapType": "System.String",
+        "Comment": "设备历史金额"
+      },
+      {
+        "Name": "processor_type",
+        "MapType": "System.String",
+        "Comment": "处理器类型"
+      },
+      {
+        "Name": "processor_count",
+        "MapType": "System.String",
+        "Comment": "处理器数量"
+      },
+      {
+        "Name": "processor_frequency",
+        "MapType": "System.String",
+        "Comment": "处理器频率"
+      },
+      {
+        "Name": "system_memory_size",
+        "MapType": "System.String",
+        "Comment": "系统内存大小"
+      },
+      {
+        "Name": "graphics_device_name",
+        "MapType": "System.String",
+        "Comment": "图形设备名称"
+      },
+      {
+        "Name": "graphics_device_type",
+        "MapType": "System.String",
+        "Comment": "图形设备类型"
+      },
+      {
+        "Name": "graphics_memory_size",
+        "MapType": "System.String",
+        "Comment": "图形内存大小"
+      },
+      {
+        "Name": "graphics_device_version",
+        "MapType": "System.String",
+        "Comment": "图形设备版本"
+      },
+      {
+        "Name": "graphics_shader_level",
+        "MapType": "System.String",
+        "Comment": "图形着色器级别"
+      },
+      {
+        "Name": "screen_width",
+        "MapType": "System.Int32",
+        "Comment": "屏幕宽度"
+      },
+      {
+        "Name": "screen_height",
+        "MapType": "System.Int32",
+        "Comment": "屏幕高度"
+      },
+      {
+        "Name": "screen_dpi",
+        "MapType": "System.String",
+        "Comment": "屏幕DPI"
+      },
+      {
+        "Name": "screen_refresh_rate",
+        "MapType": "System.String",
+        "Comment": "屏幕刷新率"
+      },
+      {
+        "Name": "system_language",
+        "MapType": "System.String",
+        "Comment": "系统语言"
+      },
+      {
+        "Name": "current_culture",
+        "MapType": "System.String",
+        "Comment": "当前语言"
+      },
+      {
+        "Name": "network_type",
+        "MapType": "System.String",
+        "Comment": "网络类型"
+      },
+      {
+        "Name": "type",
+        "MapType": "System.Int32",
+        "Comment": "引导类型0=开始,1=结束"
+      },
+      {
+        "Name": "guide_id",
+        "MapType": "System.Int32",
+        "Comment": "引导表ID"
+      },
+      {
+        "Name": "latest_online_time",
+        "MapType": "System.DateTime",
+        "Comment": "最近在线时间"
+      }
+    ],
+    "Name": "client_role_guide",
+    "Comment": "新手引导"
+  },
+  {
+    "Columns": [
+      {
+        "Name": "id",
+        "MapType": "System.Int64",
+        "Comment": "主ID"
+      },
+      {
+        "Name": "account_id",
+        "MapType": "System.String",
+        "Comment": "账号ID"
+      },
+      {
+        "Name": "role_id",
+        "MapType": "System.String",
+        "Comment": "角色ID"
+      },
+      {
+        "Name": "server_id",
+        "MapType": "System.String",
+        "Comment": "服务器ID"
+      },
+      {
+        "Name": "country",
+        "MapType": "System.String",
+        "Comment": "国家"
+      },
+      {
+        "Name": "channel",
+        "MapType": "System.String",
+        "Comment": "渠道"
+      },
+      {
+        "Name": "orig_channel",
+        "MapType": "System.String",
+        "Comment": "原始渠道"
+      },
+      {
+        "Name": "server_open_time",
+        "MapType": "System.DateTime",
+        "Comment": "服务器开服时间"
+      },
+      {
+        "Name": "domain",
+        "MapType": "System.String",
+        "Comment": "环境"
+      },
+      {
+        "Name": "system",
+        "MapType": "System.String",
+        "Comment": "应用系统"
+      },
+      {
+        "Name": "device_type",
+        "MapType": "System.String",
+        "Comment": "设备类型"
+      },
+      {
+        "Name": "ip",
+        "MapType": "System.String",
+        "Comment": "行为发生时ip地址"
+      },
+      {
+        "Name": "device_model",
+        "MapType": "System.String",
+        "Comment": "设备型号"
+      },
+      {
+        "Name": "os",
+        "MapType": "System.String",
+        "Comment": "操作系统"
+      },
+      {
+        "Name": "app_version",
+        "MapType": "System.String",
+        "Comment": "应用版本"
+      },
+      {
+        "Name": "unity_version",
+        "MapType": "System.String",
+        "Comment": "Unity版本"
+      },
+      {
+        "Name": "platform",
+        "MapType": "System.String",
+        "Comment": "Unity平台"
+      },
+      {
+        "Name": "created_time",
+        "MapType": "System.DateTime",
+        "Comment": "创建时间"
+      },
+      {
+        "Name": "nick_name",
+        "MapType": "System.String",
+        "Comment": "昵称"
+      },
+      {
+        "Name": "sub_channel",
+        "MapType": "System.String",
+        "Comment": "子渠道"
+      },
+      {
+        "Name": "server_channel",
+        "MapType": "System.String",
+        "Comment": "服务器渠道"
+      },
+      {
+        "Name": "payment",
+        "MapType": "System.String",
+        "Comment": "支付方式"
+      },
+      {
+        "Name": "device_id",
+        "MapType": "System.String",
+        "Comment": "设备ID"
+      },
+      {
+        "Name": "active_time",
+        "MapType": "System.DateTime",
+        "Comment": "激活时间"
+      },
+      {
+        "Name": "account_history_money",
+        "MapType": "System.String",
+        "Comment": "账号历史金额"
+      },
+      {
+        "Name": "role_history_money",
+        "MapType": "System.String",
+        "Comment": "角色历史金额"
+      },
+      {
+        "Name": "device_history_money",
+        "MapType": "System.String",
+        "Comment": "设备历史金额"
+      },
+      {
+        "Name": "processor_type",
+        "MapType": "System.String",
+        "Comment": "处理器类型"
+      },
+      {
+        "Name": "processor_count",
+        "MapType": "System.String",
+        "Comment": "处理器数量"
+      },
+      {
+        "Name": "processor_frequency",
+        "MapType": "System.String",
+        "Comment": "处理器频率"
+      },
+      {
+        "Name": "system_memory_size",
+        "MapType": "System.String",
+        "Comment": "系统内存大小"
+      },
+      {
+        "Name": "graphics_device_name",
+        "MapType": "System.String",
+        "Comment": "图形设备名称"
+      },
+      {
+        "Name": "graphics_device_type",
+        "MapType": "System.String",
+        "Comment": "图形设备类型"
+      },
+      {
+        "Name": "graphics_memory_size",
+        "MapType": "System.String",
+        "Comment": "图形内存大小"
+      },
+      {
+        "Name": "graphics_device_version",
+        "MapType": "System.String",
+        "Comment": "图形设备版本"
+      },
+      {
+        "Name": "graphics_shader_level",
+        "MapType": "System.String",
+        "Comment": "图形着色器级别"
+      },
+      {
+        "Name": "screen_width",
+        "MapType": "System.Int32",
+        "Comment": "屏幕宽度"
+      },
+      {
+        "Name": "screen_height",
+        "MapType": "System.Int32",
+        "Comment": "屏幕高度"
+      },
+      {
+        "Name": "screen_dpi",
+        "MapType": "System.String",
+        "Comment": "屏幕DPI"
+      },
+      {
+        "Name": "screen_refresh_rate",
+        "MapType": "System.String",
+        "Comment": "屏幕刷新率"
+      },
+      {
+        "Name": "system_language",
+        "MapType": "System.String",
+        "Comment": "系统语言"
+      },
+      {
+        "Name": "current_culture",
+        "MapType": "System.String",
+        "Comment": "当前语言"
+      },
+      {
+        "Name": "network_type",
+        "MapType": "System.String",
+        "Comment": "网络类型"
+      },
+      {
+        "Name": "item_list",
+        "MapType": "System.String",
+        "StringLength": 4096,
+        "Comment": "道具列表"
+      },
+      {
+        "Name": "latest_online_time",
+        "MapType": "System.DateTime",
+        "Comment": "最近在线时间"
+      }
+    ],
+    "Name": "client_item_bag",
+    "Comment": "道具背包中的道具信息"
+  },
+  {
+    "Columns": [
+      {
+        "Name": "id",
+        "MapType": "System.Int64",
+        "Comment": "主ID"
+      },
+      {
+        "Name": "account_id",
+        "MapType": "System.String",
+        "Comment": "账号ID"
+      },
+      {
+        "Name": "role_id",
+        "MapType": "System.String",
+        "Comment": "角色ID"
+      },
+      {
+        "Name": "server_id",
+        "MapType": "System.String",
+        "Comment": "服务器ID"
+      },
+      {
+        "Name": "country",
+        "MapType": "System.String",
+        "Comment": "国家"
+      },
+      {
+        "Name": "channel",
+        "MapType": "System.String",
+        "Comment": "渠道"
+      },
+      {
+        "Name": "orig_channel",
+        "MapType": "System.String",
+        "Comment": "原始渠道"
+      },
+      {
+        "Name": "server_open_time",
+        "MapType": "System.DateTime",
+        "Comment": "服务器开服时间"
+      },
+      {
+        "Name": "domain",
+        "MapType": "System.String",
+        "Comment": "环境"
+      },
+      {
+        "Name": "system",
+        "MapType": "System.String",
+        "Comment": "应用系统"
+      },
+      {
+        "Name": "device_type",
+        "MapType": "System.String",
+        "Comment": "设备类型"
+      },
+      {
+        "Name": "ip",
+        "MapType": "System.String",
+        "Comment": "行为发生时ip地址"
+      },
+      {
+        "Name": "device_model",
+        "MapType": "System.String",
+        "Comment": "设备型号"
+      },
+      {
+        "Name": "os",
+        "MapType": "System.String",
+        "Comment": "操作系统"
+      },
+      {
+        "Name": "app_version",
+        "MapType": "System.String",
+        "Comment": "应用版本"
+      },
+      {
+        "Name": "unity_version",
+        "MapType": "System.String",
+        "Comment": "Unity版本"
+      },
+      {
+        "Name": "platform",
+        "MapType": "System.String",
+        "Comment": "Unity平台"
+      },
+      {
+        "Name": "created_time",
+        "MapType": "System.DateTime",
+        "Comment": "创建时间"
+      },
+      {
+        "Name": "nick_name",
+        "MapType": "System.String",
+        "Comment": "昵称"
+      },
+      {
+        "Name": "sub_channel",
+        "MapType": "System.String",
+        "Comment": "子渠道"
+      },
+      {
+        "Name": "server_channel",
+        "MapType": "System.String",
+        "Comment": "服务器渠道"
+      },
+      {
+        "Name": "payment",
+        "MapType": "System.String",
+        "Comment": "支付方式"
+      },
+      {
+        "Name": "device_id",
+        "MapType": "System.String",
+        "Comment": "设备ID"
+      },
+      {
+        "Name": "active_time",
+        "MapType": "System.DateTime",
+        "Comment": "激活时间"
+      },
+      {
+        "Name": "account_history_money",
+        "MapType": "System.String",
+        "Comment": "账号历史金额"
+      },
+      {
+        "Name": "role_history_money",
+        "MapType": "System.String",
+        "Comment": "角色历史金额"
+      },
+      {
+        "Name": "device_history_money",
+        "MapType": "System.String",
+        "Comment": "设备历史金额"
+      },
+      {
+        "Name": "processor_type",
+        "MapType": "System.String",
+        "Comment": "处理器类型"
+      },
+      {
+        "Name": "processor_count",
+        "MapType": "System.String",
+        "Comment": "处理器数量"
+      },
+      {
+        "Name": "processor_frequency",
+        "MapType": "System.String",
+        "Comment": "处理器频率"
+      },
+      {
+        "Name": "system_memory_size",
+        "MapType": "System.String",
+        "Comment": "系统内存大小"
+      },
+      {
+        "Name": "graphics_device_name",
+        "MapType": "System.String",
+        "Comment": "图形设备名称"
+      },
+      {
+        "Name": "graphics_device_type",
+        "MapType": "System.String",
+        "Comment": "图形设备类型"
+      },
+      {
+        "Name": "graphics_memory_size",
+        "MapType": "System.String",
+        "Comment": "图形内存大小"
+      },
+      {
+        "Name": "graphics_device_version",
+        "MapType": "System.String",
+        "Comment": "图形设备版本"
+      },
+      {
+        "Name": "graphics_shader_level",
+        "MapType": "System.String",
+        "Comment": "图形着色器级别"
+      },
+      {
+        "Name": "screen_width",
+        "MapType": "System.Int32",
+        "Comment": "屏幕宽度"
+      },
+      {
+        "Name": "screen_height",
+        "MapType": "System.Int32",
+        "Comment": "屏幕高度"
+      },
+      {
+        "Name": "screen_dpi",
+        "MapType": "System.String",
+        "Comment": "屏幕DPI"
+      },
+      {
+        "Name": "screen_refresh_rate",
+        "MapType": "System.String",
+        "Comment": "屏幕刷新率"
+      },
+      {
+        "Name": "system_language",
+        "MapType": "System.String",
+        "Comment": "系统语言"
+      },
+      {
+        "Name": "current_culture",
+        "MapType": "System.String",
+        "Comment": "当前语言"
+      },
+      {
+        "Name": "relic_id",
+        "MapType": "System.Int32",
+        "Comment": "古宝ID"
+      },
+      {
+        "Name": "change_reason",
+        "MapType": "System.Int32",
+        "Comment": "变化原因"
+      },
+      {
+        "Name": "level",
+        "MapType": "System.Int32",
+        "Comment": "古宝等级"
+      },
+      {
+        "Name": "star",
+        "MapType": "System.Int32",
+        "Comment": "古宝星数"
+      },
+      {
+        "Name": "network_type",
+        "MapType": "System.String",
+        "Comment": "网络类型"
+      },
+      {
+        "Name": "relic_quality",
+        "MapType": "System.String",
+        "Comment": "古宝品质"
+      },
+      {
+        "Name": "cost",
+        "MapType": "System.String",
+        "StringLength": 4096,
+        "Comment": "本次变化消耗资源"
+      },
+      {
+        "Name": "latest_online_time",
+        "MapType": "System.DateTime",
+        "Comment": "最近在线时间"
+      }
+    ],
+    "Name": "client_relic_develop",
+    "Comment": "古宝养成"
+  },
+  {
+    "Columns": [
+      {
+        "Name": "id",
+        "MapType": "System.Int64",
+        "Comment": "主ID"
+      },
+      {
+        "Name": "account_id",
+        "MapType": "System.String",
+        "Comment": "账号ID"
+      },
+      {
+        "Name": "role_id",
+        "MapType": "System.String",
+        "Comment": "角色ID"
+      },
+      {
+        "Name": "server_id",
+        "MapType": "System.String",
+        "Comment": "服务器ID"
+      },
+      {
+        "Name": "country",
+        "MapType": "System.String",
+        "Comment": "国家"
+      },
+      {
+        "Name": "channel",
+        "MapType": "System.String",
+        "Comment": "渠道"
+      },
+      {
+        "Name": "orig_channel",
+        "MapType": "System.String",
+        "Comment": "原始渠道"
+      },
+      {
+        "Name": "server_open_time",
+        "MapType": "System.DateTime",
+        "Comment": "服务器开服时间"
+      },
+      {
+        "Name": "domain",
+        "MapType": "System.String",
+        "Comment": "环境"
+      },
+      {
+        "Name": "system",
+        "MapType": "System.String",
+        "Comment": "应用系统"
+      },
+      {
+        "Name": "device_type",
+        "MapType": "System.String",
+        "Comment": "设备类型"
+      },
+      {
+        "Name": "ip",
+        "MapType": "System.String",
+        "Comment": "行为发生时ip地址"
+      },
+      {
+        "Name": "device_model",
+        "MapType": "System.String",
+        "Comment": "设备型号"
+      },
+      {
+        "Name": "os",
+        "MapType": "System.String",
+        "Comment": "操作系统"
+      },
+      {
+        "Name": "app_version",
+        "MapType": "System.String",
+        "Comment": "应用版本"
+      },
+      {
+        "Name": "unity_version",
+        "MapType": "System.String",
+        "Comment": "Unity版本"
+      },
+      {
+        "Name": "platform",
+        "MapType": "System.String",
+        "Comment": "Unity平台"
+      },
+      {
+        "Name": "created_time",
+        "MapType": "System.DateTime",
+        "Comment": "创建时间"
+      },
+      {
+        "Name": "nick_name",
+        "MapType": "System.String",
+        "Comment": "昵称"
+      },
+      {
+        "Name": "sub_channel",
+        "MapType": "System.String",
+        "Comment": "子渠道"
+      },
+      {
+        "Name": "server_channel",
+        "MapType": "System.String",
+        "Comment": "服务器渠道"
+      },
+      {
+        "Name": "payment",
+        "MapType": "System.String",
+        "Comment": "支付方式"
+      },
+      {
+        "Name": "device_id",
+        "MapType": "System.String",
+        "Comment": "设备ID"
+      },
+      {
+        "Name": "active_time",
+        "MapType": "System.DateTime",
+        "Comment": "激活时间"
+      },
+      {
+        "Name": "account_history_money",
+        "MapType": "System.String",
+        "Comment": "账号历史金额"
+      },
+      {
+        "Name": "role_history_money",
+        "MapType": "System.String",
+        "Comment": "角色历史金额"
+      },
+      {
+        "Name": "device_history_money",
+        "MapType": "System.String",
+        "Comment": "设备历史金额"
+      },
+      {
+        "Name": "processor_type",
+        "MapType": "System.String",
+        "Comment": "处理器类型"
+      },
+      {
+        "Name": "processor_count",
+        "MapType": "System.String",
+        "Comment": "处理器数量"
+      },
+      {
+        "Name": "processor_frequency",
+        "MapType": "System.String",
+        "Comment": "处理器频率"
+      },
+      {
+        "Name": "system_memory_size",
+        "MapType": "System.String",
+        "Comment": "系统内存大小"
+      },
+      {
+        "Name": "graphics_device_name",
+        "MapType": "System.String",
+        "Comment": "图形设备名称"
+      },
+      {
+        "Name": "graphics_device_type",
+        "MapType": "System.String",
+        "Comment": "图形设备类型"
+      },
+      {
+        "Name": "graphics_memory_size",
+        "MapType": "System.String",
+        "Comment": "图形内存大小"
+      },
+      {
+        "Name": "graphics_device_version",
+        "MapType": "System.String",
+        "Comment": "图形设备版本"
+      },
+      {
+        "Name": "graphics_shader_level",
+        "MapType": "System.String",
+        "Comment": "图形着色器级别"
+      },
+      {
+        "Name": "screen_width",
+        "MapType": "System.Int32",
+        "Comment": "屏幕宽度"
+      },
+      {
+        "Name": "screen_height",
+        "MapType": "System.Int32",
+        "Comment": "屏幕高度"
+      },
+      {
+        "Name": "screen_dpi",
+        "MapType": "System.String",
+        "Comment": "屏幕DPI"
+      },
+      {
+        "Name": "screen_refresh_rate",
+        "MapType": "System.String",
+        "Comment": "屏幕刷新率"
+      },
+      {
+        "Name": "system_language",
+        "MapType": "System.String",
+        "Comment": "系统语言"
+      },
+      {
+        "Name": "current_culture",
+        "MapType": "System.String",
+        "Comment": "当前语言"
+      },
+      {
+        "Name": "network_type",
+        "MapType": "System.String",
+        "Comment": "网络类型"
+      },
+      {
+        "Name": "latest_online_time",
+        "MapType": "System.DateTime",
+        "Comment": "最近在线时间"
+      },
+      {
+        "Name": "pillar_config_id",
+        "MapType": "System.Int64",
+        "Comment": "英雄柱配置id"
+      },
+      {
+        "Name": "grade",
+        "MapType": "System.Int64",
+        "Comment": "养成后阶级"
+      },
+      {
+        "Name": "level",
+        "MapType": "System.Int64",
+        "Comment": "养成后等级"
+      },
+      {
+        "Name": "change_value",
+        "MapType": "System.Int64",
+        "Comment": "本次变化值"
+      },
+      {
+        "Name": "cost_thing",
+        "MapType": "System.String",
+        "StringLength": 4096,
+        "Comment": "本次变化消耗资源"
+      },
+      {
+        "Name": "change_reason",
+        "MapType": "System.String",
+        "Comment": "变化原因"
+      }
+    ],
+    "Name": "client_hero_pillar_develop",
+    "Comment": "英雄柱养成"
+  }
+]
