@@ -314,6 +314,262 @@ dotnet GameFrameX.Grafana.LokiPush.dll
 - **开发环境**：`GameFrameX.Grafana.LokiPush/json/TableDescriptor.json`
 - **运行时**：`./json/TableDescriptor.json`（相对于可执行文件目录）
 
+## 📋 完整字段类型参考 (基于Template.json)
+
+以下是基于 `json/Template.json` 文件的完整字段类型定义和示例，展示了游戏数据分析中常用的所有字段类型：
+
+### 🔑 基础标识字段
+
+| 字段名 | 类型 | 说明 | 示例值 |
+|--------|------|------|--------|
+| `id` | `System.Int64` | 主ID | `1234567890123456789` |
+| `account_id` | `System.String` | 账号ID | `"user_12345"` |
+| `role_id` | `System.String` | 角色ID | `"role_67890"` |
+| `server_id` | `System.String` | 服务器ID | `"server_001"` |
+| `device_id` | `System.String` | 设备ID | `"device_abc123"` |
+
+### 🌍 地域和渠道字段
+
+| 字段名 | 类型 | 说明 | 示例值 |
+|--------|------|------|--------|
+| `country` | `System.String` | 国家 | `"CN"` |
+| `channel` | `System.String` | 渠道 | `"official"` |
+| `orig_channel` | `System.String` | 原始渠道 | `"google_play"` |
+| `sub_channel` | `System.String` | 子渠道 | `"promotion_001"` |
+| `server_channel` | `System.String` | 服务器渠道 | `"asia_server"` |
+| `domain` | `System.String` | 环境 | `"production"` |
+
+### 💰 金额相关字段
+
+| 字段名 | 类型 | 说明 | 示例值 |
+|--------|------|------|--------|
+| `account_history_money` | `System.String` | 账号历史金额 | `"999.99"` |
+| `role_history_money` | `System.String` | 角色历史金额 | `"599.99"` |
+| `device_history_money` | `System.String` | 设备历史金额 | `"1299.99"` |
+| `payment` | `System.String` | 支付方式 | `"alipay"` |
+
+### 🖥️ 系统和设备字段
+
+| 字段名 | 类型 | 说明 | 示例值 |
+|--------|------|------|--------|
+| `system` | `System.String` | 应用系统 | `"Android"` |
+| `device_type` | `System.String` | 设备类型 | `"Mobile"` |
+| `device_model` | `System.String` | 设备型号 | `"iPhone 15 Pro"` |
+| `os` | `System.String` | 操作系统 | `"iOS 17.1"` |
+| `platform` | `System.String` | Unity平台 | `"iOS"` |
+| `ip` | `System.String` | 行为发生时ip地址 | `"192.168.1.100"` |
+
+### 🔧 硬件配置字段
+
+| 字段名 | 类型 | 说明 | 示例值 |
+|--------|------|------|--------|
+| `processor_type` | `System.String` | 处理器类型 | `"Apple A17 Pro"` |
+| `processor_count` | `System.String` | 处理器数量 | `"6"` |
+| `processor_frequency` | `System.String` | 处理器频率 | `"3.78 GHz"` |
+| `system_memory_size` | `System.String` | 系统内存大小 | `"8 GB"` |
+
+### 🎮 图形设备字段
+
+| 字段名 | 类型 | 说明 | 示例值 |
+|--------|------|------|--------|
+| `graphics_device_name` | `System.String` | 图形设备名称 | `"Apple GPU"` |
+| `graphics_device_type` | `System.String` | 图形设备类型 | `"Integrated"` |
+| `graphics_memory_size` | `System.String` | 图形内存大小 | `"Shared"` |
+| `graphics_device_version` | `System.String` | 图形设备版本 | `"Metal"` |
+| `graphics_shader_level` | `System.String` | 图形着色器级别 | `"50"` |
+
+### 📱 屏幕相关字段
+
+| 字段名 | 类型 | 说明 | 示例值 |
+|--------|------|------|--------|
+| `screen_width` | `System.Int32` | 屏幕宽度 | `1920` |
+| `screen_height` | `System.Int32` | 屏幕高度 | `1080` |
+| `screen_dpi` | `System.String` | 屏幕DPI | `"460"` |
+| `screen_refresh_rate` | `System.String` | 屏幕刷新率 | `"120Hz"` |
+
+### 🌐 语言和网络字段
+
+| 字段名 | 类型 | 说明 | 示例值 |
+|--------|------|------|--------|
+| `system_language` | `System.String` | 系统语言 | `"zh-CN"` |
+| `current_culture` | `System.String` | 当前语言 | `"zh-Hans-CN"` |
+| `network_type` | `System.String` | 网络类型 | `"WiFi"` |
+
+### 📅 时间相关字段
+
+| 字段名 | 类型 | 说明 | 示例值 |
+|--------|------|------|--------|
+| `server_open_time` | `System.DateTime` | 服务器开服时间 | `"2024-01-01T00:00:00Z"` |
+| `created_time` | `System.DateTime` | 创建时间 | `"2024-01-15T12:30:45Z"` |
+| `active_time` | `System.DateTime` | 激活时间 | `"2024-01-15T12:00:00Z"` |
+| `latest_online_time` | `System.DateTime` | 最近在线时间 | `"2024-01-15T15:30:00Z"` |
+
+### 🎯 版本和应用字段
+
+| 字段名 | 类型 | 说明 | 示例值 |
+|--------|------|------|--------|
+| `app_version` | `System.String` | 应用版本 | `"1.2.3"` |
+| `unity_version` | `System.String` | Unity版本 | `"2023.3.0f1"` |
+| `nick_name` | `System.String` | 昵称 | `"玩家昵称"` |
+
+### 🎲 游戏业务字段 (示例：古宝系统)
+
+| 字段名 | 类型 | 说明 | 示例值 |
+|--------|------|------|--------|
+| `relic_id` | `System.Int32` | 古宝ID | `10001` |
+| `change_reason` | `System.Int32` | 变化原因 | `1` |
+| `level` | `System.Int32` | 古宝等级 | `5` |
+| `star` | `System.Int32` | 古宝星数 | `3` |
+| `relic_quality` | `System.String` | 古宝品质 | `"Epic"` |
+| `cost` | `System.String` | 本次变化消耗资源 | `"{\"gold\":1000,\"gems\":50}"` |
+
+### 📝 完整表定义示例 (基于Template.json)
+
+以下是基于 `Template.json` 的完整表定义示例：
+
+```json
+{
+  "Name": "client_relic_develop",
+  "Comment": "古宝养成",
+  "Columns": [
+    {
+      "Name": "id",
+      "MapType": "System.Int64",
+      "Comment": "主ID",
+      "IsPrimary": true,
+      "IsIdentity": true,
+      "IsNullable": false,
+      "InsertValueSql": "YitIdHelper.NextId()"
+    },
+    {
+      "Name": "account_id",
+      "MapType": "System.String",
+      "Comment": "账号ID",
+      "IsNullable": false,
+      "StringLength": 50
+    },
+    {
+      "Name": "role_id",
+      "MapType": "System.String",
+      "Comment": "角色ID",
+      "IsNullable": true,
+      "StringLength": 50
+    },
+    {
+      "Name": "server_id",
+      "MapType": "System.String",
+      "Comment": "服务器ID",
+      "IsNullable": false,
+      "StringLength": 20
+    },
+    {
+      "Name": "relic_id",
+      "MapType": "System.Int32",
+      "Comment": "古宝ID",
+      "IsNullable": false
+    },
+    {
+      "Name": "change_reason",
+      "MapType": "System.Int32",
+      "Comment": "变化原因",
+      "IsNullable": false
+    },
+    {
+      "Name": "level",
+      "MapType": "System.Int32",
+      "Comment": "古宝等级",
+      "IsNullable": false
+    },
+    {
+      "Name": "star",
+      "MapType": "System.Int32",
+      "Comment": "古宝星数",
+      "IsNullable": false
+    },
+    {
+      "Name": "relic_quality",
+      "MapType": "System.String",
+      "Comment": "古宝品质",
+      "IsNullable": true,
+      "StringLength": 20
+    },
+    {
+      "Name": "cost",
+      "MapType": "System.String",
+      "Comment": "本次变化消耗资源",
+      "IsNullable": true,
+      "StringLength": 4096
+    },
+    {
+      "Name": "device_type",
+      "MapType": "System.String",
+      "Comment": "设备类型",
+      "IsNullable": true,
+      "StringLength": 20
+    },
+    {
+      "Name": "system",
+      "MapType": "System.String",
+      "Comment": "应用系统",
+      "IsNullable": true,
+      "StringLength": 50
+    },
+    {
+      "Name": "app_version",
+      "MapType": "System.String",
+      "Comment": "应用版本",
+      "IsNullable": true,
+      "StringLength": 20
+    },
+    {
+      "Name": "screen_width",
+      "MapType": "System.Int32",
+      "Comment": "屏幕宽度",
+      "IsNullable": true
+    },
+    {
+      "Name": "screen_height",
+      "MapType": "System.Int32",
+      "Comment": "屏幕高度",
+      "IsNullable": true
+    },
+    {
+      "Name": "network_type",
+      "MapType": "System.String",
+      "Comment": "网络类型",
+      "IsNullable": true,
+      "StringLength": 20
+    },
+    {
+      "Name": "created_time",
+      "MapType": "System.DateTime",
+      "Comment": "创建时间",
+      "IsNullable": false,
+      "ServerTime": "Utc"
+    }
+  ]
+}
+```
+
+### 🎯 字段使用建议
+
+1. **必填字段**：`id`、`account_id`、`server_id`、`created_time` 建议设为必填
+2. **字符串长度**：根据实际数据长度合理设置 `StringLength`
+3. **索引优化**：为常用查询字段（如 `account_id`、`role_id`、`server_id`）添加索引
+4. **时间字段**：统一使用 UTC 时间，设置 `ServerTime` 为 `"Utc"`
+5. **JSON数据**：对于复杂数据（如 `cost` 字段），使用JSON格式存储，设置足够的字符串长度
+
+### 📊 数据类型映射表
+
+| .NET类型 | PostgreSQL类型 | 说明 | 最大值/长度 |
+|----------|----------------|------|-------------|
+| `System.Int64` | `bigint` | 64位整数 | -9,223,372,036,854,775,808 到 9,223,372,036,854,775,807 |
+| `System.Int32` | `integer` | 32位整数 | -2,147,483,648 到 2,147,483,647 |
+| `System.String` | `varchar(n)` | 可变长字符串 | 根据 `StringLength` 设置 |
+| `System.DateTime` | `timestamp` | 时间戳 | 精确到微秒 |
+| `System.Boolean` | `boolean` | 布尔值 | true/false |
+| `System.Decimal` | `numeric` | 高精度数值 | 根据 `Precision` 和 `Scale` 设置 |
+
 ### 标准字段
 
 每个事件表都包含以下标准字段：
