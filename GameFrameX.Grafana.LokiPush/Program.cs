@@ -50,60 +50,54 @@ static LauncherOptions MergeOptionsWithEnvironment(LauncherOptions? cmdOptions)
     {
         options.ConnectionString = Environment.GetEnvironmentVariable("DATABASE_CONNECTION_STRING");
     }
-
-    // 批处理大小：命令行 > 环境变量 > 默认值
-    if (cmdOptions?.BatchSize == 100) // 默认值，检查环境变量
+    if (int.TryParse(Environment.GetEnvironmentVariable("BATCH_SIZE"), out var envBatchSize))
     {
-        if (int.TryParse(Environment.GetEnvironmentVariable("BATCH_SIZE"), out var envBatchSize))
-        {
-            options.BatchSize = envBatchSize;
-        }
+        options.BatchSize = envBatchSize;
+    }else
+    {
+        options.BatchSize = 100; // 保持默认值
     }
 
-    // 刷新间隔：命令行 > 环境变量 > 默认值
-    if (cmdOptions?.FlushIntervalSeconds == 30) // 默认值，检查环境变量
+    if (int.TryParse(Environment.GetEnvironmentVariable("FLUSH_INTERVAL_SECONDS"), out var envFlushInterval))
     {
-        if (int.TryParse(Environment.GetEnvironmentVariable("FLUSH_INTERVAL_SECONDS"), out var envFlushInterval))
-        {
-            options.FlushIntervalSeconds = envFlushInterval;
-        }
+        options.FlushIntervalSeconds = envFlushInterval;
     }
-
-    // 最大队列大小：命令行 > 环境变量 > 默认值
-    if (cmdOptions?.MaxQueueSize == 10000) // 默认值，检查环境变量
+    else
     {
-        if (int.TryParse(Environment.GetEnvironmentVariable("MAX_QUEUE_SIZE"), out var envMaxQueue))
-        {
-            options.MaxQueueSize = envMaxQueue;
-        }
+        options.FlushIntervalSeconds = 30; // 保持默认值
     }
-
-    // 端口：命令行 > 环境变量 > 默认值
-    if (cmdOptions?.Port == 5000) // 默认值，检查环境变量
+    if (int.TryParse(Environment.GetEnvironmentVariable("MAX_QUEUE_SIZE"), out var envMaxQueueSize))
     {
-        if (int.TryParse(Environment.GetEnvironmentVariable("HTTP_PORT"), out var envPort))
-        {
-            options.Port = envPort;
-        }
+        options.MaxQueueSize = envMaxQueueSize;
     }
-
-    // 环境：命令行 > 环境变量 > 默认值
-    if (cmdOptions?.Environment == "Production") // 默认值，检查环境变量
+    else
     {
-        var envEnvironment = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT");
-        if (!string.IsNullOrEmpty(envEnvironment))
-        {
-            options.Environment = envEnvironment;
-        }
+        options.MaxQueueSize = 10000; // 保持默认值
     }
-
-    // Verbose模式：命令行 > 环境变量 > 默认值
-    if (cmdOptions?.Verbose == false) // 默认值，检查环境变量
+   
+    if (int.TryParse(Environment.GetEnvironmentVariable("HTTP_PORT"), out var envPort))
     {
-        if (bool.TryParse(Environment.GetEnvironmentVariable("VERBOSE_LOGGING"), out var envVerbose))
-        {
-            options.Verbose = envVerbose;
-        }
+        options.Port = envPort;
+    }
+    else
+    {
+        options.Port = 5000; // 保持默认值
+    }
+    var envEnvironment = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT");
+    if (!string.IsNullOrEmpty(envEnvironment))
+    {
+        options.Environment = envEnvironment;
+    }
+    else
+    {
+        options.Environment = "Production"; // 默认值
+    }
+    if (bool.TryParse(Environment.GetEnvironmentVariable("VERBOSE_LOGGING"), out var envVerbose))
+    {
+        options.Verbose = envVerbose;
+    }else
+    {
+        options.Verbose = false; // 默认值
     }
 
     return options;

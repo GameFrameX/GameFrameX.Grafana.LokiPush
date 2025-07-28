@@ -10,10 +10,10 @@ public class LauncherOptions
     [Option("connection", Required = false, HelpText = "数据库连接字符串")]
     public string? ConnectionString { get; set; }
 
-    [Option("batch-size", Required = false, Default = 2, HelpText = "批处理大小")]
+    [Option("batch-size", Required = false, Default = 100, HelpText = "批处理大小")]
     public int BatchSize { get; set; }
 
-    [Option("flush-interval", Required = false, Default = 10, HelpText = "刷新间隔（秒）")]
+    [Option("flush-interval", Required = false, Default = 5, HelpText = "刷新间隔（秒）")]
     public int FlushIntervalSeconds { get; set; }
 
     [Option("max-queue", Required = false, Default = 10000, HelpText = "最大队列大小")]

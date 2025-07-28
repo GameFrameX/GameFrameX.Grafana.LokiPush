@@ -129,8 +129,7 @@ public class BatchProcessingService : IBatchProcessingService, IHostedService, I
                 
                 if (success)
                 {
-                    _logger.LogInformation("批次处理成功，已处理 {Count} 条日志，剩余队列: {Remaining}", 
-                        batch.Count, _logQueue.Count);
+                    _logger.LogInformation("批次处理成功，已处理 {Count} 条日志，剩余队列: {Remaining}", batch.Count, _logQueue.Count);
                 }
                 else
                 {
