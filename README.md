@@ -99,33 +99,34 @@ curl http://localhost:5000/loki/api/v1/info
 ### 配置优先级
 
 配置参数按以下优先级顺序生效（从高到低）：
+
 1. **命令行参数** - 最高优先级
-2. **环境变量** - 中等优先级  
+2. **环境变量** - 中等优先级
 3. **配置文件** - 最低优先级
 
 ### 命令行参数
 
-| 参数 | 默认值 | 说明 |
-|------|--------|------|
-| `--connection` | - | 数据库连接字符串 |
-| `--batch-size` | 100 | 批处理大小 |
-| `--flush-interval` | 30 | 刷新间隔（秒） |
-| `--max-queue` | 10000 | 最大队列大小 |
-| `--port` | 5000 | HTTP服务端口 |
-| `--environment` | Production | 运行环境 |
-| `--verbose` | false | 启用详细日志 |
-| `--help` | false | 显示帮助信息 |
+| 参数               | 默认值     | 说明             |
+| ------------------ | ---------- | ---------------- |
+| `--connection`     | -          | 数据库连接字符串 |
+| `--batch-size`     | 100        | 批处理大小       |
+| `--flush-interval` | 30         | 刷新间隔（秒）   |
+| `--max-queue`      | 10000      | 最大队列大小     |
+| `--port`           | 5000       | HTTP 服务端口    |
+| `--environment`    | Production | 运行环境         |
+| `--verbose`        | false      | 启用详细日志     |
+| `--help`           | false      | 显示帮助信息     |
 
 ### 环境变量
 
-| 环境变量 | 说明 | 示例值 |
-|---------|------|--------|
+| 环境变量                     | 说明             | 示例值                                                                            |
+| ---------------------------- | ---------------- | --------------------------------------------------------------------------------- |
 | `DATABASE_CONNECTION_STRING` | 数据库连接字符串 | `Host=localhost;Port=5432;Database=loki_logs;Username=postgres;Password=password` |
-| `BATCH_SIZE` | 批处理大小 | `100` |
-| `FLUSH_INTERVAL_SECONDS` | 刷新间隔（秒） | `30` |
-| `MAX_QUEUE_SIZE` | 最大队列大小 | `10000` |
-| `ASPNETCORE_ENVIRONMENT` | 运行环境 | `Production` |
-| `ASPNETCORE_URLS` | 监听地址 | `http://+:5000` |
+| `BATCH_SIZE`                 | 批处理大小       | `100`                                                                             |
+| `FLUSH_INTERVAL_SECONDS`     | 刷新间隔（秒）   | `30`                                                                              |
+| `MAX_QUEUE_SIZE`             | 最大队列大小     | `10000`                                                                           |
+| `ASPNETCORE_ENVIRONMENT`     | 运行环境         | `Production`                                                                      |
+| `ASPNETCORE_URLS`            | 监听地址         | `http://+:5000`                                                                   |
 
 ### 配置示例
 
@@ -155,13 +156,163 @@ dotnet GameFrameX.Grafana.LokiPush.dll
 
 ### 表结构配置
 
-项目使用 `json/TableDescriptor.json` 文件定义数据库表结构。该文件包含了游戏中各种事件的表定义，如：
+项目使用 `json/TableDescriptor.json` 文件定义数据库表结构。该文件基于 [FreeSql.Extensions.ZeroEntity](https://github.com/dotnetcore/FreeSql/blob/d94724ca79a6f1344d100ce967c573b64eedf60d/Extensions/FreeSql.Extensions.ZeroEntity/ZeroDescriptor.cs) <mcreference link="https://github.com/dotnetcore/FreeSql/blob/d94724ca79a6f1344d100ce967c573b64eedf60d/Extensions/FreeSql.Extensions.ZeroEntity/ZeroDescriptor.cs" index="0">0</mcreference> 的 `TableDescriptor` 和 `ColumnDescriptor` 类型定义，包含了游戏中各种事件的表定义，如：
 
 - **client_start** - 游戏启动事件
 - **client_user_login** - 用户登录事件
 - **client_user_register** - 用户注册事件
 - **client_start_patch_init** - 补丁初始化事件
 - **client_start_patch_done** - 补丁完成事件
+
+### JSON数据结构定义规则
+
+#### TableDescriptor 结构
+
+每个表定义遵循以下JSON结构：
+
+```json
+{
+  "Name": "表名",
+  "Comment": "表注释",
+  "Columns": [
+    // ColumnDescriptor 数组
+  ]
+}
+```
+
+**字段说明：**
+
+| 字段名 | 类型 | 必填 | 说明 |
+|--------|------|------|------|
+| `Name` | `string` | ✅ | 表名，对应数据库中的表名 |
+| `Comment` | `string` | ❌ | 表的中文注释，用于说明表的用途 |
+| `Columns` | `ColumnDescriptor[]` | ✅ | 列定义数组，包含表中所有字段的定义 |
+
+#### ColumnDescriptor 结构
+
+每个字段定义遵循以下JSON结构：
+
+```json
+{
+  "Name": "字段名",
+  "MapType": "System.String",
+  "Comment": "字段注释",
+  "IsPrimary": false,
+  "IsIdentity": false,
+  "IsNullable": true,
+  "StringLength": 255,
+  "Precision": 0,
+  "Scale": 0,
+  "ServerTime": "Unspecified",
+  "IsVersion": false,
+  "InsertValueSql": null
+}
+```
+
+**字段说明：**
+
+| 字段名 | 类型 | 必填 | 默认值 | 说明 |
+|--------|------|------|--------|------|
+| `Name` | `string` | ✅ | - | 字段名，对应数据库列名 |
+| `MapType` | `string` | ✅ | - | .NET类型映射，如 `System.String`、`System.Int64`、`System.DateTime` |
+| `Comment` | `string` | ❌ | `null` | 字段的中文注释说明 |
+| `IsPrimary` | `bool` | ❌ | `false` | 是否为主键字段 |
+| `IsIdentity` | `bool` | ❌ | `false` | 是否为自增字段 |
+| `IsNullable` | `bool` | ❌ | `true` | 是否允许为空值 |
+| `StringLength` | `int` | ❌ | `255` | 字符串类型的最大长度限制 |
+| `Precision` | `int` | ❌ | `0` | 数值类型的总位数（精度） |
+| `Scale` | `int` | ❌ | `0` | 数值类型的小数位数 |
+| `ServerTime` | `string` | ❌ | `"Unspecified"` | 时间类型的服务器时区设置 |
+| `IsVersion` | `bool` | ❌ | `false` | 是否为版本控制字段 |
+| `InsertValueSql` | `string` | ❌ | `null` | 插入时的SQL表达式，如 `"YitIdHelper.NextId()"` |
+
+#### 支持的数据类型
+
+| .NET类型 | 说明 | 示例值 |
+|----------|------|--------|
+| `System.Int64` | 64位整数 | `1234567890123456789` |
+| `System.Int32` | 32位整数 | `1920` |
+| `System.String` | 字符串 | `"用户名"` |
+| `System.DateTime` | 日期时间 | `"2024-01-01T12:00:00Z"` |
+| `System.Boolean` | 布尔值 | `true` |
+| `System.Decimal` | 高精度小数 | `99.99` |
+| `System.Double` | 双精度浮点数 | `3.14159` |
+
+### 完整示例
+
+以下是一个完整的表定义示例：
+
+```json
+{
+  "Name": "client_user_login",
+  "Comment": "用户登录事件",
+  "Columns": [
+    {
+      "Name": "id",
+      "MapType": "System.Int64",
+      "Comment": "主键ID",
+      "IsPrimary": true,
+      "IsIdentity": true,
+      "IsNullable": false,
+      "InsertValueSql": "YitIdHelper.NextId()"
+    },
+    {
+      "Name": "account_id",
+      "MapType": "System.String",
+      "Comment": "账号ID",
+      "IsNullable": false,
+      "StringLength": 50
+    },
+    {
+      "Name": "role_id",
+      "MapType": "System.String",
+      "Comment": "角色ID",
+      "IsNullable": true,
+      "StringLength": 50
+    },
+    {
+      "Name": "server_id",
+      "MapType": "System.String",
+      "Comment": "服务器ID",
+      "IsNullable": false,
+      "StringLength": 20
+    },
+    {
+      "Name": "login_time",
+      "MapType": "System.DateTime",
+      "Comment": "登录时间",
+      "IsNullable": false,
+      "ServerTime": "Utc"
+    },
+    {
+      "Name": "ip_address",
+      "MapType": "System.String",
+      "Comment": "登录IP地址",
+      "IsNullable": true,
+      "StringLength": 45
+    },
+    {
+      "Name": "device_type",
+      "MapType": "System.String",
+      "Comment": "设备类型",
+      "IsNullable": true,
+      "StringLength": 20
+    },
+    {
+      "Name": "created_time",
+      "MapType": "System.DateTime",
+      "Comment": "记录创建时间",
+      "IsNullable": false,
+      "ServerTime": "Utc"
+    }
+  ]
+}
+```
+
+### 配置文件位置
+
+- **开发环境**：`GameFrameX.Grafana.LokiPush/json/TableDescriptor.json`
+- **运行时**：`./json/TableDescriptor.json`（相对于可执行文件目录）
 
 ### 标准字段
 
@@ -285,8 +436,14 @@ docker run -d \
         "level": "info"
       },
       "values": [
-        ["1640995200000000000", "{\"event\":\"user_login\",\"user_id\":\"12345\",\"server_id\":\"s1\"}"],
-        ["1640995201000000000", "{\"event\":\"user_logout\",\"user_id\":\"12345\",\"server_id\":\"s1\"}"]
+        [
+          "1640995200000000000",
+          "{\"event\":\"user_login\",\"user_id\":\"12345\",\"server_id\":\"s1\"}"
+        ],
+        [
+          "1640995201000000000",
+          "{\"event\":\"user_logout\",\"user_id\":\"12345\",\"server_id\":\"s1\"}"
+        ]
       ]
     }
   ]
