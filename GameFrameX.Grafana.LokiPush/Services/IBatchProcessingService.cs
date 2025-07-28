@@ -8,9 +8,38 @@ using GameFrameX.Grafana.LokiPush.Models;
 
 namespace GameFrameX.Grafana.LokiPush.Services;
 
+/// <summary>
+/// 批处理服务接口，定义了日志批量处理的核心操作
+/// </summary>
 public interface IBatchProcessingService
 {
+    /// <summary>
+    /// 添加日志到批处理队列
+    /// </summary>
+    /// <param name="logs">待处理的日志条目列表</param>
+    /// <remarks>
+    /// 该方法会将日志添加到内存队列中，当队列达到批处理大小或超时时会自动触发批量插入操作。
+    /// 如果队列已满，会强制触发一次批处理以释放空间。
+    /// </remarks>
     void AddLogs(List<PendingLogEntry> logs);
+    
+    /// <summary>
+    /// 异步启动批处理服务
+    /// </summary>
+    /// <param name="cancellationToken">取消令牌，用于取消启动操作</param>
+    /// <returns>表示异步操作的任务</returns>
+    /// <remarks>
+    /// 启动后会创建定时器，定期处理队列中的日志数据。
+    /// </remarks>
     Task StartAsync(CancellationToken cancellationToken);
+    
+    /// <summary>
+    /// 异步停止批处理服务
+    /// </summary>
+    /// <param name="cancellationToken">取消令牌，用于取消停止操作</param>
+    /// <returns>表示异步操作的任务</returns>
+    /// <remarks>
+    /// 停止时会处理队列中剩余的所有日志数据，确保数据不丢失。
+    /// </remarks>
     Task StopAsync(CancellationToken cancellationToken);
 }

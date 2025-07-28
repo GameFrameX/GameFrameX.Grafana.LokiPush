@@ -8,8 +8,30 @@ using GameFrameX.Grafana.LokiPush.Models;
 
 namespace GameFrameX.Grafana.LokiPush.Services;
 
+/// <summary>
+/// 数据库服务接口，定义了日志数据存储的核心操作
+/// </summary>
 public interface IDatabaseService
 {
+    /// <summary>
+    /// 批量插入日志数据到数据库
+    /// </summary>
+    /// <param name="logs">待插入的日志条目列表，包含时间戳、内容和标签信息</param>
+    /// <returns>表示异步操作的任务，返回值指示批量插入操作是否成功</returns>
+    /// <remarks>
+    /// 该方法会根据日志中的事件名称自动选择对应的表结构进行插入。
+    /// 如果找不到匹配的表结构，则会使用默认的LokiLogEntry表进行存储。
+    /// </remarks>
     Task<bool> BatchInsertLogsAsync(List<PendingLogEntry> logs);
+    
+    /// <summary>
+    /// 异步初始化数据库，创建必要的表结构
+    /// </summary>
+    /// <returns>表示异步操作的任务</returns>
+    /// <exception cref="Exception">当数据库初始化失败时抛出异常</exception>
+    /// <remarks>
+    /// 该方法会确保数据库中存在必要的表结构，包括默认的LokiLogEntry表。
+    /// 通常在应用程序启动时调用一次。
+    /// </remarks>
     Task InitializeDatabaseAsync();
 }

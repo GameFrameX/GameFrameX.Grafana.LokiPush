@@ -8,7 +8,7 @@ namespace GameFrameX.Grafana.LokiPush.Models;
 public class LauncherOptions
 {
     [Option("connection", Required = false, HelpText = "数据库连接字符串")]
-    public string? ConnectionString { get; set; }
+    public string ConnectionString { get; set; }
 
     [Option("batch-size", Required = false, Default = 100, HelpText = "批处理大小")]
     public int BatchSize { get; set; }

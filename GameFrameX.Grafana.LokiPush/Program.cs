@@ -153,12 +153,22 @@ var freeSql = freeSqlBuilder.Build();
 
 var tableDescriptorJson = File.ReadAllText(fileTableDescriptor.FullName);
 var logEntry = JsonConvert.DeserializeObject<TableDescriptor[]>(tableDescriptorJson);
-var zeroDbContext = new ZeroDbContext(freeSql, logEntry);
-zeroDbContext.SyncStructure(logEntry);
+
+LokiZeroDbContextOptions lokiZeroDbContextOptions = new LokiZeroDbContextOptions();
+
+if (logEntry != null)
+{
+    foreach (var tableDescriptor in logEntry)
+    {
+        var zeroDbContext = new ZeroDbContext(freeSql, [tableDescriptor,]);
+        lokiZeroDbContextOptions.Options[tableDescriptor.Name] = zeroDbContext;
+        zeroDbContext.SyncStructure([tableDescriptor,]);
+    }
+}
 
 
 builder.Services.AddSingleton<IFreeSql>(freeSql);
-builder.Services.AddSingleton<ZeroDbContext>(zeroDbContext);
+builder.Services.AddSingleton<LokiZeroDbContextOptions>(lokiZeroDbContextOptions);
 
 // 注册批处理服务 - 使用合并后的配置选项
 builder.Services.Configure<BatchProcessingOptions>(batchOptions =>
