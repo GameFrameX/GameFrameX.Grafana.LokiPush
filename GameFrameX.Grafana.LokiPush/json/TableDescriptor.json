@@ -3775,7 +3775,7 @@
       },
       {
         "Name": "server_open_time",
-        "MapType": "System.DateTime",
+        "MapType": "System.String",
         "Comment": "服务器开服时间"
       },
       {
@@ -4007,7 +4007,7 @@
       },
       {
         "Name": "server_open_time",
-        "MapType": "System.DateTime",
+        "MapType": "System.String",
         "Comment": "服务器开服时间"
       },
       {
@@ -4264,7 +4264,7 @@
       },
       {
         "Name": "server_open_time",
-        "MapType": "System.DateTime",
+        "MapType": "System.String",
         "Comment": "服务器开服时间"
       },
       {
