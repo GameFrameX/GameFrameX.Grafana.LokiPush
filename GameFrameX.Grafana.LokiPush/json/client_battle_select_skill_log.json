@@ -1,5 +1,5 @@
 {
-  "Name": "client_skill_log",
+  "Name": "client_battle_select_skill_log",
   "Comment": "局内技能选择",
   "Columns": [
     {

@@ -1,6 +1,6 @@
 {
-  "Name": "client_battle_auto",
-  "Comment": "自动战斗",
+  "Name": "client_battle_boss_result",
+  "Comment": "部落BOSS战报",
   "Fields": [
     {
       "Name": "id",
@@ -223,24 +223,25 @@
       "Comment": "最近在线时间"
     },
     {
-      "Name": "battle_type",
+      "FieldName": "battle_type",
       "MapType": "System.String",
+      "StringLength": 255,
       "Comment": "战斗类型"
     },
     {
-      "Name": "map_id",
+      "FieldName": "map_id",
       "MapType": "System.Int32",
-      "Comment": "关卡id"
+      "Comment": "BOSS_ID"
     },
     {
-      "Name": "select_mode",
-      "MapType": "System.Int32",
-      "Comment": "优先级设置"
+      "FieldName": "battle_value",
+      "MapType": "System.Int64",
+      "Comment": "战斗结果"
     },
     {
-      "Name": "seconds",
+      "FieldName": "battle_time",
       "MapType": "System.Int32",
-      "Comment": "等待时间"
-    }    
+      "Comment": "战斗时间(秒)"
+    }
   ]
 }

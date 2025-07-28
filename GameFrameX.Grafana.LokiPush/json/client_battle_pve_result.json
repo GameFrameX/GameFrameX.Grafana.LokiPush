@@ -1,5 +1,5 @@
 {
-  "Name": "client_pve_battle_result",
+  "Name": "client_battle_pve_result",
   "Comment": "PVE战报",
   "Columns": [
     {
@@ -235,7 +235,7 @@
     {
       "Name": "hero_list",
       "MapType": "System.String",
-      "StringLength": 8192,
+      "StringLength": 4096,
       "Comment": "所带英雄阵容一个长JSON"
     },
     {

@@ -1,6 +1,6 @@
 {
   "Name": "client_start_patch_init",
-  "Comment": "开始补丁初始化",
+  "Comment": "热更新资源开始",
   "Columns": [
     {
       "Name": "id",

@@ -1,7 +1,7 @@
 {
-  "Name": "client_battle_auto",
-  "Comment": "自动战斗",
-  "Fields": [
+  "Name": "client_end_load_hotfix_dll",
+  "Comment": "热更新动态库加载结束",
+  "Columns": [
     {
       "Name": "id",
       "MapType": "System.Int64",
@@ -221,26 +221,6 @@
       "Name": "latest_online_time",
       "MapType": "System.DateTime",
       "Comment": "最近在线时间"
-    },
-    {
-      "Name": "battle_type",
-      "MapType": "System.String",
-      "Comment": "战斗类型"
-    },
-    {
-      "Name": "map_id",
-      "MapType": "System.Int32",
-      "Comment": "关卡id"
-    },
-    {
-      "Name": "select_mode",
-      "MapType": "System.Int32",
-      "Comment": "优先级设置"
-    },
-    {
-      "Name": "seconds",
-      "MapType": "System.Int32",
-      "Comment": "等待时间"
-    }    
+    }
   ]
 }
