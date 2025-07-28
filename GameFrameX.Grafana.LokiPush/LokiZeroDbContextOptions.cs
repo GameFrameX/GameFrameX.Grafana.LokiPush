@@ -10,7 +10,7 @@ namespace GameFrameX.Grafana.LokiPush;
 
 public class LokiZeroDbContextOptions
 {
-    public Dictionary<string, ZeroDbContext> Options { get; set; }
+    public Dictionary<string, ZeroDbContext> Options { get; set; } = new Dictionary<string, ZeroDbContext>();
 
     public bool GetDbContext(string name, out ZeroDbContext option)
     {
