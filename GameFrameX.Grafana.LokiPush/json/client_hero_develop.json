@@ -1,4 +1,6 @@
 {
+  "Name": "client_hero_develop",
+  "Comment": "英雄养成",
   "Columns": [
     {
       "Name": "id",
@@ -211,47 +213,50 @@
       "Comment": "当前语言"
     },
     {
-      "Name": "relic_id",
-      "MapType": "System.Int32",
-      "Comment": "古宝ID"
-    },
-    {
-      "Name": "change_reason",
-      "MapType": "System.Int32",
-      "Comment": "变化原因"
-    },
-    {
-      "Name": "level",
-      "MapType": "System.Int32",
-      "Comment": "古宝等级"
-    },
-    {
-      "Name": "star",
-      "MapType": "System.Int32",
-      "Comment": "古宝星数"
-    },
-    {
       "Name": "network_type",
       "MapType": "System.String",
       "Comment": "网络类型"
     },
     {
-      "Name": "relic_quality",
-      "MapType": "System.String",
-      "Comment": "古宝品质"
-    },
-    {
-      "Name": "cost",
-      "MapType": "System.String",
-      "StringLength": 4096,
-      "Comment": "本次变化消耗资源"
-    },
-    {
       "Name": "latest_online_time",
       "MapType": "System.DateTime",
       "Comment": "最近在线时间"
+    },
+    {
+      "Name": "change_reason",
+      "MapType": "System.String",
+      "Comment": "变化原因"
+    },
+    {
+      "Name": "hero_id",
+      "MapType": "System.Int64",
+      "Comment": "英雄id"
+    },
+    {
+      "Name": "hero_name",
+      "MapType": "System.String",
+      "Comment": "英雄名称"
+    },
+    {
+      "Name": "quality",
+      "MapType": "System.Int64",
+      "Comment": "养成后品质"
+    },
+    {
+      "Name": "star",
+      "MapType": "System.Int64",
+      "Comment": "养成后的星级"
+    },
+    {
+      "Name": "change_value",
+      "MapType": "System.Int64",
+      "Comment": "本次变化值，因为是升星固定1"
+    },
+    {
+      "Name": "cost_thing",
+      "MapType": "System.String",
+      "StringLength": 4096,
+      "Comment": "本次变化消耗资源，英雄养成只有升星"
     }
-  ],
-  "Name": "client_relic_develop",
-  "Comment": "古宝养成"
+  ]
 }

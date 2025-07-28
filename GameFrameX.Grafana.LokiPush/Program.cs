@@ -50,10 +50,12 @@ static LauncherOptions MergeOptionsWithEnvironment(LauncherOptions? cmdOptions)
     {
         options.ConnectionString = Environment.GetEnvironmentVariable("DATABASE_CONNECTION_STRING");
     }
+
     if (int.TryParse(Environment.GetEnvironmentVariable("BATCH_SIZE"), out var envBatchSize))
     {
         options.BatchSize = envBatchSize;
-    }else
+    }
+    else
     {
         options.BatchSize = 100; // 保持默认值
     }
@@ -66,6 +68,7 @@ static LauncherOptions MergeOptionsWithEnvironment(LauncherOptions? cmdOptions)
     {
         options.FlushIntervalSeconds = 30; // 保持默认值
     }
+
     if (int.TryParse(Environment.GetEnvironmentVariable("MAX_QUEUE_SIZE"), out var envMaxQueueSize))
     {
         options.MaxQueueSize = envMaxQueueSize;
@@ -74,7 +77,7 @@ static LauncherOptions MergeOptionsWithEnvironment(LauncherOptions? cmdOptions)
     {
         options.MaxQueueSize = 10000; // 保持默认值
     }
-   
+
     if (int.TryParse(Environment.GetEnvironmentVariable("HTTP_PORT"), out var envPort))
     {
         options.Port = envPort;
@@ -83,6 +86,7 @@ static LauncherOptions MergeOptionsWithEnvironment(LauncherOptions? cmdOptions)
     {
         options.Port = 5000; // 保持默认值
     }
+
     var envEnvironment = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT");
     if (!string.IsNullOrEmpty(envEnvironment))
     {
@@ -92,10 +96,12 @@ static LauncherOptions MergeOptionsWithEnvironment(LauncherOptions? cmdOptions)
     {
         options.Environment = "Production"; // 默认值
     }
+
     if (bool.TryParse(Environment.GetEnvironmentVariable("VERBOSE_LOGGING"), out var envVerbose))
     {
         options.Verbose = envVerbose;
-    }else
+    }
+    else
     {
         options.Verbose = false; // 默认值
     }
@@ -104,12 +110,19 @@ static LauncherOptions MergeOptionsWithEnvironment(LauncherOptions? cmdOptions)
 }
 
 // 检查 TableDescriptor.json 文件
-string filePath = "./json/TableDescriptor.json";
-var fileTableDescriptor = new FileInfo(filePath);
-if (!fileTableDescriptor.Exists)
+DirectoryInfo currentDirectory = new DirectoryInfo("./json");
+if (!currentDirectory.Exists)
 {
-    throw new FileNotFoundException($"未找到TableDescriptor.json文件。请确保该文件位于当前目录下。=> {filePath}");
+    // 如果目录不存在，创建它
+    currentDirectory.Create();
 }
+
+var fileInfos = currentDirectory.GetFiles();
+if (fileInfos.Length == 0)
+{
+    throw new FileNotFoundException("未找到任何 JSON 文件。请确保 json 目录下存在 TableDescriptor.json 文件。");
+}
+
 YitIdHelper.SetIdGenerator(new IdGeneratorOptions(10));
 var builder = WebApplication.CreateBuilder(args);
 
@@ -150,20 +163,20 @@ var freeSqlBuilder = new FreeSqlBuilder()
                      .UseNoneCommandParameter(true);
 
 var freeSql = freeSqlBuilder.Build();
-
-var tableDescriptorJson = File.ReadAllText(fileTableDescriptor.FullName);
-var logEntry = JsonConvert.DeserializeObject<TableDescriptor[]>(tableDescriptorJson);
-
 LokiZeroDbContextOptions lokiZeroDbContextOptions = new LokiZeroDbContextOptions();
-
-if (logEntry != null)
+foreach (var fileInfo in fileInfos)
 {
-    foreach (var tableDescriptor in logEntry)
+    var tableDescriptorJson = File.ReadAllText(fileInfo.FullName);
+    var tableDescriptor = JsonConvert.DeserializeObject<TableDescriptor>(tableDescriptorJson);
+    if (tableDescriptor == null || tableDescriptor.Columns.Count == 0)
     {
-        var zeroDbContext = new ZeroDbContext(freeSql, [tableDescriptor,]);
-        lokiZeroDbContextOptions.Options[tableDescriptor.Name] = zeroDbContext;
-        zeroDbContext.SyncStructure([tableDescriptor,]);
+        Console.WriteLine($"跳过无效的表描述文件: {fileInfo.Name}");
+        continue;
     }
+
+    var zeroDbContext = new ZeroDbContext(freeSql, [tableDescriptor,]);
+    lokiZeroDbContextOptions.Options[tableDescriptor.Name] = zeroDbContext;
+    zeroDbContext.SyncStructure([tableDescriptor,]);
 }
 
 

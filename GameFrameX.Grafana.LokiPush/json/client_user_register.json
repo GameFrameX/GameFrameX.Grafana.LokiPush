@@ -6,6 +6,11 @@
       "Comment": "主ID"
     },
     {
+      "Name": "type",
+      "MapType": "System.String",
+      "Comment": "类型"
+    },
+    {
       "Name": "account_id",
       "MapType": "System.String",
       "Comment": "账号ID"
@@ -211,40 +216,9 @@
       "Comment": "当前语言"
     },
     {
-      "Name": "relic_id",
-      "MapType": "System.Int32",
-      "Comment": "古宝ID"
-    },
-    {
-      "Name": "change_reason",
-      "MapType": "System.Int32",
-      "Comment": "变化原因"
-    },
-    {
-      "Name": "level",
-      "MapType": "System.Int32",
-      "Comment": "古宝等级"
-    },
-    {
-      "Name": "star",
-      "MapType": "System.Int32",
-      "Comment": "古宝星数"
-    },
-    {
       "Name": "network_type",
       "MapType": "System.String",
       "Comment": "网络类型"
-    },
-    {
-      "Name": "relic_quality",
-      "MapType": "System.String",
-      "Comment": "古宝品质"
-    },
-    {
-      "Name": "cost",
-      "MapType": "System.String",
-      "StringLength": 4096,
-      "Comment": "本次变化消耗资源"
     },
     {
       "Name": "latest_online_time",
@@ -252,6 +226,6 @@
       "Comment": "最近在线时间"
     }
   ],
-  "Name": "client_relic_develop",
-  "Comment": "古宝养成"
+  "Name": "client_user_register",
+  "Comment": "用户注册"
 }

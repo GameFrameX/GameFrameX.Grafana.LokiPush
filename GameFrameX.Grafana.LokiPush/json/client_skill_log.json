@@ -1,4 +1,6 @@
 {
+  "Name": "client_skill_log",
+  "Comment": "局内技能选择",
   "Columns": [
     {
       "Name": "id",
@@ -211,47 +213,59 @@
       "Comment": "当前语言"
     },
     {
-      "Name": "relic_id",
-      "MapType": "System.Int32",
-      "Comment": "古宝ID"
-    },
-    {
-      "Name": "change_reason",
-      "MapType": "System.Int32",
-      "Comment": "变化原因"
-    },
-    {
-      "Name": "level",
-      "MapType": "System.Int32",
-      "Comment": "古宝等级"
-    },
-    {
-      "Name": "star",
-      "MapType": "System.Int32",
-      "Comment": "古宝星数"
-    },
-    {
       "Name": "network_type",
       "MapType": "System.String",
       "Comment": "网络类型"
     },
     {
-      "Name": "relic_quality",
-      "MapType": "System.String",
-      "Comment": "古宝品质"
-    },
-    {
-      "Name": "cost",
-      "MapType": "System.String",
-      "StringLength": 4096,
-      "Comment": "本次变化消耗资源"
-    },
-    {
       "Name": "latest_online_time",
       "MapType": "System.DateTime",
       "Comment": "最近在线时间"
+    },
+    {
+      "Name": "battle_type",
+      "MapType": "System.String",
+      "Comment": "战斗类型"
+    },
+    {
+      "Name": "map_id",
+      "MapType": "System.Int32",
+      "Comment": "关卡id"
+    },
+    {
+      "Name": "hero_id",
+      "MapType": "System.Int32",
+      "Comment": "英雄id"
+    },
+    {
+      "Name": "hero_name",
+      "MapType": "System.String",
+      "Comment": "英雄名称"
+    },
+    {
+      "Name": "hero_level",
+      "MapType": "System.Int32",
+      "Comment": "英雄等级"
+    },
+    {
+      "Name": "skill_id",
+      "MapType": "System.Int32",
+      "Comment": "技能id"
+    },
+    {
+      "Name": "skill_lv",
+      "MapType": "System.Int32",
+      "Comment": "技能强化次数"
+    },
+    {
+      "Name": "recommend_skill",
+      "MapType": "System.Int32",
+      "Comment": "是否推荐技能"
+    },
+    {
+      "Name": "popup_time",
+      "MapType": "System.Int32",
+      "Comment": "技能弹出时间"
     }
-  ],
-  "Name": "client_relic_develop",
-  "Comment": "古宝养成"
+  ]
 }

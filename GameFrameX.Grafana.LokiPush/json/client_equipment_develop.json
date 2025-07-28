@@ -1,4 +1,6 @@
 {
+  "Name": "client_equipment_develop",
+  "Comment": "装备养成",
   "Columns": [
     {
       "Name": "id",
@@ -211,47 +213,74 @@
       "Comment": "当前语言"
     },
     {
-      "Name": "relic_id",
-      "MapType": "System.Int32",
-      "Comment": "古宝ID"
-    },
-    {
-      "Name": "change_reason",
-      "MapType": "System.Int32",
-      "Comment": "变化原因"
-    },
-    {
-      "Name": "level",
-      "MapType": "System.Int32",
-      "Comment": "古宝等级"
-    },
-    {
-      "Name": "star",
-      "MapType": "System.Int32",
-      "Comment": "古宝星数"
-    },
-    {
       "Name": "network_type",
       "MapType": "System.String",
       "Comment": "网络类型"
     },
     {
-      "Name": "relic_quality",
-      "MapType": "System.String",
-      "Comment": "古宝品质"
-    },
-    {
-      "Name": "cost",
-      "MapType": "System.String",
-      "StringLength": 4096,
-      "Comment": "本次变化消耗资源"
-    },
-    {
       "Name": "latest_online_time",
       "MapType": "System.DateTime",
       "Comment": "最近在线时间"
+    },
+    {
+      "Name": "equipment_uid",
+      "MapType": "System.Int64",
+      "Comment": "养成前装备唯一id"
+    },
+    {
+      "Name": "equipment_uid_after",
+      "MapType": "System.Int64",
+      "Comment": "养成后装备唯一id"
+    },
+    {
+      "Name": "equipment_config_id",
+      "MapType": "System.Int64",
+      "Comment": "装备配置id"
+    },
+    {
+      "Name": "equipment_config_id_after",
+      "MapType": "System.Int64",
+      "Comment": "养成后装备配置id"
+    },
+    {
+      "Name": "quality",
+      "MapType": "System.Int64",
+      "Comment": "养成前品质"
+    },
+    {
+      "Name": "quality_after",
+      "MapType": "System.Int64",
+      "Comment": "养成后品质"
+    },
+    {
+      "Name": "star",
+      "MapType": "System.Int64",
+      "Comment": "养成前星级"
+    },
+    {
+      "Name": "star_after",
+      "MapType": "System.Int64",
+      "Comment": "养成后星级"
+    },
+    {
+      "Name": "change_value",
+      "MapType": "System.Int64",
+      "Comment": "本次变化值"
+    },
+    {
+      "Name": "change_reason",
+      "MapType": "System.String",
+      "Comment": "变化原因"
+    },
+    {
+      "Name": "equipment_name",
+      "MapType": "System.String",
+      "Comment": "装备名称"
+    },
+    {
+      "Name": "equipment_name_after",
+      "MapType": "System.String",
+      "Comment": "养成后装备名称"
     }
-  ],
-  "Name": "client_relic_develop",
-  "Comment": "古宝养成"
+  ]
 }
