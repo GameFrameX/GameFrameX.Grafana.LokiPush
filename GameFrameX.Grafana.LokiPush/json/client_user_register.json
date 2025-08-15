@@ -54,7 +54,7 @@
       "Name": "location_city",
       "MapType": "System.String",
       "Comment": "城市"
-    }
+    },
     {
       "Name": "channel",
       "MapType": "System.String",
