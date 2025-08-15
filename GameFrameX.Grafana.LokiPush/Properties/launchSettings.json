@@ -6,6 +6,7 @@
       "dotnetRunMessages": true,
       "launchBrowser": false,
       "launchUrl": "swagger",
+      "applicationUrl": "http://localhost:8080",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development",
         "ConnectionString": "Host=175.178.65.215;Port=5432;Database=loki_logs;Username=postgres;Password=lnH3BGobgAuS0vx28iMWmJPEQa5UXjFh;",
