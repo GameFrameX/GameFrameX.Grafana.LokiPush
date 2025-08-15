@@ -89,7 +89,7 @@
     },
     {
       "Name": "created_time",
-      "MapType": "System.DateTime",
+      "MapType": "System.String",
       "Comment": "创建时间"
     },
     {
@@ -119,7 +119,7 @@
     },
     {
       "Name": "active_time",
-      "MapType": "System.DateTime",
+      "MapType": "System.String",
       "Comment": "激活时间"
     },
     {
@@ -219,7 +219,7 @@
     },
     {
       "Name": "latest_online_time",
-      "MapType": "System.DateTime",
+      "MapType": "System.String",
       "Comment": "最近在线时间"
     },
     {

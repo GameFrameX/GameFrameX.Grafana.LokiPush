@@ -1,6 +1,6 @@
 {
-  "Name": "client_get_app_version_info",
-  "Comment": "客户端获取应用版本信息",
+  "Name": "client_active",
+  "Comment": "客户端激活",
   "Columns": [
     {
       "Name": "id",
@@ -221,6 +221,21 @@
       "Name": "latest_online_time",
       "MapType": "System.String",
       "Comment": "最近在线时间"
-    }
+    },
+    {
+      "Name": "node_name",
+      "MapType": "System.String",
+      "Comment": "节点名称"
+    },
+    {
+      "Name": "node_id",
+      "MapType": "System.Int32",
+      "Comment": "节点ID"
+    },
+    {
+      "Name": "event_time",
+      "MapType": "System.String",
+      "Comment": "事件触发时间"
+    }    
   ]
 }
