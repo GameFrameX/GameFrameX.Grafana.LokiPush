@@ -7,7 +7,11 @@
       "launchBrowser": false,
       "launchUrl": "swagger",
       "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development"
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "ConnectionString": "Host=175.178.65.215;Port=5432;Database=loki_logs;Username=postgres;Password=lnH3BGobgAuS0vx28iMWmJPEQa5UXjFh;",
+        "BatchSize": "1",
+        "IntervalSeconds": "10",
+        "MaxQueueSize": "10000"
       }
     }
   }
