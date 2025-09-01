@@ -69,9 +69,18 @@ foreach (var fileInfo in fileInfos)
         continue;
     }
 
-    var zeroDbContext = new ZeroDbContext(freeSql, [tableDescriptor,]);
-    lokiZeroDbContextOptions.Options[tableDescriptor.Name] = zeroDbContext;
-    zeroDbContext.SyncStructure([tableDescriptor,]);
+    try
+    {
+        var zeroDbContext = new ZeroDbContext(freeSql, [tableDescriptor]);
+        lokiZeroDbContextOptions.Options[tableDescriptor.Name] = zeroDbContext;
+        zeroDbContext.SyncStructure([tableDescriptor,]);
+    }
+    catch (Exception e)
+    {
+        Console.WriteLine("JSON File: " + fileInfo.FullName);
+        Console.WriteLine(e);
+        throw;
+    }
 }
 
 
