@@ -19,7 +19,7 @@ if (!currentDirectory.Exists)
     currentDirectory.Create();
 }
 
-var fileInfos = currentDirectory.GetFiles();
+var fileInfos = currentDirectory.GetFiles("*.json", SearchOption.AllDirectories);
 if (fileInfos.Length == 0)
 {
     throw new FileNotFoundException("未找到任何 JSON 文件。请确保 json 目录下存在 TableDescriptor.json 文件。");
