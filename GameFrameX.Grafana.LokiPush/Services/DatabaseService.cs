@@ -76,7 +76,7 @@ public class DatabaseService : IDatabaseService
                     // 添加系统字段
                     eventData["id"] = YitIdHelper.NextId();
                     eventData["created_time"] = DateTime.UtcNow;
-
+                    eventData["event_time"] = DateTimeOffset.FromUnixTimeMilliseconds(pendingLogEntry.TimestampNs / 1_000_000).UtcDateTime;
                     var isInstall = _lokiZeroDbContextOptions.GetDbContext(eventDataModel.EventName, out var zeroDbContext);
                     if (isInstall)
                     {
@@ -147,7 +147,7 @@ public class DatabaseService : IDatabaseService
             Name = eventDataModel.EventName,
             Content = eventDataModel.EventData,
             Labels = JsonHelper.Serialize(pendingLogEntry.Labels),
-            LogTime = DateTimeOffset.FromUnixTimeMilliseconds(pendingLogEntry.TimestampNs / 1_000_000).DateTime,
+            LogTime = DateTimeOffset.FromUnixTimeMilliseconds(pendingLogEntry.TimestampNs / 1_000_000).UtcDateTime,
             CreatedTime = DateTime.UtcNow
         };
 
