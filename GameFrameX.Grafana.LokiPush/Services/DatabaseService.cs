@@ -76,6 +76,8 @@ public class DatabaseService : IDatabaseService
                     // 添加系统字段
                     eventData["id"] = YitIdHelper.NextId();
                     eventData["created_time"] = DateTime.UtcNow;
+                    eventData["event_utc_time"] = DateTimeOffset.FromUnixTimeMilliseconds(pendingLogEntry.TimestampNs / 1_000_000).UtcDateTime;
+                    eventData["event_local_time"] = DateTimeOffset.FromUnixTimeMilliseconds(pendingLogEntry.TimestampNs / 1_000_000).LocalDateTime;
                     eventData["event_time"] = DateTimeOffset.FromUnixTimeMilliseconds(pendingLogEntry.TimestampNs / 1_000_000).UtcDateTime;
                     var isInstall = _lokiZeroDbContextOptions.GetDbContext(eventDataModel.EventName, out var zeroDbContext);
                     if (isInstall)
