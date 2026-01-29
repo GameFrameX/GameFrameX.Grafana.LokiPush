@@ -1,9 +1,21 @@
 {
+  "Name": "client_role_login",
+  "Comment": "角色登录",
   "Columns": [
     {
       "Name": "id",
       "MapType": "System.Int64",
       "Comment": "主ID"
+    },
+    {
+      "Name": "event_utc_time",
+      "MapType": "System.String",
+      "Comment": "utc时间"
+    },
+    {
+      "Name": "event_local_time",
+      "MapType": "System.String",
+      "Comment": "本地时间"
     },
     {
       "Name": "account_id",
@@ -112,6 +124,11 @@
     },
     {
       "Name": "created_time",
+      "MapType": "System.String",
+      "Comment": "创建时间"
+    },
+    {
+      "Name": "event_time",
       "MapType": "System.String",
       "Comment": "创建时间"
     },
@@ -241,16 +258,14 @@
       "Comment": "网络类型"
     },
     {
-      "Name": "server_id",
-      "MapType": "System.String",
-      "Comment": "服务器ID"
-    },
-    {
       "Name": "latest_online_time",
       "MapType": "System.String",
       "Comment": "最近在线时间"
+    },
+    {
+      "Name": "server_id",
+      "MapType": "System.String",
+      "Comment": "服务器ID"
     }
-  ],
-  "Name": "client_role_login",
-  "Comment": "角色登录"
+  ]
 }

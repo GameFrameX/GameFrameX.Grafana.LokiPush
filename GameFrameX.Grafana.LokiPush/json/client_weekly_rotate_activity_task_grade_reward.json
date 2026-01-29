@@ -1,6 +1,6 @@
 {
-  "Name": "client_pve_battle_log",
-  "Comment": "PVE战斗开始",
+  "Name": "client_weekly_rotate_activity_task_grade_reward.json",
+  "Comment": "玩家领取阶段奖励时",
   "Columns": [
     {
       "Name": "id",
@@ -263,20 +263,24 @@
       "Comment": "最近在线时间"
     },
     {
-      "Name": "battle_type",
-      "MapType": "System.String",
-      "Comment": "战斗类型"
+      "Name": "playerId",
+      "MapType": "System.Int64",
+      "Comment": "玩家ID"
     },
     {
-      "Name": "map_id",
+      "Name": "timestamp",
+      "MapType": "System.Int64",
+      "Comment": "时间戳"
+    },
+    {
+      "Name": "grade",
       "MapType": "System.Int32",
-      "Comment": "关卡配置id"
+      "Comment": "阶段编号"
     },
     {
-      "Name": "hero_list",
-      "MapType": "System.String",
-      "StringLength": 8192,
-      "Comment": "所带英雄阵容是一个长JSON"
+      "Name": "rewardId",
+      "MapType": "System.Int32",
+      "Comment": "奖励ID"
     }
   ]
 }

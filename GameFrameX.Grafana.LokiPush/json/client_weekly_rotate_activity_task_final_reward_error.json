@@ -1,11 +1,21 @@
 {
-  "Name": "client_active",
-  "Comment": "客户端激活",
+  "Name": "client_weekly_rotate_activity_task_final_reward_error",
+  "Comment": "终极奖励领取失败时",
   "Columns": [
     {
       "Name": "id",
       "MapType": "System.Int64",
       "Comment": "主ID"
+    },
+    {
+      "Name": "event_utc_time",
+      "MapType": "System.String",
+      "Comment": "utc时间"
+    },
+    {
+      "Name": "event_local_time",
+      "MapType": "System.String",
+      "Comment": "本地时间"
     },
     {
       "Name": "account_id",
@@ -114,6 +124,11 @@
     },
     {
       "Name": "created_time",
+      "MapType": "System.String",
+      "Comment": "创建时间"
+    },
+    {
+      "Name": "event_time",
       "MapType": "System.String",
       "Comment": "创建时间"
     },
@@ -248,19 +263,19 @@
       "Comment": "最近在线时间"
     },
     {
-      "Name": "node_name",
-      "MapType": "System.String",
-      "Comment": "节点名称"
+      "Name": "playerId",
+      "MapType": "System.Int64",
+      "Comment": "玩家ID"
     },
     {
-      "Name": "node_id",
+      "Name": "timestamp",
+      "MapType": "System.Int64",
+      "Comment": "时间戳"
+    },
+    {
+      "Name": "errorcode",
       "MapType": "System.Int32",
-      "Comment": "节点ID"
-    },
-    {
-      "Name": "event_time",
-      "MapType": "System.String",
-      "Comment": "事件触发时间"
-    }    
+      "Comment": "错误原因"
+    }
   ]
 }

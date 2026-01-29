@@ -1,0 +1,156 @@
+{
+  "Name": "server_gem_develop",
+  "Comment": "宝石",
+  "Columns": [
+    {
+      "Name": "id",
+      "MapType": "System.Int64",
+      "Comment": "主ID"
+    },
+    {
+      "Name": "event_utc_time",
+      "MapType": "System.String",
+      "Comment": "utc时间"
+    },
+    {
+      "Name": "event_local_time",
+      "MapType": "System.String",
+      "Comment": "本地时间"
+    },
+    {
+      "Name": "account_id",
+      "MapType": "System.String",
+      "Comment": "账号ID"
+    },
+    {
+      "Name": "player_id",
+      "MapType": "System.String",
+      "Comment": "角色ID"
+    },
+    {
+      "Name": "server_id",
+      "MapType": "System.String",
+      "Comment": "服务器ID"
+    },
+    {
+      "Name": "location_country",
+      "MapType": "System.String",
+      "Comment": "国家"
+    },
+    {
+      "Name": "location_currency",
+      "MapType": "System.String",
+      "Comment": "币种"
+    },
+    {
+      "Name": "location_region",
+      "MapType": "System.String",
+      "Comment": "地区"
+    },
+    {
+      "Name": "location_country_long",
+      "MapType": "System.String",
+      "Comment": "国家完整名称"
+    },
+    {
+      "Name": "location_country_short",
+      "MapType": "System.String",
+      "Comment": "国家简称"
+    },
+    {
+      "Name": "location_city",
+      "MapType": "System.String",
+      "Comment": "城市"
+    },
+    {
+      "Name": "location_ip",
+      "MapType": "System.String",
+      "Comment": "行为发生时ip地址"
+    },
+    {
+      "Name": "app_version",
+      "MapType": "System.String",
+      "Comment": "应用版本"
+    },
+    {
+      "Name": "sub_channel",
+      "MapType": "System.String",
+      "Comment": "子渠道"
+    },
+    {
+      "Name": "server_channel",
+      "MapType": "System.String",
+      "Comment": "服务器渠道"
+    },
+    {
+      "Name": "change_reason",
+      "MapType": "System.String",
+      "Comment": "变化原因"
+    },
+    {
+      "Name": "gem_uid",
+      "MapType": "System.Int64",
+      "Comment": "养成前装备唯一id"
+    },
+    {
+      "Name": "gem_uid_after",
+      "MapType": "System.Int64",
+      "Comment": "养成后装备唯一id"
+    },
+    {
+      "Name": "gem_id",
+      "MapType": "System.Int64",
+      "Comment": "装备id"
+    },
+    {
+      "Name": "gem_id_after",
+      "MapType": "System.Int64",
+      "Comment": "养成后装备id"
+    },
+    {
+      "Name": "quality",
+      "MapType": "System.Int64",
+      "Comment": "养成前品质"
+    },
+    {
+      "Name": "quality_after",
+      "MapType": "System.Int64",
+      "Comment": "养成后品质"
+    },
+    {
+      "Name": "level",
+      "MapType": "System.Int64",
+      "Comment": "养成前等级"
+    },
+    {
+      "Name": "level_after",
+      "MapType": "System.Int64",
+      "Comment": "养成后等级"
+    },
+    {
+      "Name": "star",
+      "MapType": "System.Int64",
+      "Comment": "养成前随机词条数量"
+    },
+    {
+      "Name": "star_after",
+      "MapType": "System.Int64",
+      "Comment": "养成后随机词条数量"
+    },
+    {
+      "Name": "cost_thing",
+      "MapType": "System.String",
+      "Comment": "本次变化消耗资源"
+    },
+    {
+      "Name": "skill_name",
+      "MapType": "System.String",
+      "Comment": "宝石词条"
+    },
+    {
+      "Name": "change_value",
+      "MapType": "System.Int64",
+      "Comment": "本次变化值"
+    }
+  ]
+}

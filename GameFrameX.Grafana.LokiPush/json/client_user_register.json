@@ -6,6 +6,16 @@
       "Comment": "主ID"
     },
     {
+      "Name": "event_utc_time",
+      "MapType": "System.String",
+      "Comment": "utc时间"
+    },
+    {
+      "Name": "event_local_time",
+      "MapType": "System.String",
+      "Comment": "本地时间"
+    },
+    {
       "Name": "type",
       "MapType": "System.String",
       "Comment": "类型"
@@ -117,6 +127,11 @@
     },
     {
       "Name": "created_time",
+      "MapType": "System.String",
+      "Comment": "创建时间"
+    },
+    {
+      "Name": "event_time",
       "MapType": "System.String",
       "Comment": "创建时间"
     },

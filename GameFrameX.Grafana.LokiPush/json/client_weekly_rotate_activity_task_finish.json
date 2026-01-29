@@ -1,9 +1,21 @@
 {
+  "Name": "client_weekly_rotate_activity_task_finish",
+  "Comment": "玩家完成任务时",
   "Columns": [
     {
       "Name": "id",
       "MapType": "System.Int64",
       "Comment": "主ID"
+    },
+    {
+      "Name": "event_utc_time",
+      "MapType": "System.String",
+      "Comment": "utc时间"
+    },
+    {
+      "Name": "event_local_time",
+      "MapType": "System.String",
+      "Comment": "本地时间"
     },
     {
       "Name": "account_id",
@@ -112,6 +124,11 @@
     },
     {
       "Name": "created_time",
+      "MapType": "System.String",
+      "Comment": "创建时间"
+    },
+    {
+      "Name": "event_time",
       "MapType": "System.String",
       "Comment": "创建时间"
     },
@@ -241,17 +258,29 @@
       "Comment": "网络类型"
     },
     {
-      "Name": "item_list",
-      "MapType": "System.String",
-      "StringLength": 4096,
-      "Comment": "道具列表"
-    },
-    {
       "Name": "latest_online_time",
       "MapType": "System.String",
       "Comment": "最近在线时间"
+    },
+    {
+      "Name": "player_id",
+      "MapType": "System.Int64",
+      "Comment": "玩家ID"
+    },
+    {
+      "Name": "timestamp",
+      "MapType": "System.Int64",
+      "Comment": "时间戳"
+    },
+    {
+      "Name": "taskId",
+      "MapType": "System.Int32",
+      "Comment": "任务ID"
+    },
+    {
+      "Name": "pro",
+      "MapType": "System.Int64",
+      "Comment": "当前任务进度"
     }
-  ],
-  "Name": "client_item_bag",
-  "Comment": "道具背包中的道具信息"
+  ]
 }

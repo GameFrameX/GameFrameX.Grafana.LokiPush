@@ -8,6 +8,16 @@
       "Comment": "主ID"
     },
     {
+      "Name": "event_utc_time",
+      "MapType": "System.String",
+      "Comment": "utc时间"
+    },
+    {
+      "Name": "event_local_time",
+      "MapType": "System.String",
+      "Comment": "本地时间"
+    },
+    {
       "Name": "account_id",
       "MapType": "System.String",
       "Comment": "账号ID"
@@ -114,6 +124,11 @@
     },
     {
       "Name": "created_time",
+      "MapType": "System.String",
+      "Comment": "创建时间"
+    },
+    {
+      "Name": "event_time",
       "MapType": "System.String",
       "Comment": "创建时间"
     },
@@ -266,6 +281,6 @@
       "Name": "seconds",
       "MapType": "System.Int32",
       "Comment": "等待时间"
-    }    
+    }
   ]
 }

@@ -1,9 +1,21 @@
 {
+  "Name": "client_hero_pillar_develop",
+  "Comment": "英雄柱养成",
   "Columns": [
     {
       "Name": "id",
       "MapType": "System.Int64",
       "Comment": "主ID"
+    },
+    {
+      "Name": "event_utc_time",
+      "MapType": "System.String",
+      "Comment": "utc时间"
+    },
+    {
+      "Name": "event_local_time",
+      "MapType": "System.String",
+      "Comment": "本地时间"
     },
     {
       "Name": "account_id",
@@ -112,6 +124,11 @@
     },
     {
       "Name": "created_time",
+      "MapType": "System.String",
+      "Comment": "创建时间"
+    },
+    {
+      "Name": "event_time",
       "MapType": "System.String",
       "Comment": "创建时间"
     },
@@ -246,37 +263,34 @@
       "Comment": "最近在线时间"
     },
     {
-      "Name": "pillar_config_id",
+      "Name": "latest_online_time",
+      "MapType": "System.String",
+      "Comment": "变化原因"
+    },
+    {
+      "Name": "latest_online_time",
       "MapType": "System.Int64",
       "Comment": "英雄柱配置id"
     },
     {
-      "Name": "grade",
+      "Name": "latest_online_time",
       "MapType": "System.Int64",
       "Comment": "养成后阶级"
     },
     {
-      "Name": "level",
+      "Name": "latest_online_time",
       "MapType": "System.Int64",
       "Comment": "养成后等级"
     },
     {
-      "Name": "change_value",
+      "Name": "latest_online_time",
       "MapType": "System.Int64",
       "Comment": "本次变化值"
     },
     {
-      "Name": "cost_thing",
+      "Name": "latest_online_time",
       "MapType": "System.String",
-      "StringLength": 4096,
       "Comment": "本次变化消耗资源"
-    },
-    {
-      "Name": "change_reason",
-      "MapType": "System.String",
-      "Comment": "变化原因"
     }
-  ],
-  "Name": "client_hero_pillar_develop",
-  "Comment": "英雄柱养成"
+  ]
 }

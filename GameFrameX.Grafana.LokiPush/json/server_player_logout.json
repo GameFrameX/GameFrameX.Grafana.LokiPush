@@ -1,0 +1,91 @@
+{
+  "Name": "server_player_logout",
+  "Comment": "退出",
+  "Columns": [
+    {
+      "Name": "id",
+      "MapType": "System.Int64",
+      "Comment": "主ID"
+    },
+    {
+      "Name": "event_utc_time",
+      "MapType": "System.String",
+      "Comment": "utc时间"
+    },
+    {
+      "Name": "event_local_time",
+      "MapType": "System.String",
+      "Comment": "本地时间"
+    },
+    {
+      "Name": "account_id",
+      "MapType": "System.String",
+      "Comment": "账号ID"
+    },
+    {
+      "Name": "player_id",
+      "MapType": "System.String",
+      "Comment": "角色ID"
+    },
+    {
+      "Name": "server_id",
+      "MapType": "System.String",
+      "Comment": "服务器ID"
+    },
+    {
+      "Name": "location_country",
+      "MapType": "System.String",
+      "Comment": "国家"
+    },
+    {
+      "Name": "location_currency",
+      "MapType": "System.String",
+      "Comment": "币种"
+    },
+    {
+      "Name": "location_region",
+      "MapType": "System.String",
+      "Comment": "地区"
+    },
+    {
+      "Name": "location_country_long",
+      "MapType": "System.String",
+      "Comment": "国家完整名称"
+    },
+    {
+      "Name": "location_country_short",
+      "MapType": "System.String",
+      "Comment": "国家简称"
+    },
+    {
+      "Name": "location_city",
+      "MapType": "System.String",
+      "Comment": "城市"
+    },
+    {
+      "Name": "location_ip",
+      "MapType": "System.String",
+      "Comment": "行为发生时ip地址"
+    },
+    {
+      "Name": "app_version",
+      "MapType": "System.String",
+      "Comment": "应用版本"
+    },
+    {
+      "Name": "sub_channel",
+      "MapType": "System.String",
+      "Comment": "子渠道"
+    },
+    {
+      "Name": "server_channel",
+      "MapType": "System.String",
+      "Comment": "服务器渠道"
+    },
+    {
+      "Name": "playerId",
+      "MapType": "System.Int64",
+      "Comment": "角色id"
+    }
+  ]
+}
