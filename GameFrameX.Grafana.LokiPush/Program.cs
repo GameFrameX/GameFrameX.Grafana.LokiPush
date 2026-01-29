@@ -25,6 +25,27 @@ if (fileInfos.Length == 0)
     throw new FileNotFoundException("未找到任何 JSON 文件。请确保 json 目录下存在 TableDescriptor.json 文件。");
 }
 
+// 加载公共配置
+var commonConfigs = new Dictionary<string, TableDescriptor>();
+var commonFiles = fileInfos.Where(f => f.Name.Equals("_common.json", StringComparison.OrdinalIgnoreCase));
+foreach (var commonFile in commonFiles)
+{
+    try
+    {
+        var content = File.ReadAllText(commonFile.FullName);
+        var descriptor = JsonConvert.DeserializeObject<TableDescriptor>(content);
+        if (descriptor != null)
+        {
+            commonConfigs[commonFile.DirectoryName!] = descriptor;
+            Console.WriteLine($"加载公共配置: {commonFile.FullName}");
+        }
+    }
+    catch (Exception e)
+    {
+        Console.WriteLine($"加载公共配置失败: {commonFile.FullName}, {e.Message}");
+    }
+}
+
 YitIdHelper.SetIdGenerator(new IdGeneratorOptions(10));
 var builder = WebApplication.CreateBuilder(args);
 
@@ -61,12 +82,31 @@ var freeSql = freeSqlBuilder.Build();
 LokiZeroDbContextOptions lokiZeroDbContextOptions = new LokiZeroDbContextOptions();
 foreach (var fileInfo in fileInfos)
 {
+    // 跳过公共配置文件，它们不直接对应表
+    if (fileInfo.Name.Equals("_common.json", StringComparison.OrdinalIgnoreCase))
+    {
+        continue;
+    }
+
     var tableDescriptorJson = File.ReadAllText(fileInfo.FullName);
     var tableDescriptor = JsonConvert.DeserializeObject<TableDescriptor>(tableDescriptorJson);
     if (tableDescriptor == null || tableDescriptor.Columns.Count == 0)
     {
         Console.WriteLine($"跳过无效的表描述文件: {fileInfo.Name}");
         continue;
+    }
+
+    // 合并公共配置字段
+    if (fileInfo.DirectoryName != null && commonConfigs.TryGetValue(fileInfo.DirectoryName, out var commonConfig))
+    {
+        foreach (var commonCol in commonConfig.Columns)
+        {
+            // 如果具体配置中没有该字段，则添加公共字段
+            if (!tableDescriptor.Columns.Any(c => c.Name == commonCol.Name))
+            {
+                tableDescriptor.Columns.Add(commonCol);
+            }
+        }
     }
 
     try
