@@ -1,6 +1,8 @@
 using GameFrameX.Grafana.LokiPush.Models;
 using GameFrameX.Grafana.LokiPush.Services;
 using Microsoft.AspNetCore.Mvc;
+using System.Security.Cryptography;
+using System.Text;
 using System.Text.Json;
 
 namespace GameFrameX.Grafana.LokiPush.Controllers;
@@ -16,6 +18,16 @@ public class LokiController : ControllerBase
     {
         _batchProcessingService = batchProcessingService;
         _logger = logger;
+    }
+
+    /// <summary>
+    /// 生成日志条目的唯一哈希值（与DatabaseService保持一致）
+    /// </summary>
+    private static string GenerateHash(long timestampNs, string content, Dictionary<string, string> labels)
+    {
+        var hashInput = $"{timestampNs}|{content}|{string.Join(",", labels.OrderBy(x => x.Key).Select(x => $"{x.Key}={x.Value}"))}";
+        var hashBytes = SHA256.HashData(Encoding.UTF8.GetBytes(hashInput));
+        return Convert.ToHexString(hashBytes).ToLowerInvariant();
     }
 
     /// <summary>
@@ -35,7 +47,9 @@ public class LokiController : ControllerBase
             }
 
             var pendingLogs = new List<PendingLogEntry>();
+            var seenHashes = new HashSet<string>(); // 用于请求级别的去重
             var totalEntries = 0;
+            var duplicateCount = 0;
 
             foreach (var stream in request.Streams)
             {
@@ -62,12 +76,24 @@ public class LokiController : ControllerBase
                         continue;
                     }
 
+                    var labels = stream.Stream ?? new Dictionary<string, string>();
+                    var hash = GenerateHash(timestampNs, logContent, labels);
+
+                    // 请求级别去重：同一请求中的重复数据直接跳过
+                    if (!seenHashes.Add(hash))
+                    {
+                        _logger.LogDebug("检测到请求内重复数据，Hash: {Hash}，跳过", hash);
+                        duplicateCount++;
+                        continue;
+                    }
+
                     var pendingLog = new PendingLogEntry
                     {
                         TimestampNs = timestampNs,
                         Content = logContent,
-                        Labels = stream.Stream ?? new Dictionary<string, string>(),
-                        ReceivedAt = DateTime.UtcNow
+                        Labels = labels,
+                        ReceivedAt = DateTime.UtcNow,
+                        Hash = hash
                     };
 
                     pendingLogs.Add(pendingLog);
@@ -78,8 +104,8 @@ public class LokiController : ControllerBase
             if (pendingLogs.Any())
             {
                 _batchProcessingService.AddLogs(pendingLogs);
-                _logger.LogDebug("接收到 {StreamCount} 个流，共 {EntryCount} 条日志条目",
-                                 request.Streams.Count, totalEntries);
+                _logger.LogDebug("接收到 {StreamCount} 个流，共 {EntryCount} 条日志条目，跳过 {DuplicateCount} 条重复",
+                                 request.Streams.Count, totalEntries, duplicateCount);
             }
             else
             {

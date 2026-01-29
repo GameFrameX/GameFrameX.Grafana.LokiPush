@@ -32,4 +32,8 @@ public class PendingLogEntry
     public string Content { get; set; } = string.Empty;
     public Dictionary<string, string> Labels { get; set; } = new();
     public DateTime ReceivedAt { get; set; } = DateTime.UtcNow;
+    /// <summary>
+    /// 内容哈希值（用于去重）
+    /// </summary>
+    public string Hash { get; set; } = string.Empty;
 }

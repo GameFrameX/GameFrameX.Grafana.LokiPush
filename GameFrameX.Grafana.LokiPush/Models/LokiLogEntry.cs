@@ -44,4 +44,10 @@ public class LokiLogEntry
     /// 日志时间（从纳秒时间戳转换）
     /// </summary>
     public DateTime LogTime { get; set; }
+
+    /// <summary>
+    /// 内容哈希值（用于去重，基于 TimestampNs + Content + Labels 生成）
+    /// </summary>
+    [Column(StringLength = 64)]
+    public string Hash { get; set; } = string.Empty;
 }
