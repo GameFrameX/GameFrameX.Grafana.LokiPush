@@ -279,6 +279,11 @@
       "Comment": "所带英雄阵容一个长JSON"
     },
     {
+      "Name": "battle_uid",
+      "MapType": "System.String",
+      "Comment": "战斗唯一id"
+    },
+    {
       "Name": "battle_result",
       "MapType": "System.Int32",
       "Comment": "战斗结果"

@@ -273,21 +273,6 @@
       "Comment": "关卡id"
     },
     {
-      "Name": "hero_id",
-      "MapType": "System.Int32",
-      "Comment": "英雄id"
-    },
-    {
-      "Name": "hero_name",
-      "MapType": "System.String",
-      "Comment": "英雄名称"
-    },
-    {
-      "Name": "hero_level",
-      "MapType": "System.Int32",
-      "Comment": "英雄等级"
-    },
-    {
       "Name": "skill_id",
       "MapType": "System.Int32",
       "Comment": "技能id"
