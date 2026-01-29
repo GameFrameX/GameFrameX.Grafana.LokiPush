@@ -82,8 +82,8 @@ var freeSql = freeSqlBuilder.Build();
 LokiZeroDbContextOptions lokiZeroDbContextOptions = new LokiZeroDbContextOptions();
 foreach (var fileInfo in fileInfos)
 {
-    // 跳过公共配置文件，它们不直接对应表
-    if (fileInfo.Name.Equals("_common.json", StringComparison.OrdinalIgnoreCase))
+    // 跳过公共配置文件和模板文件，它们不直接对应表
+    if (fileInfo.Name.StartsWith("_", StringComparison.OrdinalIgnoreCase))
     {
         continue;
     }
