@@ -1,0 +1,21 @@
+{
+  "Name": "client_general_gift_recharge_reward",
+  "Comment": "通用弹窗礼包",
+  "Columns": [
+    {
+      "Name": "minlevel_num",
+      "MapType": "System.String",
+      "Comment": "主线关卡"
+    },
+    {
+      "Name": "gift_id",
+      "MapType": "System.Int32",
+      "Comment": "礼包ID"
+    },
+    {
+      "Name": "state_type",
+      "MapType": "System.Int32",
+      "Comment": "display：展示的角色数.click：点击【购买按钮】的角色数"
+    }
+  ]
+}
