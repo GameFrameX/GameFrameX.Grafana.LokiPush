@@ -169,13 +169,13 @@ public class BatchProcessingService : IBatchProcessingService, IHostedService, I
 
             if (batch.Any())
             {
-                _logger.LogInformation("开始处理批次，数量: {Count}", batch.Count);
+                _logger.LogDebug("开始处理批次，数量: {Count}", batch.Count);
                 
                 var success = await _databaseService.BatchInsertLogsAsync(batch);
                 
                 if (success)
                 {
-                    _logger.LogInformation("批次处理成功，已处理 {Count} 条日志，剩余队列: {Remaining}", batch.Count, _logQueue.Count);
+                    _logger.LogDebug("批次处理成功，已处理 {Count} 条日志，剩余队列: {Remaining}", batch.Count, _logQueue.Count);
                 }
                 else
                 {

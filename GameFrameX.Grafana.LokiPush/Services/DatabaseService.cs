@@ -211,7 +211,7 @@ public class DatabaseService : IDatabaseService
             var sql = $"INSERT INTO {tableName} ({columns}) VALUES ({values})";
             _freeSql.Ado.ExecuteNonQuery(sql);
 
-            _logger.LogInformation("成功插入事件到表 {TableName}，Hash: {Hash}", tableName, hash);
+            _logger.LogDebug("成功插入事件到表 {TableName}，Hash: {Hash}", tableName, hash);
             return true;
         }
         catch (Exception ex)
@@ -222,7 +222,7 @@ public class DatabaseService : IDatabaseService
 
             if (errorMessage.Contains("duplicate") || errorMessage.Contains("unique") || errorMessage.Contains("constraint") || errorMessage.Contains("23505"))
             {
-                _logger.LogInformation("记录已存在（表 {TableName}，Hash: {Hash}），跳过重复插入", tableName, hash);
+                _logger.LogDebug("记录已存在（表 {TableName}，Hash: {Hash}），跳过重复插入", tableName, hash);
                 Interlocked.Increment(ref duplicateCount);
                 return true; // 重复也算"成功"处理
             }
