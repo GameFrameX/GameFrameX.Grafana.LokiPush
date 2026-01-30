@@ -1,6 +1,6 @@
 {
-  "Name": "client_general_gift_recharge_reward",
-  "Comment": "通用弹窗礼包",
+  "Name": "client_general_gift_trigger",
+  "Comment": "触发弹窗礼包",
   "Columns": [
     {
       "Name": "minlevel_num",

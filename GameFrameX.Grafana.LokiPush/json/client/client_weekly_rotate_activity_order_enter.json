@@ -1,0 +1,11 @@
+{
+  "Name": "client_weekly_rotate_activity_order_enter",
+  "Comment": "玩家进入轮换活动订单埋点时",
+  "Columns": [
+    {
+      "Name": "timestamp",
+      "MapType": "System.Int64",
+      "Comment": "时间戳"
+    }
+  ]
+}

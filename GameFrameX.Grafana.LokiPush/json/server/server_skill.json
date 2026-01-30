@@ -1,0 +1,31 @@
+{
+  "Name": "server_skill",
+  "Comment": "技能系统",
+  "Columns": [
+    {
+      "Name": "change_reason",
+      "MapType": "System.String",
+      "Comment": "变化原因"
+    },
+    {
+      "Name": "current_value",
+      "MapType": "System.Int64",
+      "Comment": "当前值"
+    },
+    {
+      "Name": "config_id",
+      "MapType": "System.String",
+      "Comment": "道具配置id"
+    },
+    {
+      "Name": "target_value",
+      "MapType": "System.Int64",
+      "Comment": "目标值"
+    },
+    {
+      "Name": "item_change",
+      "MapType": "System.String",
+      "Comment": "当前操作消耗的或者返还的道具变化信息"
+    }
+  ]
+}

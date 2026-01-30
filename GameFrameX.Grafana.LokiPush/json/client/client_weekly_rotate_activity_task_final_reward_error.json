@@ -3,11 +3,6 @@
   "Comment": "终极奖励领取失败时",
   "Columns": [
     {
-      "Name": "playerId",
-      "MapType": "System.Int64",
-      "Comment": "玩家ID"
-    },
-    {
       "Name": "timestamp",
       "MapType": "System.Int64",
       "Comment": "时间戳"

@@ -1,0 +1,16 @@
+{
+  "Name": "server_change_info",
+  "Comment": "用户修改信息",
+  "Columns": [
+    {
+      "Name": "change_reason",
+      "MapType": "System.String",
+      "Comment": "变化原因"
+    },
+    {
+      "Name": "target_value",
+      "MapType": "System.String",
+      "Comment": "目标值"
+    }
+  ]
+}

@@ -4,12 +4,12 @@
   "Columns": [
     {
       "Name": "type",
-      "MapType": "System.String",
+      "MapType": "System.Int32",
       "Comment": "引导类型0=开始，1=结束"
     },
     {
       "Name": "guide_id",
-      "MapType": "System.String",
+      "MapType": "System.Int32",
       "Comment": "引导表ID"
     }
   ]

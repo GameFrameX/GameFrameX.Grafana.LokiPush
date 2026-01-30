@@ -1,11 +1,5 @@
 {
   "Name": "client_super_enter",
   "Comment": "进入超值礼包页签",
-  "Columns": [
-    {
-      "Name": "playerId",
-      "MapType": "System.Int64",
-      "Comment": "玩家ID"
-    }
-  ]
+  "Columns": []
 }

@@ -1,0 +1,16 @@
+{
+  "Name": "server_monster",
+  "Comment": "怪物",
+  "Columns": [
+    {
+      "Name": "change_reason",
+      "MapType": "System.String",
+      "Comment": "变化原因"
+    },
+    {
+      "Name": "config_id",
+      "MapType": "System.Int64",
+      "Comment": "解锁的怪物图鉴id"
+    }
+  ]
+}

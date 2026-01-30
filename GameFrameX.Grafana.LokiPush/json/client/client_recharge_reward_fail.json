@@ -1,5 +1,5 @@
 {
-  "Name": "client_recharge_reward",
-  "Comment": "玩家领取累充奖励",
+  "Name": "client_recharge_reward_fail",
+  "Comment": "充值奖励领取失败",
   "Columns": []
 }

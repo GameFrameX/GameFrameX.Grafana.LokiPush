@@ -1,0 +1,31 @@
+{
+  "Name": "server_battle",
+  "Comment": "冒险挑战",
+  "Columns": [
+    {
+      "Name": "change_reason",
+      "MapType": "System.String",
+      "Comment": "变化原因"
+    },
+    {
+      "Name": "item_change",
+      "MapType": "System.Int64",
+      "Comment": "获得的道具"
+    },
+    {
+      "Name": "result",
+      "MapType": "System.Int64",
+      "Comment": "结果"
+    },
+    {
+      "Name": "config_id",
+      "MapType": "System.Int64",
+      "Comment": "关卡id"
+    },
+    {
+      "Name": "battle_id",
+      "MapType": "System.Int64",
+      "Comment": "战斗的唯一id"
+    }
+  ]
+}

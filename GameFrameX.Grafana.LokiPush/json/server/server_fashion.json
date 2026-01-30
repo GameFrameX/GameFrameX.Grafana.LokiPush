@@ -1,0 +1,16 @@
+{
+  "Name": "server_fashion",
+  "Comment": "装备养成",
+  "Columns": [
+    {
+      "Name": "change_reason",
+      "MapType": "System.String",
+      "Comment": "变化原因"
+    },
+    {
+      "Name": "item_change",
+      "MapType": "System.Int64",
+      "Comment": "装备唯一id"
+    }
+  ]
+}

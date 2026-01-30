@@ -1,6 +1,6 @@
 {
-  "Name": "client_weekly_rotate_activity_task_grade_reward_error",
-  "Comment": "玩家领取阶段奖励时",
+  "Name": "client_weekly_rotate_activity_recharge_reward_fail",
+  "Comment": "玩家领取周轮换累充奖励失败",
   "Columns": [
     {
       "Name": "timestamp",
@@ -8,9 +8,9 @@
       "Comment": "时间戳"
     },
     {
-      "Name": "grade",
+      "Name": "price",
       "MapType": "System.Int32",
-      "Comment": "阶段编号"
+      "Comment": "档位金额"
     },
     {
       "Name": "errorcode",

@@ -1,0 +1,41 @@
+{
+  "Name": "server_arena",
+  "Comment": "竞技场挑战",
+  "Columns": [
+    {
+      "Name": "change_reason",
+      "MapType": "System.String",
+      "Comment": "变化原因"
+    },
+    {
+      "Name": "attacker_id",
+      "MapType": "System.Int64",
+      "Comment": "挑战人"
+    },
+    {
+      "Name": "attacker_name",
+      "MapType": "System.String",
+      "Comment": "挑战人姓名"
+    },
+    {
+      "Name": "defender_id",
+      "MapType": "System.Int64",
+      "Comment": "被挑战人"
+    },
+    {
+      "Name": "defender_name",
+      "MapType": "System.String",
+      "Comment": "被挑战人姓名"
+    },
+    {
+      "Name": "result",
+      "MapType": "System.String",
+      "Comment": "结果"
+    },
+    {
+      "Name": "add_cup",
+      "MapType": "System.Int64",
+      "Comment": "道具配置id"
+    }
+  ]
+}

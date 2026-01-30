@@ -1,11 +1,5 @@
 {
   "Name": "server_player_logout",
   "Comment": "退出",
-  "Columns": [
-    {
-      "Name": "playerId",
-      "MapType": "System.Int64",
-      "Comment": "角色id"
-    }
-  ]
+  "Columns": []
 }

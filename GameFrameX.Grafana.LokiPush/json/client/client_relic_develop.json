@@ -1,5 +1,37 @@
 {
   "Name": "client_relic_develop",
   "Comment": "古宝养成",
-  "Columns": []
+  "Columns": [
+    {
+      "Name": "relic_id",
+      "MapType": "System.Int32",
+      "Comment": "遗物ID"
+    },
+    {
+      "Name": "relic_quality",
+      "MapType": "System.Int32",
+      "Comment": "遗物品质"
+    },
+    {
+      "Name": "change_reason",
+      "MapType": "System.Int32",
+      "Comment": "变化原因"
+    },
+    {
+      "Name": "level",
+      "MapType": "System.Int32",
+      "Comment": "遗物等级"
+    },
+    {
+      "Name": "star",
+      "MapType": "System.Int32",
+      "Comment": "遗物星级"
+    },
+    {
+      "Name": "cost",
+      "MapType": "System.String",
+      "StringLength": 4096,
+      "Comment": "遗物强化消耗"
+    }
+  ]
 }

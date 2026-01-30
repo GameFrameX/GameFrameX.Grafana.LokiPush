@@ -1,5 +1,36 @@
 {
   "Name": "client_hero_pillar_develop",
   "Comment": "英雄柱养成",
-  "Columns": []
+  "Columns": [
+    {
+      "Name": "change_reason",
+      "MapType": "System.String",
+      "Comment": "变化原因"
+    },
+    {
+      "Name": "pillar_config_id",
+      "MapType": "System.Int64",
+      "Comment": "战斗唯一id"
+    },
+    {
+      "Name": "grade",
+      "MapType": "System.Int64",
+      "Comment": "战斗类型"
+    },
+    {
+      "Name": "level",
+      "MapType": "System.Int64",
+      "Comment": "关卡id"
+    },
+    {
+      "Name": "change_value",
+      "MapType": "System.Int64",
+      "Comment": "优先级设置"
+    },
+    {
+      "Name": "cost_thing",
+      "MapType": "System.String",
+      "Comment": "等待时间"
+    }
+  ]
 }

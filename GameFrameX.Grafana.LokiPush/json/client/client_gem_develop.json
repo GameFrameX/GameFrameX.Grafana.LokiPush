@@ -8,32 +8,32 @@
       "Comment": "变化原因"
     },
     {
-      "Name": "Gem_uid",
+      "Name": "gem_uid",
       "MapType": "System.Int64",
       "Comment": "养成前装备唯一id"
     },
     {
-      "Name": "Gem_uid_after",
+      "Name": "gem_uid_after",
       "MapType": "System.Int64",
       "Comment": "养成后装备唯一id"
     },
     {
-      "Name": "Gem_id",
+      "Name": "gem_id",
       "MapType": "System.Int64",
       "Comment": "装备id"
     },
     {
-      "Name": "Gem_id_after",
+      "Name": "gem_id_after",
       "MapType": "System.Int64",
       "Comment": "养成后装备id"
     },
     {
-      "Name": "Gem_name",
+      "Name": "gem_name",
       "MapType": "System.String",
       "Comment": "装备名称"
     },
     {
-      "Name": "Gem_name_after",
+      "Name": "gem_name_after",
       "MapType": "System.String",
       "Comment": "养成后装备名称"
     },

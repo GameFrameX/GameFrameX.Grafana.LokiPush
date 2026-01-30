@@ -3,16 +3,6 @@
   "Comment": "招募(许愿)",
   "Columns": [
     {
-      "Name": "change_reason",
-      "MapType": "System.Int64",
-      "Comment": "变化原因"
-    },
-    {
-      "Name": "draw_id",
-      "MapType": "System.Int64",
-      "Comment": "卡池ID"
-    },
-    {
       "Name": "recruit_type",
       "MapType": "System.Int32",
       "Comment": "抽卡类型"
@@ -20,6 +10,7 @@
     {
       "Name": "award_ting",
       "MapType": "System.String",
+      "StringLength": 4096,
       "Comment": "得到的物品"
     }
   ]

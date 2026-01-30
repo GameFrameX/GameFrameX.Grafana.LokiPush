@@ -6,6 +6,11 @@
       "Name": "role_name",
       "MapType": "System.String",
       "Comment": "角色名称"
+    },
+    {
+      "Name": "server_id",
+      "MapType": "System.String",
+      "Comment": "角色名称"
     }
   ]
 }

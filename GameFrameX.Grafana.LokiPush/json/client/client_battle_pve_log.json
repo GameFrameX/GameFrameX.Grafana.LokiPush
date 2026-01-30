@@ -15,13 +15,8 @@
     {
       "Name": "battle_uid",
       "MapType": "System.String",
+      "StringLength": 8192,
       "Comment": "战斗唯一id"
-    },
-    {
-      "Name": "hero_list",
-      "MapType": "System.String",
-      "StringLength": 4096,
-      "Comment": "所带英雄阵容"
     }
   ]
 }

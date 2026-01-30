@@ -3,23 +3,22 @@
   "Comment": "部落BOSS战报",
   "Columns": [
     {
-      "FieldName": "battle_type",
+      "Name": "battle_type",
       "MapType": "System.String",
-      "StringLength": 255,
       "Comment": "战斗类型"
     },
     {
-      "FieldName": "map_id",
+      "Name": "map_id",
       "MapType": "System.Int32",
       "Comment": "BOSS_ID"
     },
     {
-      "FieldName": "battle_value",
+      "Name": "battle_value",
       "MapType": "System.Int64",
       "Comment": "战斗结果"
     },
     {
-      "FieldName": "battle_time",
+      "Name": "battle_time",
       "MapType": "System.Int32",
       "Comment": "战斗时间(秒)"
     }

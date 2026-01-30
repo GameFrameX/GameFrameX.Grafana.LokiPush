@@ -1,6 +1,6 @@
 {
-  "Name": "client_weekly_rotate_activity_task_final_reward",
-  "Comment": "玩家领取终极奖励时",
+  "Name": "client_weekly_rotate_activity_recharge_reward",
+  "Comment": "玩家领取周轮换累充页面",
   "Columns": [
     {
       "Name": "timestamp",
@@ -8,12 +8,12 @@
       "Comment": "时间戳"
     },
     {
-      "Name": "times",
+      "Name": "total",
       "MapType": "System.Int32",
-      "Comment": "领取次数"
+      "Comment": "累充金额"
     },
     {
-      "Name": "rewardId",
+      "Name": "reward_id",
       "MapType": "System.Int32",
       "Comment": "奖励ID"
     }

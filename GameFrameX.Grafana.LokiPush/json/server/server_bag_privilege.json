@@ -1,0 +1,16 @@
+{
+  "Name": "server_bag_privilege",
+  "Comment": "特权背包",
+  "Columns": [
+    {
+      "Name": "change_reason",
+      "MapType": "System.String",
+      "Comment": "变化原因"
+    },
+    {
+      "Name": "item_change",
+      "MapType": "System.String",
+      "Comment": "变化的特权"
+    }
+  ]
+}

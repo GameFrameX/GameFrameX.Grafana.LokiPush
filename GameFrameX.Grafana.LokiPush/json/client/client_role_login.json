@@ -1,5 +1,12 @@
 {
   "Name": "client_role_login",
   "Comment": "角色登录",
-  "Columns": []
+  "Columns": [
+    {
+      "Name": "server_id",
+      "MapType": "System.String",
+      "StringLength": 4096,
+      "Comment": "服务器ID"
+    }
+  ]
 }

@@ -1,0 +1,16 @@
+{
+  "Name": "server_hook",
+  "Comment": "挂机",
+  "Columns": [
+    {
+      "Name": "change_reason",
+      "MapType": "System.String",
+      "Comment": "变化原因"
+    },
+    {
+      "Name": "item_change",
+      "MapType": "System.String",
+      "Comment": "当前操作消耗的或者返还的道具变化信息"
+    }
+  ]
+}

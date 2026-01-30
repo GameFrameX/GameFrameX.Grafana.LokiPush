@@ -1,0 +1,21 @@
+{
+  "Name": "client_weekly_rotate_activity_recharge_enter",
+  "Comment": "玩家进入周轮换累充页面",
+  "Columns": [
+    {
+      "Name": "timestamp",
+      "MapType": "System.Int64",
+      "Comment": "时间戳"
+    },
+    {
+      "Name": "total",
+      "MapType": "System.Int32",
+      "Comment": "累充金额"
+    },
+    {
+      "Name": "price",
+      "MapType": "System.Int32",
+      "Comment": "档位金额"
+    }
+  ]
+}

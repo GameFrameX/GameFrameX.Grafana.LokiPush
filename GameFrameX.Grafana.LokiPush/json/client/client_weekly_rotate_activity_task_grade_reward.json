@@ -3,11 +3,6 @@
   "Comment": "玩家领取阶段奖励时",
   "Columns": [
     {
-      "Name": "playerId",
-      "MapType": "System.Int64",
-      "Comment": "玩家ID"
-    },
-    {
       "Name": "timestamp",
       "MapType": "System.Int64",
       "Comment": "时间戳"
