@@ -8,7 +8,7 @@
       "Comment": "时间戳"
     },
     {
-      "Name": "taskId",
+      "Name": "task_id",
       "MapType": "System.Int32",
       "Comment": "任务ID"
     },

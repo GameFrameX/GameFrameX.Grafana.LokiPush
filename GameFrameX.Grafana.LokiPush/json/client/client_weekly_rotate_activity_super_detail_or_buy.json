@@ -8,12 +8,12 @@
       "Comment": "时间戳"
     },
     {
-      "Name": "rewardId",
+      "Name": "reward_id",
       "MapType": "System.Int32",
       "Comment": "礼包ID"
     },
     {
-      "Name": "rewardName",
+      "Name": "reward_name",
       "MapType": "System.String",
       "Comment": "礼包名称"
     }

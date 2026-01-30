@@ -13,7 +13,7 @@
       "Comment": "领取次数"
     },
     {
-      "Name": "rewardId",
+      "Name": "reward_id",
       "MapType": "System.Int32",
       "Comment": "奖励ID"
     }

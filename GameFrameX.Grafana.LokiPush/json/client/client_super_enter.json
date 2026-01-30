@@ -1,5 +1,11 @@
 {
   "Name": "client_super_enter",
   "Comment": "进入超值礼包页签",
-  "Columns": []
+  "Columns": [
+    {
+      "Name": "timestamp",
+      "MapType": "System.Int64",
+      "Comment": "时间戳"
+    }
+  ]
 }

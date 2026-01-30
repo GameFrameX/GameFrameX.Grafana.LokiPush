@@ -8,9 +8,18 @@
       "Comment": "时间戳"
     },
     {
-      "Name": "rewardId",
+      "Name": "reward_id",
       "MapType": "System.Int32",
       "Comment": "奖励id"
+    },
+    {
+      "Name": "days",
+      "MapType": "System.Int32",
+      "Comment": "奖励天数"
+    },    {
+      "Name": "type",
+      "MapType": "System.Int32",
+      "Comment": "奖励类型,0：免费奖励,1：付费奖励"
     }
   ]
 }

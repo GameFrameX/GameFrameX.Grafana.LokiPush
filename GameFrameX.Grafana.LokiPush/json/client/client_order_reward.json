@@ -1,5 +1,17 @@
 {
   "Name": "client_order_reward",
   "Comment": "领取战令奖励",
-  "Columns": []
+  "Columns": [
+    {
+      "Name": "timestamp",
+      "MapType": "System.Int64",
+      "Comment": "时间戳"
+    },
+    {
+      "Name": "reward_id",
+      "MapType": "System.String",
+      "StringLength": 4096,
+      "Comment": "奖励id"
+    }
+  ]
 }
