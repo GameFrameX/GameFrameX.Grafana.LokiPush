@@ -90,7 +90,7 @@ foreach (var fileInfo in fileInfos)
 
     var tableDescriptorJson = File.ReadAllText(fileInfo.FullName);
     var tableDescriptor = JsonConvert.DeserializeObject<TableDescriptor>(tableDescriptorJson);
-    if (tableDescriptor == null || tableDescriptor.Columns.Count == 0)
+    if (tableDescriptor == null)
     {
         Console.WriteLine($"跳过无效的表描述文件: {fileInfo.Name}");
         continue;
